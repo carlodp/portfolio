@@ -1,0 +1,9 @@
+{
+  "phone": "12345",
+  "email": "test@test.com",
+  "address": {
+    "street": "test",
+    "street2": "test",
+    "city": "test"
+  }
+}
