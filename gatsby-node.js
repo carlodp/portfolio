@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const projectPost = path.resolve(`./src/templates/project-post.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -16,6 +17,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           limit: 1000
         ) {
           nodes {
+            frontmatter {
+              posttype
+            }
             id
             fields {
               slug
@@ -45,15 +49,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
+      if (post.frontmatter.posttype === 'project') {
+        createPage({
+          path: post.fields.slug,
+          component: projectPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+          }
+        });
+      } else { // blog post
+        createPage({
+          path: post.fields.slug,
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+          },
+        });
+      }
     })
   }
 }

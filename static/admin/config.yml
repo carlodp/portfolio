@@ -6,15 +6,130 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/home.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Before Heading, name: beforeheading, widget: string },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Subheading, name: subheading, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+          - {
+              label: About,
+              name: about,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Skills,
+                    name: skills,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Stack Title, name: stacktitle, widget: string },
+                        {
+                          label: Tech Stack,
+                          name: techstack,
+                          widget: list,
+                          fields:
+                          [
+                            { label: Text, name: text, widget: string },
+                          ],
+                        }
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Jobs,
+              name: jobs,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Companies,
+                    name: companies,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Company Name, name: companyname, widget: string },
+                        { label: Job Title, name: jobtitle, widget: string },
+                        { label: Date Attended, name: dateattended, widget: string },                        
+                        {
+                          label: Roles,
+                          name: roles,
+                          widget: list,
+                          fields:
+                          [
+                            { label: Text, name: text, widget: string },
+                          ],
+                        }
+                      ],
+                  },
+                ],
+            }
+
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "project"
+    label: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Post Type", name: "posttype", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Global Settings"
+        name: global_settings
+        file: site/settings/global_settings.json
+        fields:
+          - { label: "Site Name", name: "sitename", widget: "string" }
+          - { label: "Site Title ", name: "sitetitle", widget: "string", required: false }
+
+      - label: "Contact Info"
+        name: contact_info
+        file: site/settings/contact_info.json
+        fields:
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Street", name: "street", widget: "string" }
+              - { label: "Street2", name: "street2", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }

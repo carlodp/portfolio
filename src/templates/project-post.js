@@ -5,26 +5,26 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogPostTemplate = ({ data, location }) => {
+const ProjectPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
   return (
-    <Layout location={location} title='Blogs'>
+    <Layout location={location} title='Projects'>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-
+      <div>test</div>
     </Layout>
   )
 }
 
-export default BlogPostTemplate
+export default ProjectPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+  query ProjectPostBySlug(
     $id: String!
     $previousPostId: String
     $nextPostId: String

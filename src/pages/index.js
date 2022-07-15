@@ -1,32 +1,33 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+// import contactInfo from '../../site/settings/contact_info.json'
+import globalSettings from '../../site/settings/global_settings.json'
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  // const siteTitle = data.site.siteMetadata?.title || `Title`
+  const posts = data.blog.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+  // if (posts.length === 0) {
+  //   return (
+  //     <Layout location={location} title={siteTitle}>
+  //       <Seo title="All posts" />
+  //       <Bio />
+  //       <p>
+  //         No blog posts found. Add markdown posts to "content/blog" (or the
+  //         directory you specified for the "gatsby-source-filesystem" plugin in
+  //         gatsby-config.js).
+  //       </p>
+  //     </Layout>
+  //   )
+  // }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
+    <Layout location={location}>
+      <Seo title={globalSettings.sitename} sitetitle={globalSettings.sitetitle} />
+
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -66,24 +67,40 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+query IndexQuery {
+  blog: allMarkdownRemark(
+    limit: 2000
+    sort: { fields: [frontmatter___date], order: DESC }
+    filter: { fileAbsolutePath: {regex: "/(/blog/)/" }}
+  ) {
+    nodes {
+      excerpt
+      fields {
+        slug
       }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
       }
     }
   }
+  project: allMarkdownRemark(
+    limit: 2000
+    sort: { fields: [frontmatter___date], order: DESC }
+    filter: { fileAbsolutePath: {regex: "/(/projects/)/" }}
+  ) {
+    nodes {
+      excerpt
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+      }
+    }
+  }
+}
 `
