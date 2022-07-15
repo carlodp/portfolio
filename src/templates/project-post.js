@@ -1,20 +1,18 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const ProjectPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const project = data.markdownRemark
+  //const { previous, next } = data
 
   return (
     <Layout location={location} title='Projects'>
       <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={project.frontmatter.title}
+        description={project.frontmatter.description || project.excerpt}
       />
       <div>test</div>
     </Layout>

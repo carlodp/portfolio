@@ -3,31 +3,18 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import ProjectListing from "../components/projectlisting"
+
 // import contactInfo from '../../site/settings/contact_info.json'
 import globalSettings from '../../site/settings/global_settings.json'
 
-const BlogIndex = ({ data, location }) => {
-  // const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.blog.nodes
-
-  // if (posts.length === 0) {
-  //   return (
-  //     <Layout location={location} title={siteTitle}>
-  //       <Seo title="All posts" />
-  //       <Bio />
-  //       <p>
-  //         No blog posts found. Add markdown posts to "content/blog" (or the
-  //         directory you specified for the "gatsby-source-filesystem" plugin in
-  //         gatsby-config.js).
-  //       </p>
-  //     </Layout>
-  //   )
-  // }
-
+const HomeIndex = ({ data, location }) => {
+  const posts = data.project.nodes
   return (
     <Layout location={location}>
       <Seo title={globalSettings.sitename} sitetitle={globalSettings.sitetitle} />
-
+      <ProjectListing/>
+      
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -64,31 +51,14 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default HomeIndex
 
 export const pageQuery = graphql`
 query IndexQuery {
-  blog: allMarkdownRemark(
-    limit: 2000
-    sort: { fields: [frontmatter___date], order: DESC }
-    filter: { fileAbsolutePath: {regex: "/(/blog/)/" }}
-  ) {
-    nodes {
-      excerpt
-      fields {
-        slug
-      }
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-      }
-    }
-  }
   project: allMarkdownRemark(
     limit: 2000
     sort: { fields: [frontmatter___date], order: DESC }
-    filter: { fileAbsolutePath: {regex: "/(/projects/)/" }}
+    filter: { fileAbsolutePath: {regex: "/projects/" }}
   ) {
     nodes {
       excerpt
