@@ -1,4 +1,5 @@
 {
   "sitename": "Carlo Santos",
-  "sitetitle": "Portfolio"
+  "sitetitle": "Portfolio",
+  "footertext": "© 2022 Carlo Santos, Built with Gatsby, React, Netlify"
 }
