@@ -1,5 +1,23 @@
 {
   "sitename": "Carlo Santos",
   "sitetitle": "Portfolio",
-  "footertext": "© 2022 Carlo Santos, Built with Gatsby, React, Netlify"
+  "footertext": "© 2022 Carlo Santos, Built with Gatsby, React, Netlify",
+  "navigation_menu": [
+    {
+      "label": "About",
+      "path": "#"
+    },
+    {
+      "label": "Expertise",
+      "path": "#"
+    },
+    {
+      "label": "Work",
+      "path": "#"
+    },
+    {
+      "label": "Contact",
+      "path": "#"
+    }
+  ]
 }
