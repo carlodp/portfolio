@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import globalSettings from '../../../site/settings/global_settings.json'
 
-import '../../styles/navigation.scss';
+import '../../assets/styles/navigation.scss';
 
 const MenuItems = globalSettings.navigation_menu;
 

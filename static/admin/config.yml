@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/assets/images
+public_folder: /assets/images
 
 collections:
   - name: "pages"
@@ -115,12 +115,11 @@ collections:
     files:
       - label: "Global Settings"
         name: global_settings
-        file: site/settings/global_settings.json
+        file: site/settings/global_settings.md
         fields:
           - label: "Featured Image"
             name: "sitelogo"
             widget: "image"
-            media_folder: "/static/images"
             choose_url: true
             default: "/uploads/chocolate-dogecoin.jpg"
             media_library:

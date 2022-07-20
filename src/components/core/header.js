@@ -25,7 +25,7 @@ const HeaderIndex = ({ location, title }) => {
     return (
         <header className="global-header">
             <div className="site-logo">
-                <img src={ globalSettings.thumbnail }/>
+                <img src={ globalSettings.sitelogo }/>
             </div>
             <NavigationMenu/>
         </header>

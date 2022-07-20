@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/preloader.scss'
+import '../assets/styles/preloader.scss'
 
  const Preloader = () => {
     return (

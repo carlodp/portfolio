@@ -7,8 +7,8 @@ import ProjectListing from "../components/projectlisting"
 import Intro from "../components/intro"
 import Preloader from "../components/preloader"
 
-import '../styles/global.scss';
-import '../styles/index.scss';
+import '../assets/styles/global.scss';
+import '../assets/styles/index.scss';
 
 // import contactInfo from '../../site/settings/contact_info.json'
 import globalSettings from '../../site/settings/global_settings.json'
