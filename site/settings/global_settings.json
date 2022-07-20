@@ -5,19 +5,19 @@
   "navigation_menu": [
     {
       "label": "About",
-      "path": "#"
+      "path": "#about"
     },
     {
       "label": "Expertise",
-      "path": "#"
+      "path": "#expertise"
     },
     {
-      "label": "Work",
-      "path": "#"
+      "label": "Projects",
+      "path": "#projects"
     },
     {
       "label": "Contact",
-      "path": "#"
+      "path": "#contact"
     }
   ]
 }
