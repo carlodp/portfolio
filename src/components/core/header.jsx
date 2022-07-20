@@ -1,10 +1,11 @@
 import * as React from "react"
-import { } from "gatsby"
+import { useStaticQuery } from "gatsby"
 import NavigationMenu from './navigation';
 import globalSettings from '../../../site/settings/global_settings.json'
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+import Sitelogo from '../sitelogo'
 
-const HeaderIndex = ({ location, title, data }) => {
+const HeaderIndex = ({ location, title }) => {
     // const rootPath = `${__PATH_PREFIX__}/`
     // const isRootPath = location.pathname === rootPath
     // let header
@@ -25,11 +26,7 @@ const HeaderIndex = ({ location, title, data }) => {
 
     return (
         <header className="global-header">
-            <div className="site-logo">
-                <StaticImage src="../../static/assets/images/screenshot_51.png"/>
-                {globalSettings.logoImage}
-                <GatsbyImage image={globalSettings.logoImage} alt="test"/>
-            </div>
+            <Sitelogo/>
             <NavigationMenu/>
         </header>
     )
