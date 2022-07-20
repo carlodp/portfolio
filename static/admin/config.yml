@@ -119,6 +119,17 @@ collections:
         fields:
           - { label: "Site Name", name: "sitename", widget: "string" }
           - { label: "Site Title ", name: "sitetitle", widget: "string", required: false }
+          - { label: "Footer Text ", name: "footertext", widget: "string" }
+          - {
+              label: Navigation Menu,
+              name: navigation_menu,
+              widget: list,
+              fields:
+                [
+                  { label: Label, name: label, widget: string },
+                  { label: Path, name: path, widget: string },
+                ],
+            }
 
       - label: "Contact Info"
         name: contact_info
