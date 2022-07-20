@@ -1,8 +1,5 @@
 import * as React from "react"
-import { useStaticQuery } from "gatsby"
 import NavigationMenu from './navigation';
-import globalSettings from '../../../site/settings/global_settings.json'
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import Sitelogo from '../sitelogo'
 
 const HeaderIndex = ({ location, title }) => {

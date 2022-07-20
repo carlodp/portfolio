@@ -1,26 +1,26 @@
-import React from "react"
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ComponentName = () => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              sitelogoImage
-            }
-          }
+        markdownRemark(frontmatter: {templateKey: {eq: "global-settings"}}) {
+        frontmatter {
+            sitelogoImage
         }
-      }
+        }
     }
-  `)
-  return (
-    <div>
-        <pre>{JSON.stringify(data, null)}</pre>
-        {data.allMarkdownRemark.frontmatter}
-    </div>
-  )
+    `)
+
+    const logo = getImage(data.markdownRemark.frontmatter.sitelogoImage)
+
+    return (
+        <div className="site-logo">
+            <GatsbyImage image={logo} alt="test"/>
+        </div>
+    )
 }
 
 export default ComponentName
+
