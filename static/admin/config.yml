@@ -117,8 +117,8 @@ collections:
         name: global_settings
         file: site/settings/global_settings.md
         fields:
-          - label: "Featured Image"
-            name: "sitelogo"
+          - label: "Site Logo Image"
+            name: "sitelogoImage"
             widget: "image"
             choose_url: true
             default: "/uploads/chocolate-dogecoin.jpg"

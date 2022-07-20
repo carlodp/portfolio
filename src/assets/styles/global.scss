@@ -11,6 +11,6 @@ $white: #FFFFFF;
 
 //PX to REM Function
 @function rem($value) {
-    $remValue: ($value / 16) + rem; 
+    $remValue: calc($value / 16) + rem; 
     @return $remValue;
 }
