@@ -1,6 +1,6 @@
 ---
 sitelogoImage: /assets/images/screenshot_51.png
-sitename: Carlo Santos
+sitename: Carlo Santosss
 sitetitle: Portfolio
 footertext: © 2022 Carlo Santos, Built with Gatsby, React, Netlify
 navigation_menu:
