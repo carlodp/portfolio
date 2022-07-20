@@ -1,0 +1,14 @@
+@import '../styles/global.scss';
+
+body {
+    background-color: $semi-black;
+}
+
+body.preloader_active {
+    height: auto;
+    overflow-y: auto;
+}
+  
+body.preloader_active #preloader {
+    display: none;
+}

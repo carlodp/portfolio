@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { } from "gatsby"
 
 const ProjectIndex = ({ title, slug, date, description }) => {
     return (

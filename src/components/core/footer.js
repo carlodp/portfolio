@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { } from "gatsby"
 import globalSettings from '../../../site/settings/global_settings.json'
 
 

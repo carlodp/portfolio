@@ -1,0 +1,30 @@
+@import '../styles/global.scss';
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 rem(50);
+    height: rem(100);
+    gap: rem(20);
+
+    .nav-link {
+        color: $gray;
+        text-decoration: none;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 400;
+        font-size: rem(14);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: $teal;
+        }
+
+        span {
+            color: $teal;
+        }
+    }
+}

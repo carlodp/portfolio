@@ -117,6 +117,15 @@ collections:
         name: global_settings
         file: site/settings/global_settings.json
         fields:
+          - label: "Featured Image"
+            name: "sitelogo"
+            widget: "image"
+            media_folder: "/static/images"
+            choose_url: true
+            default: "/uploads/chocolate-dogecoin.jpg"
+            media_library:
+              config:
+                multiple: false
           - { label: "Site Name", name: "sitename", widget: "string" }
           - { label: "Site Title ", name: "sitetitle", widget: "string", required: false }
           - { label: "Footer Text ", name: "footertext", widget: "string" }
