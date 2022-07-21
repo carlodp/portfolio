@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/images
-public_folder: /images
+media_folder: static/img
+public_folder: static
 
 collections:
   - name: "pages"
@@ -104,6 +104,14 @@ collections:
     editor:
       preview: true
     fields:
+      - label: "Project Featured Image"
+        name: "image"
+        widget: "image"
+        choose_url: true
+        default: "/uploads/chocolate-dogecoin.jpg"
+        media_library:
+          config:
+            multiple: true
       - { label: "Post Type", name: "posttype", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -123,14 +131,7 @@ collections:
               widget: "hidden",
               default: "global-settings",
             }
-          - label: "Site Logo Image"
-            name: "sitelogoImage"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/chocolate-dogecoin.jpg"
-            media_library:
-              config:
-                multiple: false
+          - { label: "Site Logo Image", name: "image", widget: "image" }
           - { label: "Site Name", name: "sitename", widget: "string" }
           - { label: "Site Title ", name: "sitetitle", widget: "string", required: false }
           - { label: "Footer Text ", name: "footertext", widget: "string" }

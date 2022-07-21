@@ -1,6 +1,5 @@
 ---
 templateKey: global-settings
-sitelogoImage: /images/screenshot_7.png
 image: static/screenshot_1.png
 sitename: Carlo Santos
 sitetitle: Portfolio

@@ -16,6 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/static/img`,
+        name: `uploads`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
@@ -30,21 +37,35 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/images`,
+        name: `settings`,
+        path: `${__dirname}/site/settings`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `settings`,
-        path: `${__dirname}/site/settings`,
+        path: `${__dirname}/src/images`,
+        name: "images",
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              // [Optional] The root of "media_folder" in your config.yml
+              // Defaults to "static"
+              staticFolderName: 'static',
+              // [Optional] Include the following fields, use dot notation for nested fields
+              // All fields are included by default
+              include: ['featured'],
+              // [Optional] Exclude the following fields, use dot notation for nested fields
+              // No fields are excluded by default
+              exclude: ['featured.skip'],
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
