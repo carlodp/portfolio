@@ -1,5 +1,5 @@
 .footer {
-  padding: 0 50px 45px;
+  padding: 0 50px 50px;
 }
 
 .footer :global {
@@ -16,7 +16,7 @@
       font-size: clamp(1.5rem, 8vw, 6rem);
       font-weight: bold;
       text-decoration: none;
-      color: var(--color1);
+      color: var(--primary);
     }
   }
 

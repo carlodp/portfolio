@@ -4,32 +4,40 @@ import styled from "@/styles/components/ThemeSwitcher.module.scss";
 
 const Theme = () => {
   const [initialTheme, setInitialTheme] = useState();
+  const [firstLoad, setFirstLoad] = useState(true);
   const siteContext = useContext(SiteContext);
 
   const toggleThemeHandler = () => {
     siteContext.toggleTheme({ type: "TOGGLE_THEME_MODE" });
+    setFirstLoad(false);
   };
 
-  let theme = siteContext.themeMode;
+  // let theme = siteContext.themeMode;
+  // useEffect(() => {
+  //   const localStorageTheme = localStorage.getItem("themeMode");
 
-  useEffect(() => {
-    const localStorageTheme = localStorage.getItem("themeMode");
+  //   //set dark mode as default when first time browsing through the website
+  //   if (localStorageTheme === null) {
+  //     localStorage.setItem("themeMode", "dark");
+  //   }
 
-    if (localStorageTheme === null) {
-      localStorage.setItem("themeMode", "dark");
-    }
+  //   //check if themeMode in context has value, if it has value, set initialTheme state to it's value
+  //   if (theme === "") {
+  //     setInitialTheme(localStorageTheme);
+  //   }
 
-    if (theme === "") {
-      setInitialTheme(localStorageTheme);
-    }
+  //   if (theme !== "") {
+  //     setInitialTheme(theme);
+  //     localStorage.setItem("themeMode", theme);
+  //   }
 
-    if (theme !== "") {
-      setInitialTheme(theme);
-      localStorage.setItem("themeMode", theme);
-    }
-
-    document.body.className = initialTheme;
-  }, [initialTheme, theme]);
+  //   if (firstLoad) {
+  //     document.body.className = initialTheme;
+  //   } else {
+  //     document.body.className = initialTheme + " toggled";
+  //   }
+    
+  // }, [initialTheme, theme]);
 
   return (
     <div className={styled.theme}>

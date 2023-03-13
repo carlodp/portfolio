@@ -41,7 +41,6 @@ const Footer = () => {
 
   useEffect(() => {
     if (isInView) {
-      console.log("inview", isInView);
       animation.start("visible");
     }
   }, [isInView, animation]);

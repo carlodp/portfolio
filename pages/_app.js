@@ -7,12 +7,13 @@ import SiteProvider from "@/context/SiteProvider";
 import "@/styles/globals/globals.scss";
 import "@/styles/globals/site-theme.scss";
 import "@/styles/globals/animate.scss";
+import Cursor from "@/components/Cursor";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const siteContext = useContext(SiteContext);
   const [showSplash, setShowSplash] = useState(true);
   const [showPage, setShowPage] = useState(false);
-  const [initialTheme, setInitialTheme] = useState("");
 
   useEffect(() => {
     //useEffect triggers after all components are rendered
@@ -25,8 +26,8 @@ export default function App({ Component, pageProps }) {
 
   //set body initial class to localStorage item
   useEffect(() => {
-    const localStorageTheme = localStorage.getItem("themeMode");
-    document.body.className = localStorageTheme;
+    // const localStorageTheme = localStorage.getItem("themeMode");
+    // document.body.className = localStorageTheme;
   }, []);
 
   return (
@@ -41,16 +42,20 @@ export default function App({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <Script src="/theme.js" strategy="beforeInteractive" />
       <AnimatePresence>
-        <div className={`portfolio`}>
-          <Splash
-            showSplash={showSplash}
-            setShowSplash={setShowSplash}
-            splashEnd={splashEndHandler}
-          />
-          {showPage && <Component {...pageProps} />}
-          {/* <Component {...pageProps} /> */}
-        </div>
+        <Splash
+          showSplash={showSplash}
+          setShowSplash={setShowSplash}
+          splashEnd={splashEndHandler}
+        />
+        {showPage && (
+          <>
+            <Component {...pageProps} />
+            <Cursor />
+          </>
+        )}
+        {/* <Component {...pageProps} /> */}
       </AnimatePresence>
     </SiteProvider>
   );

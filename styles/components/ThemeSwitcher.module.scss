@@ -6,7 +6,8 @@
     border: 2px solid;
     border-radius: 30px;
     cursor: pointer;
-    border-color: var(--color1);
+    border-color: var(--primary);
+    background-color: transparent;
 
     &:hover,
     &:focus-visible {
@@ -17,14 +18,14 @@
       }
 
       .ball {
-        background-color: var(--color1);
+        background-color: var(--primary);
       }
     }
 
     i {
       svg {
         path {
-          fill: var(--color1);
+          fill: var(--primary);
         }
       }
     }
@@ -60,10 +61,10 @@
   }
 
   .dark {
-    &:hover {
+    &:hover, &:focus-visible {
       .moonIcon {
         path {
-          fill: var(--color2);
+          fill: var(--secondary);
         }
       }
     }
@@ -73,10 +74,10 @@
   }
 
   .light {
-    &:hover {
+    &:hover, &:focus-visible {
       .sunIcon {
         path {
-          fill: var(--color2);
+          fill: var(--secondary);
         }
       }
     }

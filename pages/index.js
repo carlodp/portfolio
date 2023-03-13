@@ -10,7 +10,7 @@ export default function Home() {
         <title>@carlodp_</title>
       </Head>
       <Header />
-      <Main />
+      <Main/>
       <Footer />
     </>
   );
