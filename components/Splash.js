@@ -1,4 +1,4 @@
-import styles from "@/styles/Splash.module.scss";
+import styles from "@/styles/components/Splash.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
 const preloaderContainerVar = {

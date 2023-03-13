@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from '@/styles/Logo.module.scss'
+import styles from '@/styles/components/Logo.module.scss'
 
 const headerStatusVariant = {
   hidden: {

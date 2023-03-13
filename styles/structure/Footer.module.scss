@@ -1,0 +1,61 @@
+.footer {
+  padding: 0 50px 45px;
+}
+
+.footer :global {
+  .preFooter {
+    text-align: center;
+    padding: 150px 0;
+
+    .title {
+      font-size: 24px;
+      margin: 0 0 15px;
+      font-weight: lighter;
+    }
+    .email {
+      font-size: clamp(1.5rem, 8vw, 6rem);
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--white);
+    }
+  }
+
+  .bottomFooter {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+
+    .copyright {
+      a {
+        color: var(--green);
+      }
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+
+      .locationIcon {
+        position: relative;
+        margin-right: 10px;
+        background-color: var(--green);
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 16px;
+          width: 16px;
+          left: 0;
+          top: 0;
+          background-color: transparent;
+          border-radius: 50%;
+          box-shadow: 0px 0px 2px 2px var(--green);
+          animation: pulse 1.5s infinite linear;
+        }
+      }
+    }
+  }
+}

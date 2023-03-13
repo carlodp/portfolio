@@ -1,20 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import SiteContext from "@/context/site-context";
-import styled from "@/styles/ThemeSwitcher.module.scss";
+import styled from "@/styles/components/ThemeSwitcher.module.scss";
 
 const Theme = () => {
   const [initialTheme, setInitialTheme] = useState();
   const siteContext = useContext(SiteContext);
-
-  //   let getTheme;
-  //   useEffect(() => {
-  //     getTheme = localStorage.getItem("themeMode");
-
-  //     if (!getTheme) {
-  //       // if localStorage doesn't have value or first time site visit
-  //       localStorage.setItem("themeMode", "dark");
-  //     }
-  //   }, []);
 
   const toggleThemeHandler = () => {
     siteContext.toggleTheme({ type: "TOGGLE_THEME_MODE" });

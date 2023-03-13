@@ -1,6 +1,6 @@
 //import styled from "styled-components";
 import { motion } from "framer-motion";
-import styles from "@/styles/Navigation.module.scss";
+import styles from "@/styles/components/Navigation.module.scss";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 const navVariant = {

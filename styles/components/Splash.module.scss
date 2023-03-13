@@ -1,3 +1,6 @@
+.splash {
+  background-color: var(--black);
+}
 .splash :global {
   .preloader {
     position: fixed;
@@ -5,7 +8,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #161616;
+    background-color: var(--black);
     text-align: center;
     z-index: 1;
   }

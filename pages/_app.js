@@ -3,8 +3,9 @@ import { useEffect, useState, useContext } from "react";
 import Splash from "@/components/Splash";
 import SiteContext from "@/context/site-context";
 import SiteProvider from "@/context/SiteProvider";
-import "@/styles/globals.scss";
-import "@/styles/site-theme.scss";
+import "@/styles/globals/globals.scss";
+import "@/styles/globals/site-theme.scss";
+import "@/styles/globals/animate.scss";
 
 export default function App({ Component, pageProps }) {
   const siteContext = useContext(SiteContext);
@@ -18,20 +19,26 @@ export default function App({ Component, pageProps }) {
   }, [showSplash]);
 
   const splashEndHandler = (event) => {
-    setShowPage(event);
+    setShowPage(event); 
   };
-  
+
+  //set body initial class to localStorage item
+  useEffect(() => {
+    const localStorageTheme = localStorage.getItem("themeMode");
+    document.body.className = localStorageTheme;
+  }, []);
+
   return (
     <SiteProvider>
       <AnimatePresence>
         <div className={`portfolio`}>
-          {/* <Splash
+          <Splash
             showSplash={showSplash}
             setShowSplash={setShowSplash}
             splashEnd={splashEndHandler}
           />
-          {showPage && <Component {...pageProps} />} */}
-          <Component {...pageProps} />
+          {showPage && <Component {...pageProps} />}
+          {/* <Component {...pageProps} /> */}
         </div>
       </AnimatePresence>
     </SiteProvider>
