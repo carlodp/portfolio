@@ -8,7 +8,7 @@ import "@/styles/globals/globals.scss";
 import "@/styles/globals/site-theme.scss";
 import "@/styles/globals/animate.scss";
 import Cursor from "@/components/Cursor";
-import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }) {
   const siteContext = useContext(SiteContext);
@@ -42,21 +42,22 @@ export default function App({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Script src="/theme.js" strategy="beforeInteractive" />
-      <AnimatePresence>
-        <Splash
-          showSplash={showSplash}
-          setShowSplash={setShowSplash}
-          splashEnd={splashEndHandler}
-        />
-        {showPage && (
-          <>
-            <Component {...pageProps} />
-            <Cursor />
-          </>
-        )}
-        {/* <Component {...pageProps} /> */}
-      </AnimatePresence>
+      <ThemeProvider defaultTheme="dark" enableSystem={false}>
+        <AnimatePresence>
+          <Splash
+            showSplash={showSplash}
+            setShowSplash={setShowSplash}
+            splashEnd={splashEndHandler}
+          />
+          {showPage && (
+            <>
+              <Component {...pageProps} />
+              <Cursor />
+            </>
+          )}
+          {/* <Component {...pageProps} /> */}
+        </AnimatePresence>
+      </ThemeProvider>
     </SiteProvider>
   );
 }

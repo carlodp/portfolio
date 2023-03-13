@@ -1,50 +1,21 @@
-import { useContext, useEffect, useState } from "react";
-import SiteContext from "@/context/site-context";
+import { useTheme } from "next-themes";
 import styled from "@/styles/components/ThemeSwitcher.module.scss";
+import { useEffect } from "react";
 
 const Theme = () => {
-  const [initialTheme, setInitialTheme] = useState();
-  const [firstLoad, setFirstLoad] = useState(true);
-  const siteContext = useContext(SiteContext);
+  const { theme, setTheme } = useTheme();
 
+  const newTheme = theme === "dark" ? "light" : "dark";
   const toggleThemeHandler = () => {
-    siteContext.toggleTheme({ type: "TOGGLE_THEME_MODE" });
-    setFirstLoad(false);
+    setTheme(newTheme);
   };
-
-  // let theme = siteContext.themeMode;
-  // useEffect(() => {
-  //   const localStorageTheme = localStorage.getItem("themeMode");
-
-  //   //set dark mode as default when first time browsing through the website
-  //   if (localStorageTheme === null) {
-  //     localStorage.setItem("themeMode", "dark");
-  //   }
-
-  //   //check if themeMode in context has value, if it has value, set initialTheme state to it's value
-  //   if (theme === "") {
-  //     setInitialTheme(localStorageTheme);
-  //   }
-
-  //   if (theme !== "") {
-  //     setInitialTheme(theme);
-  //     localStorage.setItem("themeMode", theme);
-  //   }
-
-  //   if (firstLoad) {
-  //     document.body.className = initialTheme;
-  //   } else {
-  //     document.body.className = initialTheme + " toggled";
-  //   }
-    
-  // }, [initialTheme, theme]);
 
   return (
     <div className={styled.theme}>
       <button
         type="button"
         aria-label="Toggle Theme"
-        className={`themeToggle ${initialTheme}`}
+        className={`themeToggle ${theme}`}
         onClick={toggleThemeHandler}
       >
         <div className="icons">
