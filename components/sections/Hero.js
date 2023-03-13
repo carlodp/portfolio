@@ -9,10 +9,10 @@ const heroVariants = {
     opacity: 1,
     transition: {
       delayChildren: 0, // this will set a delay before the children start animating
-      staggerChildren: 0.5,
+      staggerChildren: 0.1,
       opacity: {
         duration: 0.5,
-        ease: "easeInOut",
+        ease: "easeOut",
       },
     },
   },
@@ -21,7 +21,7 @@ const heroVariants = {
 const heroChildVariants = {
   hidden: {
     opacity: 0,
-    y: -100,
+    y: -50,
   },
   visible: {
     opacity: 1,

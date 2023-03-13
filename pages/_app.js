@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import Splash from "@/components/Splash";
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }) {
   }, [showSplash]);
 
   const splashEndHandler = (event) => {
-    setShowPage(event); 
+    setShowPage(event);
   };
 
   //set body initial class to localStorage item
@@ -30,6 +31,16 @@ export default function App({ Component, pageProps }) {
 
   return (
     <SiteProvider>
+      <Head>
+        <title>@carlodp_</title>
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#161616" />
+        <meta name="description" content="Portfolio" />
+        <meta name="apple-mobile-web-app-status-bar" content="#161616" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <AnimatePresence>
         <div className={`portfolio`}>
           <Splash

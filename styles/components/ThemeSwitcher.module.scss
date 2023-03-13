@@ -6,6 +6,28 @@
     border: 2px solid;
     border-radius: 30px;
     cursor: pointer;
+    border-color: var(--color1);
+
+    &:hover,
+    &:focus-visible {
+      i {
+        path {
+          transition: all 0.25s ease;
+        }
+      }
+
+      .ball {
+        background-color: var(--color1);
+      }
+    }
+
+    i {
+      svg {
+        path {
+          fill: var(--color1);
+        }
+      }
+    }
 
     .icons {
       display: inline-flex;
@@ -38,49 +60,24 @@
   }
 
   .dark {
-    border-color: var(--white);
-
-    &:hover,
-    &:focus-visible {
+    &:hover {
       .moonIcon {
         path {
-          fill: var(--black);
-          transition: all 0.25s ease;
-        }
-      }
-
-      .ball {
-        background-color: var(--white);
-      }
-    }
-
-    i {
-      svg {
-        path {
-          fill: var(--white);
+          fill: var(--color2);
         }
       }
     }
-
     .ball {
       left: 3px;
     }
   }
 
   .light {
-    border-color: var(--black);
-
-    &:hover,
-    &:focus-visible {
+    &:hover {
       .sunIcon {
         path {
-          fill: var(--white);
-          transition: all 0.25s ease;
+          fill: var(--color2);
         }
-      }
-
-      .ball {
-        background-color: var(--black);
       }
     }
     .ball {

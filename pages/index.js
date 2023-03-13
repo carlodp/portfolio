@@ -7,17 +7,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>@carlodp</title>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#161616" />
-        <meta name="description" content="Portfolio" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-status-bar" content="#161616" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>@carlodp_</title>
       </Head>
       <Header />
-      <Main/>
+      <Main />
       <Footer />
     </>
   );

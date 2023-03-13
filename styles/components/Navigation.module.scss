@@ -10,7 +10,7 @@
   a {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: var(--color1);
     text-transform: uppercase;
     font-weight: bolder;
     text-decoration: none;
@@ -31,7 +31,7 @@
       transition: all 0.25s ease-in-out;
     }
     .hover {
-      color: #00a97f;
+      color: var(--green);
     }
 
     &:hover,
@@ -40,14 +40,6 @@
       .hover {
         transform: translateY(-20px);
       }
-    }
-  }
-}
-
-.light {
-  .nav {
-    span {
-      color: red;
     }
   }
 }

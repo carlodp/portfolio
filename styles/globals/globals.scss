@@ -3,10 +3,20 @@
 //global variables
 
 :root {
-  --black: #161616;
-  --white: #fdfcfc;
-  --green: #00a97f;
   --nav-height: 100px;
+  --green: #00a97f;
+
+  .dark {
+    --color1: #FCFCFC;
+    --color2: #161616;
+  }
+
+  .light {
+    --color1: #161616;
+    --color2: #FCFCFC;
+  }
+
+
 }
 
 * {
