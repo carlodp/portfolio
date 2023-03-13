@@ -1,0 +1,46 @@
+.splash :global {
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #161616;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .preloaderContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .hello {
+      width: 200px;
+    }
+
+    .preName,
+    .name {
+      font-family: "Inter", sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .preName {
+      font-size: 20px;
+      font-weight: lighter;
+      line-height: 2;
+      margin-bottom: 15px;
+      color: var(--white);
+    }
+
+    .name {
+      width: 300px;
+      font-size: 64px;
+      line-height: 1;
+      color: #00a97f;
+    }
+  }
+}

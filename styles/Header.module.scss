@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 0px 50px;
+    width: 100%;
+    height: var(--nav-height);
+    pointer-events: auto !important;
+    user-select: auto !important;
+}

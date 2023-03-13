@@ -1,0 +1,38 @@
+.logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo :global {
+  .name {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    .hover {
+      display: inline-flex;
+      flex-direction: column;
+      height: 1.5rem;
+      margin-left: 5px;
+      font-weight: 500;
+      overflow: hidden;
+
+      .copyright,
+      .lastName {
+        transition: transform 0.25s ease;
+      }
+
+      .lastName {
+        color: var(--green);
+      }
+
+      &:hover {
+        .copyright,
+        .lastName {
+          transform: translateY(-29px);
+          transition: transform 0.25s ease;
+        }
+      }
+    }
+  }
+}

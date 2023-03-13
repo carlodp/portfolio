@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Pacifico&display=swap");
+
+//global variables
+
+:root {
+  --black: #161616;
+  --white: #fdfcfc;
+  --green: #00a97f;
+  --nav-height: 100px;
+}
+
+* {
+  /* cursor: none; */
+  box-sizing: border-box;
+  &:focus-visible {
+    outline-style: dotted;
+    outline-color: var(--green);
+    outline-offset: 5px;
+    outline-width: 2px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 1px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  outline: transparent;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.cursor {
+  background-color: var(--white);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
