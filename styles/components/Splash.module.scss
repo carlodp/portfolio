@@ -1,6 +1,7 @@
 .splash {
   background-color: var(--secondary);
 }
+
 .splash :global {
   .preloader {
     position: fixed;
@@ -11,7 +12,6 @@
     background-color: var(--secondary);
     text-align: center;
     z-index: 1;
-    transition: all 0.25s ease-in !important;
   }
 
   .preloaderContent {

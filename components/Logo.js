@@ -12,11 +12,12 @@ const headerStatusVariant = {
     transition: {
       opacity: {
         duration: 0.3,
-        ease: "easeInOut",
+        ease: "easeIn",
       },
       y: {
-        duration: 1,
+        duration: 0.5,
         type: "spring",
+        stiffness: 75,
       },
     },
   },

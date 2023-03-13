@@ -4,14 +4,19 @@ import { AnimatePresence, motion } from "framer-motion";
 const preloaderContainerVar = {
   initial: {
     opacity: 1,
-    scale: "100%",
+    scale: 1,
   },
   exit: {
-    scale: "150%",
+    scale: 1.7,
     opacity: 0,
     transition: {
       delay: 3.5,
-      duration: 0.5,
+      opacity: {
+        duration: 0.4,
+      },
+      scale: {
+        duration: 0.7,
+      },
     },
   },
 };
@@ -52,7 +57,7 @@ const myNameIsVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1.5,
+      delay: 1.6,
       duration: 0.5,
       ease: "easeIn",
     },

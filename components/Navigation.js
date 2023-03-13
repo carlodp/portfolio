@@ -14,11 +14,12 @@ const navVariant = {
       staggerChildren: 0.1,
       opacity: {
         duration: 0.3,
-        ease: "easeInOut",
+        ease: "easeIn",
       },
       y: {
         duration: 1,
         type: "spring",
+        stiffness: 120,
       },
     },
   },
@@ -31,13 +32,14 @@ const navLinkVariant = {
   visible: {
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
       type: "spring",
+      stiffness: 75,
     },
   },
 };
 
-const Navigation = (props) => {
+const Navigation = () => {
   return (
     <motion.nav
       className={`nav ${styles.nav}`}

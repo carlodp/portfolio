@@ -1,17 +1,12 @@
 import Head from "next/head";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState, useContext } from "react";
-import Splash from "@/components/Splash";
-import SiteContext from "@/context/site-context";
+import { useEffect, useState } from "react";
+import Splash from "@/components/Splash";;
 import SiteProvider from "@/context/SiteProvider";
-import "@/styles/globals/globals.scss";
-import "@/styles/globals/site-theme.scss";
-import "@/styles/globals/animate.scss";
+import "@/styles/globals.scss";
 import Cursor from "@/components/Cursor";
 import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }) {
-  const siteContext = useContext(SiteContext);
   const [showSplash, setShowSplash] = useState(true);
   const [showPage, setShowPage] = useState(false);
 
@@ -24,11 +19,6 @@ export default function App({ Component, pageProps }) {
     setShowPage(event);
   };
 
-  //set body initial class to localStorage item
-  useEffect(() => {
-    // const localStorageTheme = localStorage.getItem("themeMode");
-    // document.body.className = localStorageTheme;
-  }, []);
 
   return (
     <SiteProvider>
@@ -43,7 +33,6 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-        <AnimatePresence>
           <Splash
             showSplash={showSplash}
             setShowSplash={setShowSplash}
@@ -51,12 +40,11 @@ export default function App({ Component, pageProps }) {
           />
           {showPage && (
             <>
-              <Component {...pageProps} />
               <Cursor />
+              <Component {...pageProps} />
             </>
           )}
           {/* <Component {...pageProps} /> */}
-        </AnimatePresence>
       </ThemeProvider>
     </SiteProvider>
   );

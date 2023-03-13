@@ -4,20 +4,6 @@
   --green: #00a97f;
 }
 
-.dark {
-  &:root {
-    --primary: #fcfcfc;
-    --secondary: #161616;
-  }
-}
-
-.light {
-  &:root {
-    --primary: #161616;
-    --secondary: #fcfcfc;
-  }
-}
-
 [data-theme="dark"] {
   --primary: #fcfcfc;
   --secondary: #161616;
@@ -41,7 +27,7 @@
 
       &.text {
         border-color: transparent !important;
-        background-color: #16161666 !important;
+        background-color: #faf8ff40 !important;
       }
     }
   }
@@ -69,7 +55,7 @@
 
       &.text {
         border-color: transparent !important;
-        background-color: #faf8ff40 !important;
+        background-color: #16161666 !important;
       }
     }
   }
@@ -163,5 +149,19 @@ p {
       transition: all 0.15s ease;
       opacity: 0;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
