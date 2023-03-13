@@ -7,12 +7,11 @@ const preloaderContainerVar = {
     scale: "100%",
   },
   exit: {
-    scale: "200%",
+    scale: "150%",
     opacity: 0,
     transition: {
       delay: 3.5,
       duration: 0.5,
-      ease: "easeOut",
     },
   },
 };
@@ -24,7 +23,7 @@ const helloSvg = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -38,7 +37,7 @@ const helloPaths = {
     opacity: 1,
     pathLength: 1,
     transition: {
-      duration: 2,
+      duration: 1.5,
       ease: "easeInOut",
     },
   },
@@ -53,8 +52,8 @@ const myNameIsVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1.9,
-      duration: 0.3,
+      delay: 1.5,
+      duration: 0.5,
       ease: "easeIn",
     },
   },
@@ -64,19 +63,19 @@ const nameSvg = {
   initial: {
     opacity: 0,
     y: -30,
-    fill: "rgba(255, 255, 255, 0)",
+    fillOpacity: 0,
   },
   animate: {
     opacity: 1,
     y: 0,
-    fill: "rgba(255, 255, 255, 1)",
+    fillOpacity: 1,
     transition: {
       type: "spring",
       stiffness: 120,
       y: {
         duration: 0.5,
       },
-      fill: {
+      fillOpacity: {
         duration: 0.5,
         delay: 3,
       },
@@ -91,7 +90,7 @@ const namePaths = {
   visible: {
     pathLength: 1,
     transition: {
-      delay: 2.2,
+      delay: 2,
       duration: 1,
       ease: "easeIn",
     },

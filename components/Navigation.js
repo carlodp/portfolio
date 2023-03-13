@@ -57,7 +57,7 @@ const Navigation = (props) => {
         <span className="normal">Contact</span>
         <span className="hover">Contact</span>
       </motion.a>
-      <motion.div>
+      <motion.div variants={navLinkVariant}>
         <ThemeSwitcher />
       </motion.div>
     </motion.nav>

@@ -1,4 +1,5 @@
 import Footer from "@/components/structure/Footer";
+import Main from "@/components/structure/Main";
 import Head from "next/head";
 import Header from "../components/structure/Header";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Main/>
       <Footer />
     </>
   );
