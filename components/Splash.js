@@ -10,7 +10,7 @@ const preloaderContainerVar = {
     scale: 1.7,
     opacity: 0,
     transition: {
-      delay: 3.5,
+      delay: 4.5,
       opacity: {
         duration: 0.4,
       },
