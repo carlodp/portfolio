@@ -1,11 +1,12 @@
 import styled from "@/styles/sections/Profile.module.scss";
 import SectionHeader from "../SectionHeader";
-import image from "@/public/profile-image.JPG";
+import Image from "next/image";
+import image from "public/profile-image.JPG";
 
 const Profile = () => {
   return (
     <section className={styled.profile}>
-      <SectionHeader title="About Me." position="left" number="01." />
+      <SectionHeader title="About Me" position="left" number="01." />
       <div className="aboutMe">
         <div className="text">
           <p>
@@ -21,10 +22,12 @@ const Profile = () => {
             well as absorbing new knowledge inspires me to be better, making me
             confident in myself and the work that I do.
           </p>
-          <a href="#!" className="button with-bg">Browse My Current Projects</a>
+          <a href="#!" className="button with-bg">
+            Browse My Current Projects
+          </a>
         </div>
         <div className="image">
-          <img src={image.src} alt="Carlo Santos"/>
+          <Image src={image.src} alt="Carlo Santos" width={500} height={500} />
         </div>
       </div>
       <SectionHeader title="Skills." position="right" number="02." />
