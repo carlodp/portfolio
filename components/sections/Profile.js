@@ -1,7 +1,7 @@
 import styled from "@/styles/sections/Profile.module.scss";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
-import image from "public/profile-image.JPG";
+import image from "/public/profile-image.JPG";
 
 const Profile = () => {
   return (
