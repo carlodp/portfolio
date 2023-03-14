@@ -1,5 +1,6 @@
 import styles from "@/styles/components/Splash.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const preloaderContainerVar = {
   initial: {
@@ -101,8 +102,32 @@ const namePaths = {
 };
 
 const Splash = (props) => {
+  const [firstVisit, setFirstVisit] = useState();
+
+  useEffect(() => {
+    //check firstvisit
+    const checkStorage = localStorage.getItem("visitor");
+
+    //if it's null it means it's the first time the user has visited
+    if (checkStorage === null) {
+      localStorage.setItem(
+        "visitor",
+        JSON.stringify({ firstVisit: true, type: "2" })
+      );
+      
+      setFirstVisit(true);
+    }
+    //if firstvisit is true
+    //show long splash
+    //else show short splash
+  }, []);
+
   const showMainPageHandler = () => {
     props.splashEnd(true);
+    localStorage.setItem(
+      "visitor",
+      JSON.stringify({ firstVisit: false, type: "1" })
+    );
   };
 
   return (

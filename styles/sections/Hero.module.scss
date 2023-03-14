@@ -8,15 +8,42 @@
   min-height: 100vh;
   height: 100vh;
   padding: 0px;
+  gap: 20px;
+  padding-bottom: 100px;
 }
 
 .hero :global {
-  h1 {
-    font-size: 4rem;
-    line-height: 1;
+  .heroTexts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      font-size: 4.5rem;
+      line-height: 5rem;
+
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  .heroCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
 
     span {
-      display: block;
+      font-size: 0.875rem;
+    }
+
+    .viewProjects {
+      text-decoration: underline;
     }
   }
 }

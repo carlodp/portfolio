@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import Splash from "@/components/Splash";;
+import { useEffect, useState, useContext } from "react";
+import Splash from "@/components/Splash";
 import SiteProvider from "@/context/SiteProvider";
+import SiteContext from "@/context/site-context";
 import "@/styles/globals.scss";
 import Cursor from "@/components/Cursor";
 import { ThemeProvider } from "next-themes";
@@ -13,12 +14,11 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     //useEffect triggers after all components are rendered
     setShowSplash(false);
-  }, [showSplash]);
+  }, []);
 
   const splashEndHandler = (event) => {
     setShowPage(event);
   };
-
 
   return (
     <SiteProvider>
@@ -33,18 +33,18 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-          <Splash
-            showSplash={showSplash}
-            setShowSplash={setShowSplash}
-            splashEnd={splashEndHandler}
-          />
-          {showPage && (
-            <>
-              <Cursor />
-              <Component {...pageProps} />
-            </>
-          )}
-          {/* <Component {...pageProps} /> */}
+        {/* <Splash
+          showSplash={showSplash}
+          setShowSplash={setShowSplash}
+          splashEnd={splashEndHandler}
+        />
+        {showPage && (
+          <>
+            <Cursor />
+            <Component {...pageProps} />
+          </>
+        )} */}
+        <Component {...pageProps} />
       </ThemeProvider>
     </SiteProvider>
   );

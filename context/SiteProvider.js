@@ -4,6 +4,7 @@ import SiteContext from "./site-context";
 
 const defaultSiteState = {
   themeMode: '',
+  firstVisit: null,
 };
 
 const siteReducer = (state, action) => {
