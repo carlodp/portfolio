@@ -8,6 +8,7 @@
     cursor: pointer;
     border-color: var(--primary);
     background-color: transparent;
+    transition: border-color 0.15s ease;
 
     &:hover,
     &:focus-visible {
