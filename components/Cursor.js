@@ -52,7 +52,7 @@ const Cursor = () => {
       y: cursorPos.y - 16,
       height: 32,
       width: 32,
-      scale: 2,
+      scale: 1.6,
       transition: {
         delay: 0,
         duration: 0,
