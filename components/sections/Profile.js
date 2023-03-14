@@ -1,7 +1,6 @@
 import styled from "@/styles/sections/Profile.module.scss";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
-import image from "/public/profile-image.JPG";
 
 const Profile = () => {
   return (
@@ -27,7 +26,7 @@ const Profile = () => {
           </a>
         </div>
         <div className="image">
-          <Image src={image.src} alt="Carlo Santos" width={500} height={500} />
+          <Image src="/profile-image.JPG" alt="Carlo Santos" width={500} height={500} />
         </div>
       </div>
       <SectionHeader title="Skills." position="right" number="02." />
