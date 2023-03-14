@@ -49,13 +49,13 @@ const helloPaths = {
 const myNameIsVariant = {
   hidden: {
     opacity: 0,
-    y: -15,
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1.6,
+      delay: 2,
       duration: 0.5,
       ease: "easeIn",
     },
@@ -80,7 +80,7 @@ const nameSvg = {
       },
       fillOpacity: {
         duration: 0.5,
-        delay: 3,
+        delay: 4,
       },
     },
   },
@@ -93,8 +93,8 @@ const namePaths = {
   visible: {
     pathLength: 1,
     transition: {
-      delay: 2,
-      duration: 1,
+      delay: 2.5,
+      duration: 1.5,
       ease: "easeIn",
     },
   },
