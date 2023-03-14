@@ -1,13 +1,75 @@
+import { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import Image from "next/image";
 import styled from "@/styles/sections/Profile.module.scss";
 import SectionHeader from "../SectionHeader";
-import Image from "next/image";
+
+const aboutDivVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5, // this will set a delay before the children start animating
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const aboutTextVariant = {
+  hidden: {
+    opacity: 0,
+    y: -100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
+const aboutImgVariant = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Profile = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      console.log(isInView);
+      animation.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <section className={styled.profile}>
-      <SectionHeader title="About Me" position="left" number="01." />
-      <div className="aboutMe">
-        <div className="text">
+      <SectionHeader title="About" position="left" number="01." />
+      <motion.div
+        className="aboutMe"
+        ref={ref}
+        variants={aboutDivVariant}
+        initial="hidden"
+        animate={animation}
+      >
+        <motion.div className="text" variants={aboutTextVariant}>
           <p>
             As a high‐performing, strategic‐thinking professional who has 8
             years of experience in the web development industry, I have
@@ -24,12 +86,17 @@ const Profile = () => {
           <a href="#!" className="button with-bg">
             Browse My Current Projects
           </a>
-        </div>
-        <div className="image">
-          <Image src="/profile-image.JPG" alt="Carlo Santos" width={500} height={500} />
-        </div>
-      </div>
-      <SectionHeader title="Skills." position="right" number="02." />
+        </motion.div>
+        <motion.div className="image" variants={aboutImgVariant}>
+          <Image
+            src="/profile-image.JPG"
+            alt="Carlo Santos"
+            width={500}
+            height={500}
+          />
+        </motion.div>
+      </motion.div>
+      <SectionHeader title="Skills" position="right" number="02." />
     </section>
   );
 };
