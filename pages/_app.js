@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     //useEffect triggers after all components are rendered
-    setShowSplash(false);
+    setShowSplash(true);
   }, [showSplash]);
 
   const splashEndHandler = (event) => {

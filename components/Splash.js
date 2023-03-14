@@ -28,21 +28,19 @@ const helloSvg = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
 
 const helloPaths = {
   hidden: {
-    opacity: 0,
     pathLength: 0,
   },
   visible: {
-    opacity: 1,
     pathLength: 1,
     transition: {
-      duration: 1.5,
+      duration: 2,
       ease: "easeInOut",
     },
   },
