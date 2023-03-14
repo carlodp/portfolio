@@ -122,15 +122,17 @@ h2 {
 
 p {
   font-size: 1rem;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
   margin: 0 0 1rem;
   font-weight: 100;
 }
 
 .button {
+  display: inline-block;
   text-decoration: none;
   color: var(--primary);
   font-size: 0.875rem;
+  
   &.with-bg {
     background-color: var(--green);
     color: var(--secondary);
@@ -181,6 +183,7 @@ p {
   position: relative;
   display: flex;
   gap: 25px;
+  margin-bottom: 25px;
 
   &.left {
     .preTitle {
