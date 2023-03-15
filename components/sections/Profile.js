@@ -71,19 +71,19 @@ const Profile = () => {
       >
         <motion.div className="text" variants={aboutTextVariant}>
           <p>
-            As an 8-year front-end developer, I'm driven to craft stunning,
+            As an 8-year front-end developer, I&apos;m driven to craft stunning,
             responsive, and user-friendly websites and applications through the
             utilization of cutting-edge technologies and industry best
-            practices. I've tackled various projects for clients of all sizes,
+            practices. I&apos;ve tackled various projects for clients of all sizes,
             delivering exceptional solutions that meet and exceed their
             expectations.
           </p>
           <p>
             My expertise lies in HTML, CSS, JavaScript, React, Angular, Vue, and
-            web design tools such as Photoshop, Sketch, and Figma. I'm
+            web design tools such as Photoshop, Sketch, and Figma. I&apos;m
             continuously upskilling and staying up-to-date with the latest web
-            development trends. I'm a team player who collaborates seamlessly
-            with other developers, designers, and stakeholders. I'm also a
+            development trends. I&apos;m a team player who collaborates seamlessly
+            with other developers, designers, and stakeholders. I&apos;m also a
             self-starter who thrives on independent creative problem-solving.
           </p>
           <a href="#!" className="button with-bg">
