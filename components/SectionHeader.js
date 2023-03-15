@@ -82,7 +82,7 @@ const SectionHeader = (props) => {
       console.log(isInView);
       animation.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, animation]);
 
   return (
     <motion.div
