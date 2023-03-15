@@ -1,0 +1,10 @@
+.skillsExperience {
+  display: flex;
+  gap: 80px;
+}
+
+.skillsExperience :global {
+  .column {
+    flex: 1;
+  }
+}

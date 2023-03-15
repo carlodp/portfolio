@@ -269,6 +269,18 @@ p {
   }
 }
 
+.accordion {
+  &.show {
+    &:before {
+      background: var(--green);
+    }
+    &:after {
+      background-color: transparent;
+      border-left: 1px dashed var(--primary);
+    }
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: scale(0.1);
