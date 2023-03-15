@@ -9,7 +9,6 @@
   height: 100vh;
   padding: 0px;
   gap: 20px;
-  padding-bottom: 100px;
 }
 
 .hero :global {
@@ -26,6 +25,12 @@
 
       span:not(:last-child) {
         color: var(--green);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%;
+        -webkit-animation: gradient 3s linear infinite;
+        animation: gradient 3s linear infinite;
       }
 
       span:last-child {
@@ -48,6 +53,7 @@
     svg {
       path {
         stroke: var(--primary);
+        transition: stroke 0.15s ease-out;
       }
     }
   }

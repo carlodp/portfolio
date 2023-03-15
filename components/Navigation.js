@@ -52,8 +52,8 @@ const Navigation = () => {
         <span className="hover">Profile</span>
       </motion.a>
       <motion.a href="#!" variants={navLinkVariant}>
-        <span className="normal">Works</span>
-        <span className="hover">Works</span>
+        <span className="normal">Projects</span>
+        <span className="hover">Projects</span>
       </motion.a>
       <motion.a href="#!" variants={navLinkVariant}>
         <span className="normal">Contact</span>

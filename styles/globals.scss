@@ -10,7 +10,7 @@
 }
 
 * {
-  cursor: none;
+  // cursor: none;
   box-sizing: border-box;
   &:focus-visible {
     outline-style: dotted;
@@ -37,14 +37,21 @@
 
     transition: all 0.15s ease;
     .cursor {
-      border-color: var(--primary) !important;
-      .dot {
-        background-color: var(--primary);
-      }
+      background-image: url("/cursor-light.svg");
+    }
 
-      &.text {
-        border-color: transparent !important;
-        background-color: #faf8ff40 !important;
+    .heroTexts {
+      span:not(:last-child) {
+        background: linear-gradient(
+          135deg,
+          rgba(250, 248, 255, 1) 0%,
+          rgba(125, 209, 191, 1) 15%,
+          rgba(0, 169, 127, 1) 40%,
+          rgba(0, 169, 127, 1) 50%,
+          rgba(0, 169, 127, 1) 60%,
+          rgba(125, 209, 191, 1) 85%,
+          rgba(250, 248, 255, 1) 100%
+        );
       }
     }
   }
@@ -67,14 +74,21 @@
 
     transition: all 0.15s ease;
     .cursor {
-      border-color: var(--primary) !important;
-      .dot {
-        background-color: var(--primary);
-      }
+      background-image: url("/cursor-dark.svg");
+    }
 
-      &.text {
-        border-color: transparent !important;
-        background-color: #16161666 !important;
+    .heroTexts {
+      span:not(:last-child) {
+        background: linear-gradient(
+          135deg,
+          rgba(22, 22, 22, 1) 0%,
+          rgba(13, 86, 68, 1) 15%,
+          rgba(2, 157, 119, 1) 40%,
+          rgba(0, 169, 127, 1) 50%,
+          rgba(2, 157, 119, 1) 60%,
+          rgba(13, 86, 68, 1) 85%,
+          rgba(22, 22, 22, 1) 100%
+        );
       }
     }
   }
@@ -125,6 +139,7 @@ p {
   line-height: 1.4rem;
   margin: 0 0 1rem;
   font-weight: 100;
+  text-align: justify;
 }
 
 .button {
@@ -133,7 +148,8 @@ p {
   color: var(--primary);
   font-size: 0.875rem;
   position: relative;
-  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out,
+    color 0.15s ease-out;
 
   &.with-bg {
     background-color: var(--green);
@@ -141,7 +157,7 @@ p {
     padding: 20px 35px;
     border-radius: 5px;
     box-shadow: 5px 5px 0px 0px var(--primary);
-    
+
     // &:before {
     //   content: '';
     //   background: var(--primary);
@@ -155,45 +171,31 @@ p {
     //   transition: top 0.15s ease-out, left 0.15s ease-out;
     // }
 
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       background-color: var(--primary);
       box-shadow: 0 0 var(--primary);
-      transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+      transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out,
+        color 0.15s ease-out;
     }
   }
 }
 
 .cursor {
-  border: 1px solid;
   border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   pointer-events: none;
-  transition: border-color 0.15s ease;
-
-  .dot {
-    opacity: 1;
-    height: 3px;
-    width: 3px;
-    border-radius: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-    transition: all 0.15s ease;
-  }
+  background-size: cover;
+  transition: all 0.15s ease;
 
   &.text {
-    border-color: transparent !important;
-    transition: border-color 0.15s ease;
-    .dot {
-      transition: all 0.15s ease;
-      opacity: 0;
-    }
+    background-image: none !important;
+    background-color: #FAF8FF !important;
+    mix-blend-mode: difference;
+    transition: all 0.15s ease;
   }
 }
 
@@ -276,5 +278,17 @@ p {
   100% {
     transform: translateY(15px);
     opacity: 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

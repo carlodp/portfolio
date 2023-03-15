@@ -26,8 +26,8 @@ const aboutTextVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: "easeOut",
+      duration: 0.8,
+      type: "spring",
     },
   },
 };
@@ -41,8 +41,8 @@ const aboutImgVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: "easeOut",
+      duration: 0.8,
+      type: "spring",
     },
   },
 };
@@ -73,33 +73,42 @@ const Profile = () => {
             As an 8-year front-end developer, I&apos;m driven to craft stunning,
             responsive, and user-friendly websites and applications through the
             utilization of cutting-edge technologies and industry best
-            practices. I&apos;ve tackled various projects for clients of all sizes,
-            delivering exceptional solutions that meet and exceed their
+            practices. I&apos;ve tackled various projects for clients of all
+            sizes, delivering exceptional solutions that meet and exceed their
             expectations.
           </p>
           <p>
             My expertise lies in HTML, CSS, JavaScript, React, Angular, Vue, and
             web design tools such as Photoshop, Sketch, and Figma. I&apos;m
             continuously upskilling and staying up-to-date with the latest web
-            development trends. I&apos;m a team player who collaborates seamlessly
-            with other developers, designers, and stakeholders. I&apos;m also a
-            self-starter who thrives on independent creative problem-solving.
+            development trends. I&apos;m a team player who collaborates
+            seamlessly with other developers, designers, and stakeholders.
+            I&apos;m also a self-starter who thrives on independent creative
+            problem-solving.
           </p>
           <a href="#!" className="button with-bg">
             View My Projects
           </a>
         </motion.div>
         <motion.div className="image" variants={aboutImgVariant}>
-          <Image
-            src="/profile-image.JPG"
-            alt="Carlo Santos"
-            width={500}
-            height={500}
-          />
+          <div className="imageContainer">
+            <Image
+              src="/profile-image.JPG"
+              alt="Carlo Santos"
+              width={500}
+              height={500}
+            />
+          </div>
         </motion.div>
       </motion.div>
-      <SectionHeader title="Skills" position="right" number="02." />
-      <SectionHeader title="Expertise" position="left" number="03." />
+      <div className="skillsAndExpertise">
+        <div className="column">
+          <SectionHeader title="Skills" position="left" number="02." />
+        </div>
+        <div className="column">
+          <SectionHeader title="Experience" position="right" number="03." />
+        </div>
+      </div>
     </section>
   );
 };

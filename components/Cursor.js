@@ -34,39 +34,41 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorPos.x - 16,
-      y: cursorPos.y - 16,
-      height: 32,
-      width: 32,
+      x: cursorPos.x - 24,
+      y: cursorPos.y - 24,
+      height: 48,
+      width: 48,
       scale: 1,
       transition: {
         delay: 0,
         duration: 0,
         scale: {
           duration: 0.25,
-        }
+        },
       },
     },
     text: {
-      x: cursorPos.x - 16,
-      y: cursorPos.y - 16,
-      height: 32,
-      width: 32,
-      scale: 1.6,
+      x: cursorPos.x - 24,
+      y: cursorPos.y - 24,
+      height: 48,
+      width: 48,
+      scale: 1,
       transition: {
         delay: 0,
         duration: 0,
         scale: {
           duration: 0.25,
-        }
+        },
       },
     },
   };
 
   return (
-    <motion.div className={`cursor ${cursorVariant}`} variants={variants} animate={cursorVariant}>
-      <span className="dot"></span>
-    </motion.div>
+    <motion.div
+      className={`cursor ${cursorVariant}`}
+      variants={variants}
+      animate={cursorVariant}
+    ></motion.div>
   );
 };
 
