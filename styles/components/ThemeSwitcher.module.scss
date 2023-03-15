@@ -39,12 +39,15 @@
       display: inline-flex;
       gap: 10px;
       i {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         width: 20px;
         height: 20px;
         z-index: 1;
         svg {
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           path {
             transition: all 0.25s ease;
           }
@@ -66,7 +69,8 @@
   }
 
   .dark {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       .moonIcon {
         path {
           fill: var(--secondary);
@@ -79,7 +83,8 @@
   }
 
   .light {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       .sunIcon {
         path {
           fill: var(--secondary);

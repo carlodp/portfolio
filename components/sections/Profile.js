@@ -71,20 +71,23 @@ const Profile = () => {
       >
         <motion.div className="text" variants={aboutTextVariant}>
           <p>
-            As a high‐performing, strategic‐thinking professional who has 8
-            years of experience in the web development industry, I have
-            developed different strategies to maintain high-quality service in
-            the least amount of time possible.
+            As an 8-year front-end developer, I'm driven to craft stunning,
+            responsive, and user-friendly websites and applications through the
+            utilization of cutting-edge technologies and industry best
+            practices. I've tackled various projects for clients of all sizes,
+            delivering exceptional solutions that meet and exceed their
+            expectations.
           </p>
           <p>
-            Driven by passion and the natural feeling of joy, doing the work
-            that I love helps me push to further - making sure that I develop
-            websites to perfection. Also, my willingness to learn new things as
-            well as absorbing new knowledge inspires me to be better, making me
-            confident in myself and the work that I do.
+            My expertise lies in HTML, CSS, JavaScript, React, Angular, Vue, and
+            web design tools such as Photoshop, Sketch, and Figma. I'm
+            continuously upskilling and staying up-to-date with the latest web
+            development trends. I'm a team player who collaborates seamlessly
+            with other developers, designers, and stakeholders. I'm also a
+            self-starter who thrives on independent creative problem-solving.
           </p>
           <a href="#!" className="button with-bg">
-            Browse My Current Projects
+            View My Projects
           </a>
         </motion.div>
         <motion.div className="image" variants={aboutImgVariant}>
@@ -97,6 +100,7 @@ const Profile = () => {
         </motion.div>
       </motion.div>
       <SectionHeader title="Skills" position="right" number="02." />
+      <SectionHeader title="Expertise" position="left" number="03." />
     </section>
   );
 };

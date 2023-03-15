@@ -24,7 +24,11 @@
       line-height: 5rem;
       margin-bottom: 0;
 
-      span {
+      span:not(:last-child) {
+        color: var(--green);
+      }
+
+      span:last-child {
         display: block;
       }
     }
