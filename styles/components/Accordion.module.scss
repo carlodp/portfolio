@@ -3,12 +3,14 @@
 
   &:hover {
     &:before {
-      background: var(--green);
+      background-color: var(--green);
+      transition: background-color 0.15s ease;
     }
   }
 
   &:before {
     content: "";
+    pointer-events: none;
     position: absolute;
     left: -40px;
     top: 8px;
@@ -16,7 +18,8 @@
     height: 15px;
     transform: rotate(45deg);
     border-radius: 2px;
-    background: var(--primary);
+    background-color: var(--primary);
+    transition: background-color 0.15s ease;
     z-index: 2;
   }
 
@@ -28,7 +31,8 @@
     width: 1px;
     height: calc(100% - 20px);
     top: 37px;
-    background: var(--primary);
+    background-color: var(--primary);
+    transition: background-color 0.15s ease;
   }
 
   &:last-child {
@@ -47,6 +51,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    user-select: none;
     cursor: pointer;
 
     .title {
