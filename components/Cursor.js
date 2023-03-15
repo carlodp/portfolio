@@ -34,25 +34,26 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorPos.x - 24,
-      y: cursorPos.y - 24,
-      height: 48,
-      width: 48,
+      x: cursorPos.x - 20,
+      y: cursorPos.y - 20,
+      height: 40,
+      width: 40,
       scale: 1,
       transition: {
         delay: 0,
         duration: 0,
+        ease: "easeInOut",
         scale: {
           duration: 0.25,
         },
       },
     },
     text: {
-      x: cursorPos.x - 24,
-      y: cursorPos.y - 24,
-      height: 48,
-      width: 48,
-      scale: 1,
+      x: cursorPos.x - 20,
+      y: cursorPos.y - 20,
+      height: 40,
+      width: 40,
+      scale: 1.3,
       transition: {
         delay: 0,
         duration: 0,
@@ -68,7 +69,9 @@ const Cursor = () => {
       className={`cursor ${cursorVariant}`}
       variants={variants}
       animate={cursorVariant}
-    ></motion.div>
+    >
+      <span className="cursorLogo"></span>
+    </motion.div>
   );
 };
 

@@ -37,7 +37,9 @@
 
     transition: all 0.15s ease;
     .cursor {
-      background-image: url("/cursor-light.svg");
+      .cursorLogo {
+        background-image: url("/cursor-light.svg");
+      }
     }
 
     .heroTexts {
@@ -74,7 +76,9 @@
 
     transition: all 0.15s ease;
     .cursor {
-      background-image: url("/cursor-dark.svg");
+      .cursorLogo {
+        background-image: url("/cursor-dark.svg");
+      }
     }
 
     .heroTexts {
@@ -188,14 +192,26 @@ p {
   left: 0;
   z-index: 1;
   pointer-events: none;
-  background-size: cover;
-  transition: all 0.15s ease;
+  transition: background-color 0.15s ease;
+
+  .cursorLogo {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    background-size: cover;
+    animation: rotate 10s linear infinite;
+    transition: background-image 0.15s ease;
+  }
 
   &.text {
-    background-image: none !important;
-    background-color: #FAF8FF !important;
+    background-color: #faf8ff !important;
     mix-blend-mode: difference;
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease;
+
+    .cursorLogo {
+      background-image: none !important;
+      transition: background-image 0.15s ease;
+    }
   }
 }
 
@@ -290,5 +306,14 @@ p {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
