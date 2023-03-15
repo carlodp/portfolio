@@ -138,14 +138,8 @@ const SkillsExperience = () => {
           </p>
           <div className="skillStack">
             {SKILLS.map((event) => (
-              <Stack stack={event}/>
+              <Stack key={event.title} stack={event}/>
             ))}
-            {/* {Object.keys(SKILLS).map((key, index) => {
-              console.log(index); // 0,1,2
-              console.log(key); // id, title, tags
-              console.log(SKILLS[key]); // 1, Loop through an array, ["array", "map", "foreach"]
-              <div>{SKILLS[key].title}</div>
-            })} */}
           </div>
         </div>
       </div>
