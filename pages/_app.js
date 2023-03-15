@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
   return (
     <SiteProvider>
       <Head>
-        <title>@carlodp_</title>
+        <title>Welcome</title>
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" href="/favicon.ico" />
@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-        <Splash
+        {/* <Splash
           showSplash={showSplash}
           setShowSplash={setShowSplash}
           splashEnd={splashEndHandler}
@@ -43,8 +43,8 @@ export default function App({ Component, pageProps }) {
             <Cursor />
             <Component {...pageProps} />
           </>
-        )}
-        {/* <Component {...pageProps} /> */}
+        )} */}
+        <Component {...pageProps} />
       </ThemeProvider>
     </SiteProvider>
   );

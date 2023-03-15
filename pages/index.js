@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>@carlodp_</title>
+        <title>Carlo | Creative Portfolio 👨‍💻</title>
       </Head>
       <Header />
       <Main/>
