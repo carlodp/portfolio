@@ -79,7 +79,6 @@ const SectionHeader = (props) => {
 
   useEffect(() => {
     if (isInView) {
-      console.log(isInView);
       animation.start("visible");
     }
   }, [isInView, animation]);

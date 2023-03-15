@@ -76,9 +76,7 @@ const Hero = () => {
           I turn <span>pixels</span> into <span>code</span>, <span>one line at a time.</span>
         </h1>
         <p>
-          With a passion for creating user-friendly
-          <br /> experiences with the perfect blend
-          <br /> of design and technology.
+          With a passion for creating user-friendly experiences with the<br/>perfect blend of design and technology.
         </p>
 
         <motion.div className="arrow">
