@@ -57,7 +57,7 @@ const Profile = () => {
       console.log(isInView);
       animation.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, animation]);
 
   return (
     <section className={styled.profile}>

@@ -43,7 +43,7 @@ const Footer = () => {
     if (isInView) {
       animation.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, animation]);
 
   return (
     <footer className={`footerSection ${styled.footer}`}>
