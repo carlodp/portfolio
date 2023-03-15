@@ -3,6 +3,7 @@ import { useState } from "react";
 import Accordion from "./Accordion";
 import AccordionList from "./AccordionList";
 import SectionHeader from "./SectionHeader";
+import Stack from "./Stack";
 
 const JOB_EXPERIENCES = [
   {
@@ -32,10 +33,65 @@ const JOB_EXPERIENCES = [
   {
     id: 4,
     position: "Junior Web Developer",
-    company: "Innov8tive Design &amp; Development",
+    company: "Innov8tive Design & Development",
     dateAttended: "Jul 2015 – Jul 2016",
     description:
       "Through their guidance, I acquired the necessary skills to thrive in my career, managing diverse projects spanning web development, systems administration, and beyond. My time with them facilitated my growth and maturation within the profession.",
+  },
+];
+
+const SKILLS = [
+  {
+    title: "Languages",
+    skills: [
+      "Javascript (ES6)",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "PHP",
+      "SQL",
+      "PHP",
+    ],
+  },
+  {
+    title: "Libraries & Frameworks",
+    skills: [
+      "React",
+      "Next.js",
+      "Bootstrap",
+      "Vue.js",
+      "Nuxt.js",
+      "Gatsby",
+      "WordPress",
+      "Node",
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "GitHub",
+      "LESS",
+      "SASS",
+      "Gulp",
+      "NPM",
+      "Postman",
+      "Chrome DevTools",
+      "Docker &amp; Lando",
+      "MongoDB",
+      "W3C",
+    ],
+  },
+  {
+    title: "Design ",
+    skills: [
+      "Adobe Creative Suite",
+      "UI/UX",
+      "Figma",
+      "Adobe XD",
+      "Prototyping",
+      "Wireframing",
+      "User Testing",
+    ],
   },
 ];
 
@@ -44,7 +100,7 @@ const SkillsExperience = () => {
 
   const toggleOpenHandler = (event) => {
     setOpenKey(event);
-  }
+  };
 
   return (
     <div className={styled.skillsExperience}>
@@ -60,7 +116,7 @@ const SkillsExperience = () => {
               <Accordion
                 key={job.id}
                 id={job.id}
-                defaultExpanded={index === 0 ? true : false} 
+                defaultExpanded={index === 0 ? true : false}
                 position={job.position}
                 company={job.company}
                 dateAttended={job.dateAttended}
@@ -80,6 +136,17 @@ const SkillsExperience = () => {
             experience and gained numerous skills. Although here are some,
             I&apos;m always eager to attain more.
           </p>
+          <div className="skillStack">
+            {SKILLS.map((event) => (
+              <Stack stack={event}/>
+            ))}
+            {/* {Object.keys(SKILLS).map((key, index) => {
+              console.log(index); // 0,1,2
+              console.log(key); // id, title, tags
+              console.log(SKILLS[key]); // 1, Loop through an array, ["array", "map", "foreach"]
+              <div>{SKILLS[key].title}</div>
+            })} */}
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,17 @@
 .skillsExperience {
   display: flex;
-  gap: 80px;
+  gap: 120px;
 }
 
 .skillsExperience :global {
   .column {
     flex: 1;
+  }
+
+  .skillStack {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px 0;
   }
 }
