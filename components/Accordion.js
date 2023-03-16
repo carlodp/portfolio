@@ -64,12 +64,15 @@ const Accordion = (props) => {
       },
     },
   };
+  
 
+  const toggleCondition = props.open === props.id;
+   
   return (
     <>
       <li
         className={`accordion ${styled.accordionItem} ${
-          props.open === props.id ? "show" : ""
+          toggleCondition ? "show" : ""
         }`}
         aria-expanded="false"
         role="tab"
@@ -79,10 +82,11 @@ const Accordion = (props) => {
           variants={spinnerVariants}
           initial="initial"
           animate={animate}
+          onClick={toggleAccordionHandler}
         ></motion.span>
         <div
           id={props.id}
-          className="accordionTitle"
+          className={`accordionTitle ${toggleCondition && 'active'}`}
           tabIndex="0"
           type="button"
           aria-controls={`panel-${props.id}`}
@@ -98,14 +102,14 @@ const Accordion = (props) => {
           </div>
         </div>
         <AnimatePresence initial={false}>
-          {props.open === props.id && (
+          {toggleCondition && (
             <motion.div
               variants={accordionToggleVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
               id={`panel-${props.id}`}
-              className={`accordionContent${props.open ? "" : " collapse"}`}
+              className={`accordionContent${toggleCondition ? "" : " collapse"}`}
               role="tabpanel"
               aria-hidden="true"
               aria-labelledby={props.id}
