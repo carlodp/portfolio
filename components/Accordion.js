@@ -8,8 +8,20 @@ const Accordion = (props) => {
     }
   }, []);
 
-  const toggleAccordionHandler = () => {
-    props.toggleOpen(props.id);
+  const toggleAccordionHandler = (e) => {
+    if(e._reactName === 'onClick') {
+      props.toggleOpen(props.id);
+    }
+
+    if(e._reactName === 'onKeyUp') {
+      if (e.keyCode === 13) {
+        props.toggleOpen(props.id);
+      }
+    }
+  };
+
+  const enterToggleAccordion = (e) => {
+   
   };
 
   return (
@@ -28,6 +40,7 @@ const Accordion = (props) => {
           type="button"
           aria-controls={`panel-${props.id}`}
           onClick={toggleAccordionHandler}
+          onKeyUp={toggleAccordionHandler}
         >
           <div className="title">
             <h3>{props.position}</h3>

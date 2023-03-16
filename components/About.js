@@ -70,7 +70,7 @@ const About = () => {
       >
         <motion.div className="text" variants={aboutTextVariant}>
           <p>
-            As an 8-year front-end developer, I&apos;m driven to craft stunning,
+            As an eight-year software engineer, I&apos;m driven to craft stunning,
             responsive, and user-friendly websites and applications through the
             utilization of cutting-edge technologies and industry best
             practices. I&apos;ve tackled various projects for clients of all
@@ -87,7 +87,7 @@ const About = () => {
             problem-solving.
           </p>
           <a href="#!" className="button with-bg">
-            View My Projects
+            Browse My Projects
           </a>
         </motion.div>
         <motion.div className="image" variants={aboutImgVariant}>

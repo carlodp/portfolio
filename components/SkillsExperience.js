@@ -76,7 +76,7 @@ const SKILLS = [
       "NPM",
       "Postman",
       "Chrome DevTools",
-      "Docker &amp; Lando",
+      "Docker & Lando",
       "MongoDB",
       "W3C",
     ],
@@ -104,44 +104,51 @@ const SkillsExperience = () => {
 
   return (
     <div className={styled.skillsExperience}>
-      <div className="column">
-        <SectionHeader title="Experience" position="left" number="02." />
-        <div className="experience">
-          <p className="introText">
-            I&apos;ve worked on a handful of web projects over the past 8 years,
-            some of which were for the following organizations:
-          </p>
-          <AccordionList id="jobExperiences">
-            {JOB_EXPERIENCES.map((job, index) => (
-              <Accordion
-                key={job.id}
-                id={job.id}
-                defaultExpanded={index === 0 ? true : false}
-                position={job.position}
-                company={job.company}
-                dateAttended={job.dateAttended}
-                description={job.description}
-                open={openKey === job.id}
-                toggleOpen={toggleOpenHandler}
-              />
-            ))}
-          </AccordionList>
-        </div>
-      </div>
-      <div className="column">
-        <SectionHeader title="Skills" position="left" number="03." />
-        <div className="skills">
-          <p className="introText">
-            During my career as a developer, I&apos;ve amassed extensive
-            experience and gained numerous skills. Although here are some,
-            I&apos;m always eager to attain more.
-          </p>
-          <div className="skillStack">
-            {SKILLS.map((event) => (
-              <Stack key={event.title} stack={event}/>
-            ))}
+      <div className="row">
+        <div className="column">
+          <SectionHeader title="Experience" position="left" number="02." />
+          <div className="experience">
+            <p className="introText">
+              I&apos;ve worked on a handful of web projects over the past 8
+              years, some of which were for the following organizations:
+            </p>
+            <AccordionList id="jobExperiences">
+              {JOB_EXPERIENCES.map((job, index) => (
+                <Accordion
+                  key={job.id}
+                  id={job.id}
+                  defaultExpanded={index === 0 ? true : false}
+                  position={job.position}
+                  company={job.company}
+                  dateAttended={job.dateAttended}
+                  description={job.description}
+                  open={openKey === job.id}
+                  toggleOpen={toggleOpenHandler}
+                />
+              ))}
+            </AccordionList>
           </div>
         </div>
+        <div className="column">
+          <SectionHeader title="Skills" position="left" number="03." />
+          <div className="skills">
+            <p className="introText">
+              Throughout my career, I&apos;ve amassed extensive experience and
+              gained numerous skills. Although here are some, I&apos;m always
+              eager to attain more.
+            </p>
+            <div className="skillStack">
+              {SKILLS.map((event) => (
+                <Stack key={event.title} stack={event} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bottom">
+        <a href="#!" className="button with-bg">
+          View My Resume
+        </a>
       </div>
     </div>
   );

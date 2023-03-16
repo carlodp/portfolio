@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-        <Splash
+        {/* <Splash
           showSplash={showSplash}
           setShowSplash={setShowSplash}
           splashEnd={splashEndHandler}
@@ -43,8 +43,8 @@ export default function App({ Component, pageProps }) {
             <Cursor />
             <Component {...pageProps} />
           </>
-        )}
-        {/* <Component {...pageProps} /> */}
+        )} */}
+        <Component {...pageProps} />
       </ThemeProvider>
     </SiteProvider>
   );

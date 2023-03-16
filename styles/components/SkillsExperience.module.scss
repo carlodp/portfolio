@@ -1,17 +1,31 @@
 .skillsExperience {
   display: flex;
-  gap: 120px;
+  flex-direction: column;
+  gap: 100px;
 }
 
 .skillsExperience :global {
-  .column {
-    flex: 1;
-  }
-
-  .skillStack {
+  .row {
     display: flex;
-    flex-direction: column;
-    gap: 35px;
-    padding: 20px 0;
+    gap: 120px;
+
+    .column {
+      flex: 1;
+    }
+
+    .introText {
+      text-align: left;
+    }
+
+    .skillStack {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      padding: 20px 0;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: center;
   }
 }
