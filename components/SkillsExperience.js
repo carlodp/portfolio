@@ -1,5 +1,6 @@
 import styled from "@/styles/components/SkillsExperience.module.scss";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Accordion from "./Accordion";
 import AccordionList from "./AccordionList";
 import SectionHeader from "./SectionHeader";
@@ -107,7 +108,7 @@ const SkillsExperience = () => {
       <div className="row">
         <div className="column">
           <SectionHeader title="Experience" position="left" number="02." />
-          <div className="experience">
+          <motion.div className="experience">
             <p className="introText">
               I&apos;ve worked on a handful of web projects over the past 8
               years, some of which were for the following organizations:
@@ -122,12 +123,12 @@ const SkillsExperience = () => {
                   company={job.company}
                   dateAttended={job.dateAttended}
                   description={job.description}
-                  open={openKey === job.id}
+                  open={openKey}
                   toggleOpen={toggleOpenHandler}
                 />
               ))}
             </AccordionList>
-          </div>
+          </motion.div>
         </div>
         <div className="column">
           <SectionHeader title="Skills" position="left" number="03." />

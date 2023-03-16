@@ -112,7 +112,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 1px;
+  width: 3px;
 }
 
 body::-webkit-scrollbar-track {
@@ -120,7 +120,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--white);
+  background-color: var(--primary);
   outline: transparent;
 }
 
@@ -271,8 +271,9 @@ p {
 
 .accordion {
   &.show {
-    &:before {
-      background: var(--green);
+    .spinner {
+      background-color: var(--green);
+      transition: background-color 0.25s ease;
     }
     &:after {
       background-color: transparent;
@@ -324,6 +325,15 @@ p {
 @keyframes rotate {
   from {
     transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate45 {
+  from {
+    transform: rotate(45deg);
   }
   to {
     transform: rotate(360deg);

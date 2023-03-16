@@ -12,7 +12,7 @@ const aboutDivVariant = {
     opacity: 1,
     transition: {
       delayChildren: 0.5, // this will set a delay before the children start animating
-      staggerChildren: 0.1,
+      staggerChildren: 0,
     },
   },
 };
@@ -20,14 +20,14 @@ const aboutDivVariant = {
 const aboutTextVariant = {
   hidden: {
     opacity: 0,
-    y: -100,
+    x: -100,
   },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      duration: 0.8,
-      type: "spring",
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 };
@@ -35,14 +35,14 @@ const aboutTextVariant = {
 const aboutImgVariant = {
   hidden: {
     opacity: 0,
-    y: 100,
+    x: 100,
   },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      duration: 0.8,
-      type: "spring",
+      duration: 0.5,
+      type: "easeOut",
     },
   },
 };
@@ -59,10 +59,9 @@ const About = () => {
   }, [isInView, animation]);
 
   return (
-    <>
+    <div className={styled.about}>
       <SectionHeader title="About" position="left" number="01." />
-      <motion.div
-        className={styled.aboutMe}
+      <motion.div className="aboutMe"
         ref={ref}
         variants={aboutDivVariant}
         initial="hidden"
@@ -101,7 +100,7 @@ const About = () => {
           </div>
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 };
 

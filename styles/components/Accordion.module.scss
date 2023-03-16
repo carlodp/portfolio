@@ -1,27 +1,19 @@
 .accordionItem {
   position: relative;
 
-  &:hover {
-    &:before {
-      background-color: var(--green);
-      transition: background-color 0.15s ease;
-    }
-  }
-
-  &:before {
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    left: -40px;
-    top: 8px;
-    width: 15px;
-    height: 15px;
-    transform: rotate(45deg);
-    border-radius: 2px;
-    background-color: var(--primary);
-    transition: background-color 0.15s ease;
-    z-index: 2;
-  }
+  // &:before {
+  //   content: "";
+  //   pointer-events: none;
+  //   position: absolute;
+  //   left: -40px;
+  //   top: 8px;
+  //   width: 15px;
+  //   height: 15px;
+  //   transform: rotate(45deg);
+  //   border-radius: 2px;
+  //   background-color: var(--primary);
+  //   z-index: 2;
+  // }
 
   &:after {
     z-index: 1;
@@ -32,7 +24,7 @@
     height: calc(100% - 20px);
     top: 37px;
     background-color: var(--primary);
-    transition: background-color 0.15s ease;
+    transition: all 0.15s ease;
   }
 
   &:last-child {
@@ -42,11 +34,21 @@
   }
 }
 
-.accordionItem.show {
-  background-color: red;
-}
-
 .accordionItem :global {
+  .spinner {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    left: -40px;
+    top: 8px;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    background-color: var(--primary);
+    z-index: 2;
+    transition: background-color 0.25s ease;
+  }
+
   .accordionTitle {
     display: flex;
     align-items: flex-start;
@@ -65,10 +67,13 @@
   }
 
   .accordionContent {
-    padding-top: 20px;
-    &.collapse:not(.show) {
-      display: none;
+    overflow: hidden;
+
+    .accordionContent-inner {
+      padding-top: 20px;
+      p {
+        margin-bottom: 0;
+      }
     }
   }
 }
-

@@ -67,7 +67,8 @@ const preTitle = {
     y: 0,
     transition: {
       delay: 0.6,
-      duration: 0.1,
+      duration: 0.3,
+      ease: "easeOut",
     },
   },
 };
