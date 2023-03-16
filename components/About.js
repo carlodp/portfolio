@@ -35,7 +35,7 @@ const aboutChildVariants = {
 const About = () => {
   return (
     <div className={styled.about}>
-      <SectionHeader title="About" position="left" number="01." />
+      <SectionHeader title="Profile." position="left" number="01." />
       <motion.div className="aboutMe"
         variants={aboutDivVariant}
         initial="hidden"
@@ -50,15 +50,6 @@ const About = () => {
             practices. I&apos;ve tackled various projects for clients of all
             sizes, delivering exceptional solutions that meet and exceed their
             expectations.
-          </p>
-          <p>
-            My expertise lies in HTML, CSS, JavaScript, React, Angular, Vue, and
-            web design tools such as Photoshop, Sketch, and Figma. I&apos;m
-            continuously upskilling and staying up-to-date with the latest web
-            development trends. I&apos;m a team player who collaborates
-            seamlessly with other developers, designers, and stakeholders.
-            I&apos;m also a self-starter who thrives on independent creative
-            problem-solving.
           </p>
           <a href="#!" className="button with-bg">
             Browse My Projects

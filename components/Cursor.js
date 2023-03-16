@@ -38,10 +38,10 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorPos.x - 20,
-      y: cursorPos.y - 20,
-      height: 40,
-      width: 40,
+      x: cursorPos.x - 32,
+      y: cursorPos.y - 32,
+      height: 64,
+      width: 64,
       scale: 1,
       transition: {
         delay: 0,
@@ -53,10 +53,10 @@ const Cursor = () => {
       },
     },
     text: {
-      x: cursorPos.x - 20,
-      y: cursorPos.y - 20,
-      height: 40,
-      width: 40,
+      x: cursorPos.x - 32,
+      y: cursorPos.y - 32,
+      height: 64,
+      width: 64,
       scale: 1.3,
       transition: {
         delay: 0,

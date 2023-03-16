@@ -2,6 +2,8 @@
 :root {
   --nav-height: 120px;
   --green: #00a97f;
+  --background-light: #e1dfdd;
+  --background-dark: #161616;
 }
 
 ::selection {
@@ -10,7 +12,7 @@
 }
 
 * {
-  // cursor: none;
+  cursor: none;
   box-sizing: border-box;
   &:focus-visible {
     outline-style: dotted;
@@ -21,14 +23,13 @@
 }
 
 [data-theme="dark"] {
-  --primary: #f5fdfb;
+  --primary: #e1dfdd;
   --secondary: #161616;
 
   body {
-    background-color: var(--secondary);
+    background-color: var(--background-dark);
     color: var(--primary);
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTYxNjE2Ii8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiNGQUY4RkYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzE3IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiNGQUY4RkYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzE3KSIvPgo8L3N2Zz4K);
-
+    //background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTYxNjE2Ii8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiNGQUY4RkYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzE3IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiNGQUY4RkYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzE3KSIvPgo8L3N2Zz4K);
     // background-size: 40px 40px;
     // background-image: linear-gradient(
     //     to right,
@@ -38,6 +39,7 @@
     //   linear-gradient(to bottom, rgba(250, 248, 255, 0.05) 1px, transparent 1px);
 
     transition: all 0.15s ease;
+
     .cursor {
       .cursorLogo {
         background-image: url("/cursor-light.svg");
@@ -63,12 +65,12 @@
 
 [data-theme="light"] {
   --primary: #161616;
-  --secondary: #f5fdfb;
+  --secondary: #e1dfdd;
 
   body {
-    background: var(--secondary);
+    background: var(--background-light);
     color: var(--primary);
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjVGREZCIi8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiMxNjE2MTYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzMwIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiMxNjE2MTYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzMwKSIvPgo8L3N2Zz4K);
+    //background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjVGREZCIi8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiMxNjE2MTYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzMwIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiMxNjE2MTYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzMwKSIvPgo8L3N2Zz4K);
     // background-size: 40px 40px;
     // background-image: linear-gradient(
     //     to right,
@@ -111,6 +113,28 @@ body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .noise {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 3;
+
+    &:after {
+      content: "";
+      width: calc(100% + 20rem);
+      height: calc(100% + 20rem);
+      background-position: 50%;
+      position: absolute;
+      left: -10rem;
+      top: -10rem;
+      background-image: url(/noise.png);
+      animation: noise 1s steps(2) infinite;
+    }
+  }
 }
 
 body::-webkit-scrollbar {
@@ -133,19 +157,25 @@ code {
 
 h1 {
   margin: 0 0 1rem;
+  font-size: 5.5rem;
+  line-height: 6rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 0;
 }
 
+h3 {
+  font-size: 1.25rem;
+}
+
 p {
-  font-size: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
   margin: 0 0 1.4rem;
   font-weight: 300;
   letter-spacing: 0.3px;
-  line-height: 1.34em;
 }
 
 .button {
@@ -159,10 +189,9 @@ p {
 
   &.with-bg {
     background-color: var(--green);
-    color: var(--primary);
+    color: var(--secondary);
     padding: 20px 35px;
     border-radius: 1px;
-    text-shadow: 1px 1px 2px var(--secondary);
 
     // &:before {
     //   content: '';
@@ -199,8 +228,8 @@ p {
   transition: background-color 0.15s ease;
 
   .cursorLogo {
-    height: 40px;
-    width: 40px;
+    height: 64px;
+    width: 64px;
     position: fixed;
     background-size: cover;
     animation: rotate 10s linear infinite;
@@ -332,6 +361,42 @@ p {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  to {
+    transform: translate3d(-7rem, 0, 0);
   }
 }
 

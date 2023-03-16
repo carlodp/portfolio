@@ -6,9 +6,6 @@ import Header from "../components/structure/Header";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Carlo | Creative Portfolio 👨‍💻</title>
-      </Head>
       <Header />
       <Main/>
       <Footer />

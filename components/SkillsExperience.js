@@ -13,7 +13,7 @@ const JOB_EXPERIENCES = [
     company: "Incenter Solutions",
     dateAttended: "Oct 2020 – Nov 2022",
     description:
-      "As Incenters' parent company, Finance of America Companies entrusts me with the crucial responsibility of overseeing 40+ websites, including those for FOA clients across various regions of the USA. My team and I work closely with designers and shareholders to bring new websites, pages, and features to life. We create bespoke websites using WordPress as our ecosystem and integrating Gulp, CSS Preprocessors, Lando, Webpack, and GitHub version control system to ensure streamlined management and tracking of code modifications.",
+      "As Incenters' parent company, Finance of America Companies entrusts me with the crucial responsibility of overseeing 40+ websites, including those for FOA clients across various regions of the USA. I work closely with designers and shareholders to bring new websites, pages, and features to life. We create bespoke websites using WordPress as our ecosystem and integrating Gulp, CSS Preprocessors, Lando, Webpack, and GitHub version control system to ensure streamlined management and tracking of code modifications.",
   },
   {
     id: 2,
@@ -122,7 +122,7 @@ const SkillsExperience = () => {
     <div className={styled.skillsExperience}>
       <div className="row">
         <div className="column">
-          <SectionHeader title="Experience" position="left" number="02." />
+          <SectionHeader title="Experience." position="left" number="02." />
           <motion.div
             className="experienceColumn"
             variants={SkillsDivVariant}
@@ -153,7 +153,7 @@ const SkillsExperience = () => {
           </motion.div>
         </div>
         <div className="column">
-          <SectionHeader title="Skills" position="left" number="03." />
+          <SectionHeader title="Skills." position="left" number="03." />
           <motion.div
             className="skillsColumn"
             variants={SkillsDivVariant}
