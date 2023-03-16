@@ -97,7 +97,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
       <motion.a href="#!" className="button with-bg knowMore" variants={heroCtaVariants}>
-          Know More About Me
+          Know Me Better
         </motion.a>
     </motion.section>
   );
