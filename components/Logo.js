@@ -3,22 +3,15 @@ import styles from '@/styles/components/Logo.module.scss'
 
 const headerStatusVariant = {
   hidden: {
-    y: -100,
     opacity: 0,
   },
   visible: {
-    y: 0,
     opacity: 1,
     transition: {
       opacity: {
-        duration: 0.3,
-        ease: "easeIn",
-      },
-      y: {
         duration: 0.5,
-        type: "spring",
-        stiffness: 75,
-      },
+        ease: "easeIn",
+      }
     },
   },
 };

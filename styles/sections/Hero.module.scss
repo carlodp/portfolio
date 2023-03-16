@@ -8,14 +8,14 @@
   min-height: 100vh;
   height: 100vh;
   padding: 0px;
-  gap: 20px;
+  gap: 30px;
 }
 
 .hero :global {
   .heroTexts {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     position: relative;
 
     h1 {
@@ -29,8 +29,8 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: 400% 400%;
-        -webkit-animation: gradient 3s linear infinite;
-        animation: gradient 3s linear infinite;
+        animation: gradient 1.5s linear infinite;
+        user-select: none;
       }
 
       span:last-child {
@@ -39,7 +39,7 @@
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       line-height: 1.6rem;
       margin-bottom: 10px;
     }
@@ -47,7 +47,7 @@
 
   .arrow {
     position: absolute;
-    bottom: -50px;
+    bottom: -55px;
     left: -45px;
 
     svg {

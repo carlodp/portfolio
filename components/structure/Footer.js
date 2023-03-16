@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@/styles/structure/Footer.module.scss";
 
 const FooterVariants = {
@@ -35,24 +34,14 @@ const FooterBottomVariants = {
 };
 
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      animation.start("visible");
-    }
-  }, [isInView, animation]);
-
   return (
     <footer className={`footerSection ${styled.footer}`}>
       <motion.div
         className="preFooter"
-        ref={ref}
         variants={FooterVariants}
         initial="hidden"
-        animate={animation}
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <motion.h6 className="title">Want to work together?</motion.h6>
         <motion.a href="mailto:hello@carlosantos.dev" className="email">
@@ -62,9 +51,9 @@ const Footer = () => {
       <motion.div
         className="bottomFooter"
         variants={FooterBottomVariants}
-        ref={ref}
         initial="hidden"
-        animate={animation}
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <p className="copyright">
           ©2023 Carlo Santos. Made with <a href="#!">Next.js</a> &{" "}

@@ -5,19 +5,23 @@ import { useEffect, useState } from "react";
 const preloaderContainerVar = {
   initial: {
     opacity: 1,
-    scale: 1,
+    blur: 'blur(0px)',
   },
   exit: {
-    scale: 1.7,
+    scale: 1,
     opacity: 0,
+    filter: 'blur(10px)',
     transition: {
-      delay: 4.5,
+      delay: 5,
       opacity: {
         duration: 0.4,
       },
       scale: {
         duration: 0.7,
       },
+      blur: {
+        duration: 0.7,
+      }
     },
   },
 };

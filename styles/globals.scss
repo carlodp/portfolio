@@ -27,13 +27,15 @@
   body {
     background-color: var(--secondary);
     color: var(--primary);
-    background-size: 40px 40px;
-    background-image: linear-gradient(
-        to right,
-        rgba(250, 248, 255, 0.05) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgba(250, 248, 255, 0.05) 1px, transparent 1px);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTYxNjE2Ii8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjRkFGOEZGIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiNGQUY4RkYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzE3IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiNGQUY4RkYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzE3KSIvPgo8L3N2Zz4K);
+
+    // background-size: 40px 40px;
+    // background-image: linear-gradient(
+    //     to right,
+    //     rgba(250, 248, 255, 0.05) 1px,
+    //     transparent 1px
+    //   ),
+    //   linear-gradient(to bottom, rgba(250, 248, 255, 0.05) 1px, transparent 1px);
 
     transition: all 0.15s ease;
     .cursor {
@@ -66,13 +68,14 @@
   body {
     background: var(--secondary);
     color: var(--primary);
-    background-size: 40px 40px;
-    background-image: linear-gradient(
-        to right,
-        rgba(22, 22, 22, 0.05) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgba(22, 22, 22, 0.05) 1px, transparent 1px);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjVGREZCIi8+CjxsaW5lIHgxPSIxLjUiIHkxPSIxIiB4Mj0iMS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMS41IiB5MT0iMzkiIHgyPSIxLjUiIHkyPSI0MCIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjEiIHgyPSIzOS41IiB5Mj0iMiIgc3Ryb2tlPSIjMTYxNjE2IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8bGluZSB4MT0iMzkuNSIgeTE9IjM5IiB4Mj0iMzkuNSIgeTI9IjQwIiBzdHJva2U9IiMxNjE2MTYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CjxtYXNrIGlkPSJwYXRoLTYtaW5zaWRlLTFfMTY1XzMwIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0wIDBINDBWNDBIMFYwWiIvPgo8L21hc2s+CjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0wIDFINDBWLTFIMFYxWk0xIDQwVjBILTFWNDBIMVoiIGZpbGw9IiMxNjE2MTYiIGZpbGwtb3BhY2l0eT0iMC4wNSIgbWFzaz0idXJsKCNwYXRoLTYtaW5zaWRlLTFfMTY1XzMwKSIvPgo8L3N2Zz4K);
+    // background-size: 40px 40px;
+    // background-image: linear-gradient(
+    //     to right,
+    //     rgba(22, 22, 22, 0.05) 1px,
+    //     transparent 1px
+    //   ),
+    //   linear-gradient(to bottom, rgba(22, 22, 22, 0.05) 1px, transparent 1px);
 
     transition: all 0.15s ease;
     .cursor {
@@ -99,7 +102,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   font-size: 1rem;
 }
 
@@ -108,7 +111,6 @@ body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary);
 }
 
 body::-webkit-scrollbar {
@@ -140,10 +142,10 @@ h2 {
 
 p {
   font-size: 1rem;
-  line-height: 1.4rem;
-  margin: 0 0 1rem;
-  font-weight: 100;
-  text-align: justify;
+  margin: 0 0 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  line-height: 1.34em;
 }
 
 .button {
@@ -157,10 +159,10 @@ p {
 
   &.with-bg {
     background-color: var(--green);
-    color: var(--secondary);
+    color: var(--primary);
     padding: 20px 35px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 0px 0px var(--primary);
+    border-radius: 1px;
+    text-shadow: 1px 1px 2px var(--secondary);
 
     // &:before {
     //   content: '';
@@ -177,6 +179,8 @@ p {
 
     &:hover,
     &:focus-visible {
+      color: var(--secondary);
+      text-shadow: none;
       background-color: var(--primary);
       box-shadow: 0 0 var(--primary);
       transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out,

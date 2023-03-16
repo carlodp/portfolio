@@ -46,9 +46,11 @@ const headerRightVariant = {
 
 const headerLines = {
   hidden: {
+    opacity: 0,
     width: 0,
   },
   visible: {
+    opacity: 1,
     width: "100%",
     transition: {
       duration: 0.5,
@@ -74,23 +76,14 @@ const preTitle = {
 };
 
 const SectionHeader = (props) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      animation.start("visible");
-    }
-  }, [isInView, animation]);
 
   return (
     <motion.div
       className={`sectionHeader ${props.position}`}
-      ref={ref}
       variants={headerWrapVariant}
       initial="hidden"
-      animate={animation}
+      whileInView="visible"
+      viewport={{ once: true }}
     >
       <motion.span className="preTitle" variants={preTitle}>
         {props.number}

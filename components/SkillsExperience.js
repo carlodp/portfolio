@@ -96,6 +96,21 @@ const SKILLS = [
   },
 ];
 
+const SkillsDivVariant = {
+  hidden: {
+    opacity: 0,
+    y: -30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.7,
+      duration: 0.5,
+    },
+  },
+};
+
 const SkillsExperience = () => {
   const [openKey, setOpenKey] = useState();
 
@@ -108,7 +123,14 @@ const SkillsExperience = () => {
       <div className="row">
         <div className="column">
           <SectionHeader title="Experience" position="left" number="02." />
-          <motion.div className="experience">
+          <motion.div
+            className="experienceColumn"
+            variants={SkillsDivVariant}
+            initial="hidden"
+            whileInView="visible"
+            onDirectionLock={axis => console.log(axis)}
+            viewport={{ once: true }}
+          >
             <p className="introText">
               I&apos;ve worked on a handful of web projects over the past 8
               years, some of which were for the following organizations:
@@ -132,18 +154,26 @@ const SkillsExperience = () => {
         </div>
         <div className="column">
           <SectionHeader title="Skills" position="left" number="03." />
-          <div className="skills">
-            <p className="introText">
-              Throughout my career, I&apos;ve amassed extensive experience and
-              gained numerous skills. Although here are some, I&apos;m always
-              eager to attain more.
-            </p>
-            <div className="skillStack">
-              {SKILLS.map((event) => (
-                <Stack key={event.title} stack={event} />
-              ))}
+          <motion.div
+            className="skillsColumn"
+            variants={SkillsDivVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="skills">
+              <p className="introText">
+                Throughout my career, I&apos;ve amassed extensive experience and
+                gained numerous skills. Although here are some, I&apos;m always
+                eager to attain more.
+              </p>
+              <div className="skillStack">
+                {SKILLS.map((event) => (
+                  <Stack key={event.title} stack={event} />
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="bottom">

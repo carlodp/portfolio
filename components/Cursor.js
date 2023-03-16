@@ -19,13 +19,17 @@ const Cursor = () => {
 
   useEffect(() => {
     window.addEventListener("mouseover", (event) => {
-      const a = event.target.closest("a, button");
+      const a = event.target.closest(
+        "a, button, .headerStatus .name, .heroTexts .title span, .accordionTitle, .skillsList span, .sectionHeader h2"
+      );
       if (a) {
         setCursorVariant("text");
       }
     });
     window.addEventListener("mouseout", (event) => {
-      const a = event.target.closest("a, button");
+      const a = event.target.closest(
+        "a, button, .headerStatus .name, .heroTexts .title span, .accordionTitle, .skillsList span, .sectionHeader h2"
+      );
       if (a) {
         setCursorVariant("default");
       }

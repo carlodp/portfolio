@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import styled from "@/styles/components/About.module.scss";
 import SectionHeader from "./SectionHeader";
@@ -17,57 +16,33 @@ const aboutDivVariant = {
   },
 };
 
-const aboutTextVariant = {
+const aboutChildVariants = {
   hidden: {
     opacity: 0,
-    x: -100,
+    y: -50,
   },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
+      delay: 0.7,
       duration: 0.5,
       ease: "easeOut",
     },
   },
 };
 
-const aboutImgVariant = {
-  hidden: {
-    opacity: 0,
-    x: 100,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      type: "easeOut",
-    },
-  },
-};
-
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      animation.start("visible");
-    }
-  }, [isInView, animation]);
-
   return (
     <div className={styled.about}>
       <SectionHeader title="About" position="left" number="01." />
       <motion.div className="aboutMe"
-        ref={ref}
         variants={aboutDivVariant}
         initial="hidden"
-        animate={animation}
+        whileInView="visible"
+        viewport={{ once: true }}
       >
-        <motion.div className="text" variants={aboutTextVariant}>
+        <motion.div className="text" variants={aboutChildVariants}>
           <p>
             As an eight-year software engineer, I&apos;m driven to craft stunning,
             responsive, and user-friendly websites and applications through the
@@ -89,7 +64,7 @@ const About = () => {
             Browse My Projects
           </a>
         </motion.div>
-        <motion.div className="image" variants={aboutImgVariant}>
+        <motion.div className="image" variants={aboutChildVariants}>
           <div className="imageContainer">
             <Image
               src="/profile-image.JPG"

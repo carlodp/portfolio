@@ -14,12 +14,7 @@ const navVariant = {
       staggerChildren: 0.1,
       opacity: {
         duration: 0.3,
-        ease: "easeIn",
-      },
-      y: {
-        duration: 1,
-        type: "spring",
-        stiffness: 120,
+        ease: "easeOut",
       },
     },
   },
@@ -27,14 +22,21 @@ const navVariant = {
 
 const navLinkVariant = {
   hidden: {
+    opacity: 0,
     y: -100,
   },
   visible: {
+    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      type: "spring",
-      stiffness: 75,
+      opacity: {
+        duration: 0.5,
+      },
+      y: {
+        type: "spring",
+        stiffness: 75,
+        duration: 0.3,
+      }
     },
   },
 };
