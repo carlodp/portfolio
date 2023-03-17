@@ -10,7 +10,7 @@ const navVariant = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.8, // this will set a delay before the children start animating
+      delayChildren: 0.6, // this will set a delay before the children start animating
       staggerChildren: 0.1,
       opacity: {
         duration: 0.3,
@@ -30,7 +30,7 @@ const navLinkVariant = {
     y: 0,
     transition: {
       opacity: {
-        duration: 0.6,
+        duration: 0.4,
       },
       y: {
         ease: [0.6, 0.01, 0.05, 0.95],

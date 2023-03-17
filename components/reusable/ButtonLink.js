@@ -23,7 +23,7 @@ const underlineVariant = {
     width: "50%",
     transition: {
       delay: props.delay ? props.delay : 0,
-      duration: props.duration ? props.duration : 1,
+      duration: props.duration ? props.duration * 1.5 : 1,
     },
   }),
 };

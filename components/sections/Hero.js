@@ -30,7 +30,7 @@ const subTexts = {
     transition: {
       ease: [0.6, 0.01, 0.05, 0.95],
       duration: 0.8,
-      delay: 1.45,
+      delay: 2.3,
       when: "afterChildren",
     },
   },
@@ -63,7 +63,7 @@ const Hero = () => {
             <AnimateLetters
               className="heroIntroText"
               title="I&nbsp;turn&nbsp;pixels&nbsp;to&nbsp;code,"
-              duration="1"
+              duration="1.3"
               stagger="0.025"
               delay="0.3"
             />
@@ -74,7 +74,7 @@ const Hero = () => {
               title="one&nbsp;line&nbsp;at&nbsp;a&nbsp;time."
               duration="1"
               stagger="0.025"
-              delay="0.9"
+              delay="1"
             />
           </motion.div>
         </motion.h1>
