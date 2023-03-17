@@ -126,7 +126,7 @@ const Splash = ({ setLoading }) => {
               animate="visible"
               exit="exit"
             >
-              I'm
+              I&apos;m
             </motion.p>
           </div>
           <motion.p variants={nameVariant} layout layoutId="splash-text">
