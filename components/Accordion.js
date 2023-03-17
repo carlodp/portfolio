@@ -1,8 +1,8 @@
 import styled from "@/styles/components/Accordion.module.scss";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
-const Accordion = (props) => {
+const Accordion = () => {
   const animate = useAnimation();
   useEffect(() => {
     if (props.defaultExpanded) {
