@@ -2,7 +2,7 @@ import styled from "@/styles/components/Accordion.module.scss";
 import { useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
-const Accordion = () => {
+const Accordion = (props) => {
   const animate = useAnimation();
   useEffect(() => {
     if (props.defaultExpanded) {
