@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled from "@/styles/structure/Footer.module.scss";
+import styled from "@/styles/sections/Footer.module.scss";
 
 const FooterVariants = {
   hidden: {

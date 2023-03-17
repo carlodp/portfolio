@@ -1,13 +1,20 @@
-import Footer from "@/components/structure/Footer";
-import Main from "@/components/structure/Main";
-import Head from "next/head";
-import Header from "../components/structure/Header";
+import Footer from "@/components/sections/Footer";
+import Hero from "@/components/sections/Hero";
+import Profile from "@/components/sections/Profile";
+import Projects from "@/components/sections/Projects";
+import SkillsExperience from "@/components/sections/SkillsExperience";
+import Header from "../components/sections/Header";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Main/>
+      <main>
+        <Hero/>
+        <Profile/>
+        <SkillsExperience/>
+        <Projects/>
+      </main>
       <Footer />
     </>
   );

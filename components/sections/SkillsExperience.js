@@ -1,10 +1,10 @@
 import styled from "@/styles/components/SkillsExperience.module.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Accordion from "./Accordion";
-import AccordionList from "./AccordionList";
-import SectionHeader from "./SectionHeader";
-import Stack from "./Stack";
+import Accordion from "../Accordion";
+import AccordionList from "../AccordionList";
+import SectionHeader from "../SectionHeader";
+import Stack from "../Stack";
 
 const JOB_EXPERIENCES = [
   {
@@ -58,6 +58,7 @@ const SKILLS = [
     title: "Libraries & Frameworks",
     skills: [
       "React",
+      "Framer Motion",
       "Next.js",
       "Bootstrap",
       "Vue.js",

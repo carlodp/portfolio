@@ -6,19 +6,10 @@ import SiteContext from "@/context/site-context";
 import "@/styles/globals.scss";
 import Cursor from "@/components/Cursor";
 import { ThemeProvider } from "next-themes";
+import { AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
-  const [showSplash, setShowSplash] = useState(true);
-  const [showPage, setShowPage] = useState(false);
-
-  useEffect(() => {
-    //useEffect triggers after all components are rendered
-    setShowSplash(false);
-  }, []);
-
-  const splashEndHandler = (event) => {
-    setShowPage(event);
-  };
+  const [loading, setLoading] = useState(true);
 
   return (
     <SiteProvider>
@@ -32,21 +23,17 @@ export default function App({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="noise"></div>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-        <Splash
-          showSplash={showSplash}
-          setShowSplash={setShowSplash}
-          splashEnd={splashEndHandler}
-        />
-        {showPage && (
-          <>
-            <Cursor />
+        <AnimatePresence>
+          {/* {loading ? (
+            <Splash setLoading={setLoading} key="splash" />
+          ) : (
             <Component {...pageProps} />
-          </>
-        )}
-        {/* <Component {...pageProps} /> */}
+          )} */}
+          <Component {...pageProps} />
+        </AnimatePresence>
       </ThemeProvider>
+      <div className="noise"></div>
     </SiteProvider>
   );
 }

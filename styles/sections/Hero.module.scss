@@ -8,64 +8,42 @@
   min-height: 100vh;
   height: 100vh;
   padding: 0px;
-  gap: 30px;
+  gap: 15px;
 }
 
 .hero :global {
   .heroTexts {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     position: relative;
+    .heroTitle {
+      margin: 0;
 
-    h1 {
-      margin-bottom: 0;
-
-      span:not(:last-child) {
-        color: var(--green);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400% 400%;
-        animation: gradient 1.5s linear infinite;
-        user-select: none;
-      }
-
-      span:last-child {
-        display: block;
+      .heroIntroText {
+        font-size: 5.5rem;
+        line-height: 6rem;
+        font-weight: 800;
       }
     }
 
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 0;
-    }
-  }
-
-  .arrow {
-    position: absolute;
-    bottom: -55px;
-    left: -45px;
-
-    svg {
-      path {
-        stroke: var(--primary);
-        transition: stroke 0.15s ease-out;
+    .subTexts {
+      margin-top: 5px;
+      overflow: hidden;
+      p {
+        margin: 0;
       }
     }
-  }
 
-  .heroCta {
-    display: inline-flex;
-    align-items: center;
-    gap: 25px;
+    .arrow {
+      position: absolute;
+      bottom: -45px;
+      left: -45px;
+      z-index: 1231312;
 
-    span {
-      font-size: 0.875rem;
-    }
-
-    .viewProjects {
-      text-decoration: underline;
+      svg {
+        path {
+          stroke: var(--primary);
+          transition: stroke 0.15s ease-out;
+        }
+      }
     }
   }
 }

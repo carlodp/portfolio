@@ -10,7 +10,7 @@ const navVariant = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0, // this will set a delay before the children start animating
+      delayChildren: 0.8, // this will set a delay before the children start animating
       staggerChildren: 0.1,
       opacity: {
         duration: 0.3,
@@ -30,12 +30,11 @@ const navLinkVariant = {
     y: 0,
     transition: {
       opacity: {
-        duration: 0.5,
+        duration: 0.6,
       },
       y: {
-        type: "spring",
-        stiffness: 75,
-        duration: 0.3,
+        ease: [0.6, 0.01, 0.05, 0.95],
+        duration: 0.5,
       }
     },
   },
@@ -51,15 +50,12 @@ const Navigation = () => {
     >
       <motion.a href="#!" variants={navLinkVariant}>
         <span className="normal">Profile</span>
-        <span className="hover">Profile</span>
       </motion.a>
       <motion.a href="#!" variants={navLinkVariant}>
         <span className="normal">Projects</span>
-        <span className="hover">Projects</span>
       </motion.a>
       <motion.a href="#!" variants={navLinkVariant}>
         <span className="normal">Contact</span>
-        <span className="hover">Contact</span>
       </motion.a>
       <motion.div variants={navLinkVariant}>
         <ThemeSwitcher />

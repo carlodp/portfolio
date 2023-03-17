@@ -1,0 +1,12 @@
+.letters {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.letters :global {
+  .letter {
+    display: inline-flex;
+    line-height: 1;
+  }
+}
