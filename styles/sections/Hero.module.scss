@@ -12,42 +12,6 @@
 }
 
 .hero :global {
-  // .heroTexts {
-  //   position: relative;
-  //   .heroTitle {
-  //     margin: 0;
-
-  //     .heroIntroText {
-  //       font-family: "Everett";
-  //       font-size: 5.5rem;
-  //       line-height: 7rem;
-  //       margin: -15px 0;
-  //     }
-  //   }
-
-  //   .subTexts {
-  //     margin-top: 20px;
-  //     overflow: hidden;
-  //     p {
-  //       margin: 0;
-  //     }
-  //   }
-
-  //   .arrow {
-  //     position: absolute;
-  //     bottom: -45px;
-  //     left: -45px;
-  //     z-index: 1231312;
-
-  //     svg {
-  //       path {
-  //         stroke: var(--primary);
-  //         transition: stroke 0.15s ease-out;
-  //       }
-  //     }
-  //   }
-  // }
-
   .heroTexts {
     padding: 45px;
     width: 100%;
@@ -74,7 +38,7 @@
       top: 45px;
       left: 45px;
       text-align: left;
-      margin-top: -10px;
+      margin-top: -15px;
     }
 
     .bottomText {

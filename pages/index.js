@@ -1,4 +1,4 @@
-import About from "@/components/About";
+import About from "@/components/sections/About";
 import Experience from "@/components/Experience";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
@@ -10,10 +10,9 @@ import Header from "../components/sections/Header";
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Hero/>
-
         <About/>
         <Experience/>
         {/* <SkillsExperience/> */}

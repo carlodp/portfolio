@@ -1,8 +1,7 @@
 import { useTheme } from "next-themes";
 import styled from "@/styles/components/ThemeSwitcher.module.scss";
-import { useEffect } from "react";
 
-const Theme = () => {
+const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   const newTheme = theme === "dark" ? "light" : "dark";
@@ -54,4 +53,4 @@ const Theme = () => {
   );
 };
 
-export default Theme;
+export default ThemeSwitcher;

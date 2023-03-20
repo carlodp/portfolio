@@ -1,6 +1,5 @@
 import styled from "@/styles/AnimateLetters.module.scss";
-import { motion, useAnimate, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 
 const AnimateLettersDiv = {
   hidden: {
@@ -31,7 +30,7 @@ const AnimateLetter = {
   }),
 };
 
-const AnimateLettersUp = (props) => {
+const AnimateLetters = (props) => {
   const animate = useAnimationControls();
 
   return (
@@ -41,7 +40,6 @@ const AnimateLettersUp = (props) => {
       custom={props}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
     >
       {props.type === "letters" && (
         <>
@@ -87,4 +85,4 @@ const AnimateLettersUp = (props) => {
   );
 };
 
-export default AnimateLettersUp;
+export default AnimateLetters;

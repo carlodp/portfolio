@@ -81,8 +81,6 @@ const Experience = () => {
     ["100%", "0%"]
   );
 
-  const showWorks = useTransform(scrollYProgress, [0, 0.8, 1], ["0", "0", "1"]);
-
   return (
     <motion.section ref={targetRef} className={styled.profile}>
       <motion.div
