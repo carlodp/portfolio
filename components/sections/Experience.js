@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import styled from "@/styles/components/Experience.module.scss";
+import styled from "@/styles/sections/Experience.module.scss";
 
 const JOB_EXPERIENCES = [
   {
@@ -37,7 +37,6 @@ const JOB_EXPERIENCES = [
   },
 ];
 
-
 const jobSingleVariants = {
   hidden: {
     opacity: 0,
@@ -48,7 +47,7 @@ const jobSingleVariants = {
     x: -340,
     transition: {
       duration: 0.5,
-    }
+    },
   },
 };
 
@@ -62,12 +61,11 @@ const jobSingleVariants2 = {
     x: 340,
     transition: {
       duration: 0.5,
-    }
-  }
-}
+    },
+  },
+};
 
 const Experience = () => {
-
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -110,15 +108,15 @@ const Experience = () => {
           ></motion.span>
           <motion.div className="jobs">
             {JOB_EXPERIENCES.map((job, index) => (
-              <>
+              <Fragment key={index}>
                 {index % 2 === 0 ? (
                   <motion.div
+                    key={job.id + index}
                     className="jobSingle odd"
                     id={`job${job.id}`}
                     variants={jobSingleVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
                   >
                     <div className="jobHeader">
                       <h3>{job.company}</h3>
@@ -129,12 +127,12 @@ const Experience = () => {
                   </motion.div>
                 ) : (
                   <motion.div
+                    key={job.id + index}
                     className="jobSingle even"
                     id={`job${job.id}`}
                     variants={jobSingleVariants2}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
                   >
                     <div className="jobHeader">
                       <h3>{job.company}</h3>
@@ -144,7 +142,7 @@ const Experience = () => {
                     <div className="jobDetails">{job.description}</div>
                   </motion.div>
                 )}
-              </>
+              </Fragment>
             ))}
           </motion.div>
         </motion.div>

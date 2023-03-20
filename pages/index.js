@@ -2,9 +2,7 @@ import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
-
-import Projects from "@/components/sections/Projects";
-import SkillsExperience from "@/components/sections/SkillsExperience";
+import Skills from "@/components/sections/Skills";
 import Header from "../components/sections/Header";
 
 export default function Home() {
@@ -15,7 +13,7 @@ export default function Home() {
         <Hero/>
         <About/>
         <Experience/>
-        <SkillsExperience/>
+        <Skills/>
         {/* <Projects/> */}
       </main>
       {/* <Footer /> */}
