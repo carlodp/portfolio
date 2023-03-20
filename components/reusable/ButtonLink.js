@@ -41,6 +41,7 @@ const ButtonLink = (props) => {
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered("")}
         custom={props}
+        viewport={{ once: true }}
       >
         {props.title}
         <motion.span

@@ -28,6 +28,7 @@ const helloSvg = {
     },
   },
   exit: {
+    y: 50,
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
@@ -50,10 +51,10 @@ const helloPathVariant = {
 };
 
 const imVariant = {
-  hidden: { opacity: 0, y: 0 },
+  hidden: { opacity: 0, x: -70 },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
@@ -61,6 +62,7 @@ const imVariant = {
     },
   },
   exit: {
+    y: 50,
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
@@ -70,21 +72,19 @@ const imVariant = {
 };
 
 const nameVariant = {
-  hidden: { opacity: 0, y: 0 },
+  hidden: { opacity: 0, x: -70 },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
-      duration: 1.3,
+      duration: 1,
       delay: 2.2,
     },
   },
 };
 
 const Splash = ({ setLoading }) => {
-  const controls = useAnimationControls();
-
   return (
     <motion.div className={styled.splash}>
       <motion.div
@@ -112,7 +112,6 @@ const Splash = ({ setLoading }) => {
               stroke="white"
               strokeWidth="20"
               strokeMiterlimit="10"
-              onAnimationComplete={() => console.log("haha")}
             />
           </motion.svg>
         </motion.div>
@@ -126,11 +125,11 @@ const Splash = ({ setLoading }) => {
               animate="visible"
               exit="exit"
             >
-              I&apos;m
+              I&apos;M
             </motion.p>
           </div>
           <motion.p variants={nameVariant} layout layoutId="splash-text">
-            Carlo Santos
+            <span>CARLO</span><span>SANTOS</span>
           </motion.p>
         </motion.div>
       </motion.div>

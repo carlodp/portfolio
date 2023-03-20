@@ -129,7 +129,6 @@ const SkillsExperience = () => {
             variants={SkillsDivVariant}
             initial="hidden"
             whileInView="visible"
-            onDirectionLock={axis => console.log(axis)}
             viewport={{ once: true }}
           >
             <p className="introText">

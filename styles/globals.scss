@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Everett";
+  src: url(../public/fonts/TWKEverett-Regular.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Everett";
+  src: url(../public/fonts/TWKEverett-Bold.otf);
+  font-weight: 600;
+}
+
+
 //global variables
 :root {
   --nav-height: 120px;
@@ -7,8 +20,9 @@
 }
 
 ::selection {
-  color: var(--primary);
-  background-color: var(--green);
+  color: transparent;
+  background-color: transparent;
+  -webkit-text-stroke: 1px var(--primary);
 }
 
 * {
@@ -136,11 +150,11 @@ body {
     }
   }
 
-  main {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 150px;
-  }
+  // main {
+  //   max-width: 1600px;
+  //   margin: 0 auto;
+  //   padding: 0 150px;
+  // }
 }
 
 body::-webkit-scrollbar {
@@ -249,6 +263,7 @@ p {
   }
 
   h2 {
+    font-family: "Everett";
     position: relative;
     display: inline-flex;
     flex: 0 1 auto;
@@ -355,5 +370,17 @@ p {
   }
   100% {
     width: 50%;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    top: -105px;
+  }
+  50% {
+    top: -65px;
+  }
+  100% {
+    top: -105px;
   }
 }

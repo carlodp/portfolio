@@ -1,119 +1,86 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/Hero.module.scss";
-import AnimateLetters from "../reusable/AnimateLettersUp";
-import ButtonLink from "../reusable/ButtonLink";
+import AnimateLetters from "../reusable/AnimateLetters";
 
-const heroTextDivVariants = {
-  visible: {
-    transition: {
-      delayChildren: 0, // this will set a delay before the children start animating
-      staggerChildren: 0.5,
-    },
-  },
-};
-
-const heroTextVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
-
-const subTexts = {
-  hidden: {
-    y: 50,
-  },
-  visible: {
-    y: 0,
-    transition: {
-      ease: [0.6, 0.01, 0.05, 0.95],
-      duration: 0.8,
-      delay: 2.3,
-      when: "afterChildren",
-    },
-  },
-};
-
-const arrowPaths = {
-  hidden: {
-    pathLength: 0,
-  },
-  visible: {
-    pathLength: 1,
-    transition: {
-      duration: 0.6,
-      delay: 2.5,
-      ease: "easeOut",
-    },
-  },
-};
 const Hero = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: [
+      "end end",
+      "end start",
+    ],
+  });
+
+  const position = useTransform(scrollYProgress, (pos) => {
+    return pos === 1 ? "relative" : "fixed";
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["-50%", "-50%"]);
+
   return (
-    <section className={`heroSection ${styled.hero}`}>
-      <div className="heroTexts">
-        <motion.h1
-          className="heroTitle"
-          variants={heroTextDivVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={heroTextVariants}>
-            <AnimateLetters
-              className="heroIntroText"
-              title="I&nbsp;turn&nbsp;pixels&nbsp;to&nbsp;code,"
-              duration="1.3"
-              stagger="0.025"
-              delay="0.3"
-            />
-          </motion.div>
-          <motion.div variants={heroTextVariants}>
-            <AnimateLetters
-              className="heroIntroText"
-              title="one&nbsp;line&nbsp;at&nbsp;a&nbsp;time."
-              duration="1"
-              stagger="0.025"
-              delay="1"
-            />
-          </motion.div>
-        </motion.h1>
-
-        <div className="subTexts">
-          <motion.p variants={subTexts} initial="hidden" animate="visible">
-            A passion for creating user-friendly experience <br />
-            with the perfect blend of design and technology.
-          </motion.p>
-        </div>
-
-        <motion.div className="arrow">
-          <svg
-            width="35"
-            height="74"
-            viewBox="0 0 35 74"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <motion.section ref={targetRef} className={`heroSection ${styled.hero}`}>
+      <motion.div className="heroTexts" style={{ position }}>
+        <div className="topText">
+          <motion.h1
+            layoutId="splash-text"
+            layout
+            transition={{
+              ease: [0.6, 0.01, 0.05, 0.9],
+              duration: 1,
+              delay: 0.25,
+            }}
           >
-            <motion.path
-              variants={arrowPaths}
-              initial="hidden"
-              animate="visible"
-              d="M29.5 1.5C-10 4 4.49998 46 4.49998 46C6.99998 53.5 16.4999 69 28.4999 69V66L33 69L28.5 72V69.5"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-        </motion.div>
-      </div>
-
-      <ButtonLink
-        title="Know Me Better"
-        href="#!"
-        className="hero-button"
-        delay="2.8"
-        duration="1"
-      />
-    </section>
+            <span>CARLO</span>
+            <span>SANTOS</span>
+          </motion.h1>
+          <h2><AnimateLetters type="words" title="— CREATIVE PORTFOLIO" duration="1" stagger="0.1" delay="0.5"/></h2>
+        </div>
+        <div className="bottomText">
+          <h2><AnimateLetters type="words" title="— FRONT-END FOCUSED" duration="1" stagger="0.1" delay="0.5"/></h2>
+          <h1>
+            <span>
+              <AnimateLetters
+                title="SOFTWARE"
+                type="letters"
+                direction="down"
+                duration="2"
+                stagger="0.025"
+                delay="0.5"
+              />
+            </span>
+            <span>
+              <AnimateLetters
+                title="ENGINEER"
+                type="letters"
+                direction="up"
+                duration="2"
+                stagger="0.025"
+                delay="0.5"
+              />
+            </span>
+          </h1>
+        </div>
+        <span className="scrollArrow">
+          <span className="arrow">
+            <svg
+              width="25"
+              height="46"
+              viewBox="0 0 25 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M25 33L22.7969 30.7969L14.0625 39.5156V0.96875H10.9375V39.5156L2.21875 30.7812L0 33L12.5 45.5L25 33Z"
+                fill="black"
+              />
+            </svg>
+          </span>
+          SCROLL
+        </span>
+      </motion.div>
+    </motion.section>
   );
 };
 

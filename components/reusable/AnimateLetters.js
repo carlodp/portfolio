@@ -4,12 +4,12 @@ import { useEffect } from "react";
 
 const AnimateLettersDiv = {
   hidden: {
-   opacity: 0, 
+    opacity: 0,
   },
   visible: (props) => ({
     opacity: 1,
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       delay: props.delay ? props.delay : 0,
       staggerChildren: props.stagger ? props.stagger : 0.1,
       duration: 0.5,
@@ -19,9 +19,9 @@ const AnimateLettersDiv = {
 };
 
 const AnimateLetter = {
-  hidden: {
-    y: 100,
-  },
+  hidden: (props) => ({
+    y: props.direction === "down" ? -100 : 100,
+  }),
   visible: (props) => ({
     y: 0,
     transition: {
@@ -41,17 +41,48 @@ const AnimateLettersUp = (props) => {
       custom={props}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
-      {[...props.title].map((letter, index) => (
+      {props.type === "letters" && (
+        <>
+          {[...props.title].map((letter, index) => (
+            <motion.span
+              key={letter + index}
+              className="letter"
+              variants={AnimateLetter}
+              custom={props}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </>
+      )}
+
+      {props.type === "sentence" && (
         <motion.span
-          key={letter + index}
-          className="letter"
+          className="sentence"
           variants={AnimateLetter}
           custom={props}
         >
-          {letter}
+          {props.title}
         </motion.span>
-      ))}
+      )}
+
+      {props.type === 'words' && (
+        <>
+        
+        {[...props.title.split(' ')].map((letter, index) => (
+          <motion.span
+            key={letter + index}
+            className="words"
+            variants={AnimateLetter}
+            custom={props}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </>
+      )}
     </motion.span>
   );
 };

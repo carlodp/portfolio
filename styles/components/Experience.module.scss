@@ -1,0 +1,49 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    height: 100vh;
+  }
+  
+  .profile :global {
+    .backdrop {
+      position: absolute;
+      opacity: 0.1;
+      font-family: "Everett";
+      font-size: 7rem;
+      line-height: 1;
+      top: 0px;
+    }
+
+    .workContainer {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: var(--secondary);
+      width: 100%;
+  
+      .textContainer {
+        padding: 60px;
+        color: var(--primary);
+  
+        .backdrop {
+          -webkit-text-stroke: 1px var(--primary);
+          color: transparent;
+        }
+  
+        p {
+          position: relative;
+          font-size: 3rem;
+          line-height: 1.3;
+          color: var(--primary);
+          margin: 0;
+        }
+      }
+    }
+  }
+  

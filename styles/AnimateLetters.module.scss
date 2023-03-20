@@ -5,8 +5,13 @@
 }
 
 .letters :global {
-  .letter {
+  .letter, .sentence {
     display: inline-flex;
     line-height: 1;
+  }
+
+  .words {
+    display: inline-flex;
+    margin-right: 10px;
   }
 }
