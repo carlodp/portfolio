@@ -116,6 +116,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: overlay;
 
+  &.open-navigation {
+    overflow: hidden;
+  }
 
   .noise {
     width: 100%;

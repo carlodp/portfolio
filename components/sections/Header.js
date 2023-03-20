@@ -51,6 +51,7 @@ const Header = () => {
   };
 
   const toggleNavigationHandler = () => {
+    document.querySelector('body').classList.toggle('open-navigation');
     setIsNavToggled((isNavToggled) => !isNavToggled);
   };
 
