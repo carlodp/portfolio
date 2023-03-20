@@ -58,6 +58,12 @@
       .arrow {
         position: absolute;
         animation: arrow 1s linear infinite;
+
+        svg {
+          path {
+            fill: var(--primary);
+          }
+        }
       }
     }
   }
