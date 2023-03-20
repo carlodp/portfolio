@@ -11,7 +11,7 @@ const container = {
 
 const helloSvg = {
   initial: {
-    x: 200,
+    x: 160,
   },
   animate: {
     x: 0,

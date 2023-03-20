@@ -1,4 +1,4 @@
-import styled from "@/styles/AnimateLetters.module.scss";
+import styled from "@/styles/reusable/AnimateLetters.module.scss";
 import { motion, useAnimate, useAnimationControls } from "framer-motion";
 
 const AnimateLettersDiv = {

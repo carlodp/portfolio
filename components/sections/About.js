@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import styled from "@/styles/components/About.module.scss";
+import styled from "@/styles/sections/About.module.scss";
 
-const Profile = () => {
+const About = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -18,7 +18,7 @@ const Profile = () => {
   const textScale = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
 
   return (
-    <motion.section ref={targetRef} className={styled.profile}>
+    <motion.section ref={targetRef} className={styled.about}>
       <motion.div
         className="aboutContainer"
         style={{ position, width: aboutWidth }}
@@ -42,4 +42,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default About;
