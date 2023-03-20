@@ -7,6 +7,7 @@ import "@/styles/globals.scss";
 import Cursor from "@/components/Cursor";
 import { ThemeProvider } from "next-themes";
 import { AnimatePresence } from "framer-motion";
+import '../public/fonts/style.css';
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
