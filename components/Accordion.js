@@ -8,7 +8,7 @@ const Accordion = (props) => {
     if (props.defaultExpanded) {
       props.toggleOpen(props.id);
     }
-  }, []);
+  }, [props]);
 
   useEffect(() => {
     if (props.open === props.id) {

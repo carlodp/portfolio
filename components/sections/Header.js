@@ -50,9 +50,9 @@ const Header = () => {
     setIsHovered((isHovered) => !isHovered);
   };
 
-  const toggleNavigationHandler  = () => {
+  const toggleNavigationHandler = () => {
     setIsNavToggled((isNavToggled) => !isNavToggled);
-  }
+  };
 
   return (
     <header className={styles.header}>
@@ -64,17 +64,27 @@ const Header = () => {
         animate="visible"
         onClick={toggleNavigationHandler}
       >
-        {isNavToggled ? 'CLOSE' : 'MENU'}
+        {isNavToggled ? "CLOSE" : "MENU"}
       </motion.button>
-      <motion.nav className={`nav${isNavToggled ? ' toggled' : ''}`} initial="hidden" animate="visible">
+      <motion.nav
+        className={`nav${isNavToggled ? " toggled" : ""}`}
+        initial="hidden"
+        animate="visible"
+      >
         <div className={`column pageLinks${isHovered ? " hovered" : ""}`}>
-          {LINKS.map((link) => (
+          {LINKS.map((link, index) => (
             <Link
+              key={link + index}
               href={link.url}
               onMouseEnter={toggleHoverHandler}
               onMouseLeave={toggleHoverHandler}
             >
-              <AnimateLetters type="letters" title={link.title} duration="1" stagger="0.025"/>
+              <AnimateLetters
+                type="letters"
+                title={link.title}
+                duration="1"
+                stagger="0.025"
+              />
             </Link>
           ))}
         </div>
