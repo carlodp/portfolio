@@ -117,6 +117,7 @@ const Experience = () => {
                     variants={jobSingleVariants}
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                   >
                     <div className="jobHeader">
                       <h3>{job.company}</h3>
@@ -133,6 +134,7 @@ const Experience = () => {
                     variants={jobSingleVariants2}
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                   >
                     <div className="jobHeader">
                       <h3>{job.company}</h3>

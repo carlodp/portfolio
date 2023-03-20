@@ -1,5 +1,9 @@
 .footer {
-  padding: 0 80px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 45px;
 }
 
 .footer :global {

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "@/styles/sections/Skills.module.scss";
 import AnimateLetters from "../reusable/AnimateLetters";
 
@@ -121,55 +122,73 @@ const skillVariant = {
 };
 
 const Skills = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"], //start of target(targetRef) - end of container (window) and vice versa
+  });
+
+  // const position = useTransform(scrollYProgress, (pos) => {
+  //   return pos === 1 ? "relative" : "fixed";
+  // });
+
+  const y = useTransform(scrollYProgress, [0, 0.45], ['100%', '15%']);
+
+  const position = useTransform(scrollYProgress, (pos) => {
+    return pos === 1 ? "relative" : "fixed";
+  });
+
   return (
-    <motion.section className={styles.skills}>
-      <motion.div className="sectionHeader">
-        <div className="title">
+    <motion.section ref={targetRef} className={styles.skills}>
+      <motion.div style={{ position, top: y }}>
+        <motion.div className="sectionHeader">
+          <div className="title">
+            <AnimateLetters
+              direction="down"
+              type="sentence"
+              title="SKILLS"
+              delay="0"
+              duration="1"
+            />
+          </div>
           <AnimateLetters
-            direction="down"
+            className="subText"
+            direction="up"
             type="sentence"
-            title="SKILLS"
+            title="Throughout my career, I've amassed extensive experience and gained numerous skills. Although here are some, I'm always eager to attain more."
             delay="0"
             duration="1"
-            repeat="true"
           />
-        </div>
-        <AnimateLetters
-          className="subText"
-          direction="up"
-          type="sentence"
-          title="Throughout my career, I've amassed extensive experience and gained numerous skills. Although here are some, I'm always eager to attain more."
-          delay="0"
-          duration="1"
-          repeat="true"
-        />
-      </motion.div>
-      <motion.div className="stackContainer">
-        {SKILLS.map((event, index) => (
-          <motion.div
-            className="stack"
-            key={event.title + index}
-            variants={stackVariant}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <motion.h3 className="stackTitle" variants={stackTitleVariant}>
-              {event.title}
-            </motion.h3>
+        </motion.div>
+        <motion.div className="stackContainer">
+          {SKILLS.map((event, index) => (
             <motion.div
-              className="skillsList"
-              variants={skillsListVariant}
+              className="stack"
+              key={event.title + index}
+              variants={stackVariant}
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
             >
-              {event.skills.map((skill, index) => (
-                <motion.span key={skill + index} variants={skillVariant}>
-                  {skill}
-                </motion.span>
-              ))}
+              <motion.h3 className="stackTitle" variants={stackTitleVariant}>
+                {event.title}
+              </motion.h3>
+              <motion.div
+                className="skillsList"
+                variants={skillsListVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {event.skills.map((skill, index) => (
+                  <motion.span key={skill + index} variants={skillVariant}>
+                    {skill}
+                  </motion.span>
+                ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </motion.div>
     </motion.section>
   );

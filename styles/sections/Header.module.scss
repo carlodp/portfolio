@@ -15,7 +15,7 @@
   .menuToggler {
     position: fixed;
     right: 45px;
-    z-index: 2;
+    z-index: 3;
     background: transparent;
     border: 0;
     font-size: 18px;
@@ -31,16 +31,16 @@
     position: fixed;
     display: flex;
     top: 0;
-    right: -100%;
+    left: -100%;
     background: var(--primary);
-    z-index: 1;
+    z-index: 2;
     width: 100vw;
     height: 100vh;
-    transition: right 0.75s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+    transition: left 0.75s cubic-bezier(0.6, 0.01, 0.05, 0.9);
 
     &.toggled {
-      right: 0;
-      transition: right 0.75s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+      left: 0;
+      transition: left 0.75s cubic-bezier(0.6, 0.01, 0.05, 0.9);
     }
 
     .column {
