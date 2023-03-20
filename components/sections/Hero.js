@@ -17,7 +17,19 @@ const Hero = () => {
     return pos === 1 ? "relative" : "fixed";
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["-50%", "-50%"]);
+  const arrowVariant = {
+    hidden: {
+      x: -200,
+    },
+    visible: {
+      x: 0,
+      transition: {
+        duration: 1,
+        delay: 1,
+        ease: [0.6, 0.01, 0.05, 0.9],
+      }
+    }
+  }
 
   return (
     <motion.section ref={targetRef} className={`heroSection ${styled.hero}`}>
@@ -62,7 +74,7 @@ const Hero = () => {
             </span>
           </h1>
         </div>
-        <span className="scrollArrow">
+        <motion.span className="scrollArrow" variants={arrowVariant} initial="hidden" animate="visible">
           <span className="arrow">
             <svg
               width="25"
@@ -78,7 +90,7 @@ const Hero = () => {
             </svg>
           </span>
           SCROLL
-        </span>
+        </motion.span>
       </motion.div>
     </motion.section>
   );
