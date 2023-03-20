@@ -84,6 +84,7 @@ const Header = () => {
                 title={link.title}
                 duration="1"
                 stagger="0.025"
+                repeat="true"
               />
             </Link>
           ))}

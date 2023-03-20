@@ -1,5 +1,5 @@
 import styled from "@/styles/AnimateLetters.module.scss";
-import { motion, useAnimationControls } from "framer-motion";
+import { motion, useAnimate, useAnimationControls } from "framer-motion";
 
 const AnimateLettersDiv = {
   hidden: {
@@ -33,6 +33,7 @@ const AnimateLetter = {
 const AnimateLetters = (props) => {
   const animate = useAnimationControls();
 
+
   return (
     <motion.span
       className={`${props.className} ${styled.letters}`}
@@ -40,6 +41,7 @@ const AnimateLetters = (props) => {
       custom={props}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: props.repeat === 'true' ? false : true }}
     >
       {props.type === "letters" && (
         <>
