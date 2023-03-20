@@ -1,13 +1,21 @@
+.theme {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
 .theme :global {
   .themeToggle {
     display: flex;
     position: relative;
-    padding: 5px;
+    padding: 10px;
     border: none;
     cursor: pointer;
-    border-color: var(--primary);
-    background-color: transparent;
+    background-color: var(--secondary);
+    color: var(--primary);
     transition: border-color 0.15s ease;
+    font-size: 1.125rem;
+    font-weight: 600;
 
     &:hover,
     &:focus-visible {

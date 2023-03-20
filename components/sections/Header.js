@@ -72,6 +72,7 @@ const Header = () => {
         initial="hidden"
         animate="visible"
       >
+        <ThemeSwitcher />
         <div className={`column pageLinks${isHovered ? " hovered" : ""}`}>
           {LINKS.map((link, index) => (
             <Link
@@ -91,7 +92,7 @@ const Header = () => {
           ))}
         </div>
         <div className="column socialLinks">
-          <ThemeSwitcher />
+          asd
         </div>
       </motion.nav>
     </header>
