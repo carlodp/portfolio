@@ -1,5 +1,5 @@
 import styled from "@/styles/components/Splash.module.scss";
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 
 const container = {
   visible: {

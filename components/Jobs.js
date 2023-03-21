@@ -44,13 +44,12 @@ function JobExperience(props) {
     offset: ["end end", "start start"],
   });
 
-  const y = useTransform(scrollYProgress, [0.3, 0.5], [50, 0]);
   const x = useTransform(scrollYProgress, [0, 0.6], [-260, -300]);
   const title1 = useTransform(scrollYProgress, [0, 0.6], [220, 260]);
   const x2 = useTransform(scrollYProgress, [0, 0.6], [260, 300]);
   const title2 = useTransform(scrollYProgress, [0, 0.6], [-220, -260]);
   const lineWidth = useTransform(scrollYProgress, [0.2, 0.7], ["0px", "25px"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
   const lineProgressHeight = useTransform(
     scrollYProgress,

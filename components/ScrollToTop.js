@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useScroll, useAnimationControls } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import styled from "@/styles/components/ScrollToTop.module.scss";
 
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
@@ -16,7 +16,6 @@ const ScrollToTop = () => {
   useEffect(() => {
     return scrollYProgress.on("change", (latestValue) => {
       if (latestValue > 0.3) {
-        //controls.start("visible");
         setIsShowing("show");
       }
 
@@ -25,7 +24,6 @@ const ScrollToTop = () => {
       }
 
       if (latestValue < 0.3) {
-        //controls.start("hidden");
         setIsShowing("hide");
       }
     });
