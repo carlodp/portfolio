@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import styled from "@/styles/components/Cursor.module.scss";
 
 const Cursor = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -20,7 +21,7 @@ const Cursor = () => {
   useEffect(() => {
     window.addEventListener("mouseover", (event) => {
       const a = event.target.closest(
-        "a, button, .headerStatus .name, .heroTexts .title span, .accordionTitle, .skillsList span, .sectionHeader h2"
+        "a, button"
       );
       if (a) {
         setCursorVariant("text");
@@ -28,7 +29,7 @@ const Cursor = () => {
     });
     window.addEventListener("mouseout", (event) => {
       const a = event.target.closest(
-        "a, button, .headerStatus .name, .heroTexts .title span, .accordionTitle, .skillsList span, .sectionHeader h2"
+        "a, button"
       );
       if (a) {
         setCursorVariant("default");
@@ -38,10 +39,10 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorPos.x - 32,
-      y: cursorPos.y - 32,
-      height: 64,
-      width: 64,
+      x: cursorPos.x - 20,
+      y: cursorPos.y - 20,
+      height: 40,
+      width: 40,
       scale: 1,
       transition: {
         delay: 0,
@@ -53,11 +54,11 @@ const Cursor = () => {
       },
     },
     text: {
-      x: cursorPos.x - 32,
-      y: cursorPos.y - 32,
-      height: 64,
-      width: 64,
-      scale: 1.3,
+      x: cursorPos.x - 20,
+      y: cursorPos.y - 20,
+      height: 40,
+      width: 40,
+      scale: 1.5,
       transition: {
         delay: 0,
         duration: 0,
@@ -70,7 +71,7 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className={`cursor ${cursorVariant}`}
+      className={styled.cursor}
       variants={variants}
       animate={cursorVariant}
     >

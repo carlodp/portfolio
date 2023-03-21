@@ -1,3 +1,4 @@
+import Cursor from "@/components/Cursor";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Footer from "@/components/sections/Footer";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Header />
       <main>
+        <Cursor/>
         <Hero id="hero"/>
         <About id="about"/>
         <Experience id="experience"/>
