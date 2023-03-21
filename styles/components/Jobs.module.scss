@@ -9,7 +9,7 @@
       text-align: right;
 
       .lineGoing {
-        right : 250px;
+        right: 250px;
       }
     }
     &:nth-child(even) {
@@ -21,16 +21,15 @@
     }
 
     &:first-child {
-        padding-top: 0;
+      padding-top: 0;
 
-        .lineGoing {
-            top: 15px;
-        }
+      .lineGoing {
+        top: 15px;
+      }
     }
 
-    
     &:last-child {
-        padding-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -61,6 +60,24 @@
     height: 4px;
     width: 25px;
     background: var(--primary);
-    top: 75px;
+    top: 50px;
+  }
+
+  .jobInformation {
+    .jobHeader {
+      margin-bottom: 15px;
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      span {
+        font-size: 1rem;
+      }
+    }
+    .jobDetails {
+      font-size: 1.125rem;
+      font-weight: 100;
+    }
   }
 }

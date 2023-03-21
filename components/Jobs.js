@@ -76,7 +76,6 @@ function JobExperience(props) {
             <div className="jobHeader">
               <h3>{props.company}</h3>
               <span>{props.dateAttended}</span>
-              <span className="line2"></span>
             </div>
             <div className="jobDetails">{props.description}</div>
           </motion.div>
@@ -99,7 +98,6 @@ function JobExperience(props) {
             <div className="jobHeader">
               <h3>{props.company}</h3>
               <span>{props.dateAttended}</span>
-              <span className="line2"></span>
             </div>
             <div className="jobDetails">{props.description}</div>
           </motion.div>
