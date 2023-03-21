@@ -46,8 +46,11 @@ function JobExperience(props) {
 
   const y = useTransform(scrollYProgress, [0.3, 0.5], [50, 0]);
   const x = useTransform(scrollYProgress, [0, 0.6], [-260, -300]);
+  const title1 = useTransform(scrollYProgress, [0, 0.6], [220, 260]);
   const x2 = useTransform(scrollYProgress, [0, 0.6], [260, 300]);
+  const title2 = useTransform(scrollYProgress, [0, 0.6], [-220, -260]);
   const lineWidth = useTransform(scrollYProgress, [0.2, 0.7], ["0px", "25px"]);
+  const lineWidth2 = useTransform(scrollYProgress, [0.2, 0.7], ["0px", "35px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   const lineProgressHeight = useTransform(
@@ -72,12 +75,21 @@ function JobExperience(props) {
             className="lineGoing"
             style={{ width: lineWidth }}
           ></motion.span>
+          <motion.span
+            className="lineJobPosition"
+            style={{ width: lineWidth2 }}
+          ></motion.span>
           <motion.div className="jobInformation" style={{ opacity, x }}>
             <div className="jobHeader">
               <h3>{props.company}</h3>
               <span>{props.dateAttended}</span>
             </div>
             <div className="jobDetails">{props.description}</div>
+          </motion.div>
+          <motion.div className="jobTitle">
+            <motion.div className="title" style={{ opacity, x: title1 }}>
+              {props.position}
+            </motion.div>
           </motion.div>
         </motion.li>
       ) : (
@@ -94,12 +106,21 @@ function JobExperience(props) {
             className="lineGoing"
             style={{ width: lineWidth }}
           ></motion.span>
+          <motion.span
+            className="lineJobPosition"
+            style={{ width: lineWidth2 }}
+          ></motion.span>
           <motion.div className="jobInformation" style={{ opacity, x: x2 }}>
             <div className="jobHeader">
               <h3>{props.company}</h3>
               <span>{props.dateAttended}</span>
             </div>
             <div className="jobDetails">{props.description}</div>
+          </motion.div>
+          <motion.div className="jobTitle">
+            <motion.div className="title" style={{ opacity, x: title2 }}>
+              {props.position}
+            </motion.div>
           </motion.div>
         </motion.li>
       )}
@@ -118,6 +139,7 @@ const Jobs = () => {
           company={job.company}
           dateAttended={job.dateAttended}
           description={job.description}
+          position={job.position}
         />
       ))}
     </motion.ul>

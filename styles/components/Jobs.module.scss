@@ -11,12 +11,20 @@
       .lineGoing {
         right: 250px;
       }
+      
+      .lineJobPosition {
+        left: 250px;
+      }
     }
     &:nth-child(even) {
       text-align: left;
 
       .lineGoing {
         left: 250px;
+      }
+
+      .lineJobPosition {
+        right: 250px;
       }
     }
 
@@ -55,12 +63,19 @@
     transform: translateX(-50%);
   }
 
-  span.lineGoing {
+  .lineGoing {
     position: absolute;
     height: 4px;
-    width: 25px;
     background: var(--primary);
     top: 50px;
+  }  
+  
+  .lineJobPosition {
+    position: absolute;
+    height: 4px;
+    background: var(--primary);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .jobInformation {
@@ -78,6 +93,21 @@
     .jobDetails {
       font-size: 1.125rem;
       font-weight: 100;
+    }
+  }
+
+  .jobTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .title {
+      font-size: 2.5rem;
     }
   }
 }
