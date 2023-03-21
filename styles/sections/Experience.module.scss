@@ -64,66 +64,7 @@
 
     .jobExperiences {
       position: relative;
-      .line {
-        width: 4px;
-        height: 0px;
-        display: block;
-        background: var(--primary);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .jobs {
-        .jobSingle {
-          position: relative;
-          width: 600px;
-          margin-bottom: 50px;
-
-          .line2 {
-            position: absolute;
-            top: 15px;
-            height: 4px;
-            width: 30px;
-            background: var(--primary);
-          }
-
-          .jobHeader {
-            margin-bottom: 10px;
-            
-            h3 {
-              text-transform: uppercase;
-              margin: 0;
-              font-size: 2rem;
-              line-height: 1;
-            }
-          }
-
-          &:nth-child(odd) {
-            text-align: right;
-            transform: translateX(-270px);
-
-            .line2 {
-              right: -40px;
-            }
-          }
-
-          &:nth-child(even) {
-            text-align: left;
-            transform: translateX(270px);
-
-            .line2 {
-              left: -40px;
-            }
-          }
-
-          .jobDetails {
-            font-size: 1.125rem;
-            font-weight: 100;
-            line-height: 1.5;
-          }
-        }
-      }
+      width: 100%;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Fragment, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/Experience.module.scss";
+import Jobs from "../Jobs";
 
 const JOB_EXPERIENCES = [
   {
@@ -65,16 +66,14 @@ const jobSingleVariants2 = {
   },
 };
 
-const Experience = ({id}) => {
+const Experience = ({ id }) => {
   const targetRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end end"],
   });
 
-  const position = useTransform(scrollYProgress, (pos) => {
-    return pos === 1 ? "relative" : "fixed";
-  });
 
   const showExperienceHeader = useTransform(
     scrollYProgress,
@@ -84,8 +83,8 @@ const Experience = ({id}) => {
 
   const lineHeight = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.9],
-    ["0%", "0%", "100%"]
+    [0, 0.4, 0.8],
+    ["0%", "0%", "70%"]
   );
 
   return (
@@ -102,51 +101,7 @@ const Experience = ({id}) => {
           </p>
         </motion.div>
         <motion.div className="jobExperiences">
-          <motion.span
-            className="line"
-            style={{ height: lineHeight }}
-          ></motion.span>
-          <motion.div className="jobs">
-            {JOB_EXPERIENCES.map((job, index) => (
-              <Fragment key={index}>
-                {index % 2 === 0 ? (
-                  <motion.div
-                    key={job.id + index}
-                    className="jobSingle odd"
-                    id={`job${job.id}`}
-                    variants={jobSingleVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <div className="jobHeader">
-                      <h3>{job.company}</h3>
-                      <span>{job.dateAttended}</span>
-                      <span className="line2"></span>
-                    </div>
-                    <div className="jobDetails">{job.description}</div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key={job.id + index}
-                    className="jobSingle even"
-                    id={`job${job.id}`}
-                    variants={jobSingleVariants2}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <div className="jobHeader">
-                      <h3>{job.company}</h3>
-                      <span>{job.dateAttended}</span>
-                      <span className="line2"></span>
-                    </div>
-                    <div className="jobDetails">{job.description}</div>
-                  </motion.div>
-                )}
-              </Fragment>
-            ))}
-          </motion.div>
+          <Jobs/>
         </motion.div>
       </motion.div>
     </motion.section>

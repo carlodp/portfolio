@@ -1,0 +1,66 @@
+.jobs {
+  padding: 0;
+  margin: 0;
+}
+
+.jobs :global {
+  li {
+    &:nth-child(odd) {
+      text-align: right;
+
+      .lineGoing {
+        right : 250px;
+      }
+    }
+    &:nth-child(even) {
+      text-align: left;
+
+      .lineGoing {
+        left: 250px;
+      }
+    }
+
+    &:first-child {
+        padding-top: 0;
+
+        .lineGoing {
+            top: 15px;
+        }
+    }
+
+    
+    &:last-child {
+        padding-bottom: 0;
+    }
+  }
+}
+
+.jobExperience {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  position: relative;
+  width: 500px;
+  padding: 40px 0;
+}
+
+.jobExperience :global {
+  .lineProgress {
+    width: 4px;
+    height: calc(100% + 20px);
+    position: absolute;
+    top: 0;
+    background: var(--primary);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  span.lineGoing {
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    background: var(--primary);
+    top: 75px;
+  }
+}
