@@ -155,7 +155,10 @@ const Header = () => {
           </div>
           <div className="footer">
             <p className="copyright">©2023 Carlo Santos.</p>
-            <p className="copyright">Based on Manila, Philippines</p>
+            <p className="location">
+              <span className="locationIcon"></span> Based on Manila,
+              Philippines
+            </p>
           </div>
         </div>
       </motion.nav>
