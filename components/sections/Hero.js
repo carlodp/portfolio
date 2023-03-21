@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/Hero.module.scss";
 import AnimateLetters from "../reusable/AnimateLetters";
 
-const Hero = () => {
+const Hero = ({id}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -32,7 +32,7 @@ const Hero = () => {
   }
 
   return (
-    <motion.section ref={targetRef} className={`heroSection ${styled.hero}`}>
+    <motion.section id={id} ref={targetRef} className={`heroSection ${styled.hero}`}>
       <motion.div className="heroTexts" style={{ position }}>
         <div className="topText">
           <motion.h1

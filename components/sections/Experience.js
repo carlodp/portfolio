@@ -65,7 +65,7 @@ const jobSingleVariants2 = {
   },
 };
 
-const Experience = () => {
+const Experience = ({id}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -89,7 +89,7 @@ const Experience = () => {
   );
 
   return (
-    <motion.section ref={targetRef} className={styled.experience}>
+    <motion.section id={id} ref={targetRef} className={styled.experience}>
       <motion.div className="experienceContainer">
         <motion.div
           className="sectionHeader"

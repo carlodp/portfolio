@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import styled from "@/styles/sections/Projects.module.scss";
 
 const PROJECT_LIST = [
   {
     id: "01",
     name: "Moviebase",
+    link: "http://test.com/",
     stacks: ["React", "Next.js", "TMBD API"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -13,6 +15,7 @@ const PROJECT_LIST = [
   {
     id: "02",
     name: "Statify",
+    link: "http://test.com/",
     stacks: ["Vue", "Vite", "Spotify API"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -20,6 +23,7 @@ const PROJECT_LIST = [
   {
     id: "03",
     name: "Lipsum",
+    link: "http://test.com/",
     stacks: ["Next.js", "React", "TMBD API"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -27,13 +31,14 @@ const PROJECT_LIST = [
   {
     id: "04  ",
     name: "Lorem",
+    link: "http://test.com/",
     stacks: ["Next.js", "React", "TMBD API"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
 ];
 
-const Projects = () => {
+const Projects = ({id}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -43,7 +48,7 @@ const Projects = () => {
   const x = useTransform(scrollYProgress, [0, 0.78], ["0", "-65%"]);
 
   return (
-    <motion.section ref={targetRef} className={styled.projects}>
+    <motion.section id={id} ref={targetRef} className={styled.projects}>
       <motion.div className="projectsContainer">
         <motion.div className="projectsContent" style={{ x }}>
           <h2 className="sectionHeader">Projects</h2>
@@ -58,6 +63,7 @@ const Projects = () => {
                   ))}
                 </span>
                 <p className="description">{project.description}</p>
+                <Link href={project.link}>Visit Website</Link>
               </div>
             ))}
           </div>

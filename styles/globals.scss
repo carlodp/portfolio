@@ -105,7 +105,6 @@
 }
 
 html {
-  scroll-behavior: smooth !important;
   font-size: 1rem;
 }
 
@@ -144,8 +143,8 @@ body {
 }
 
 body::-webkit-scrollbar {
+  display: none;
   width: 3px;
-  position: absolute;
 }
 
 body::-webkit-scrollbar-track {

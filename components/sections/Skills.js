@@ -121,16 +121,12 @@ const skillVariant = {
   },
 };
 
-const Skills = () => {
+const Skills = ({id}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"], //start of target(targetRef) - end of container (window) and vice versa
   });
-
-  // const position = useTransform(scrollYProgress, (pos) => {
-  //   return pos === 1 ? "relative" : "fixed";
-  // });
 
   const y = useTransform(scrollYProgress, [0, 0.45], ['100%', '15%']);
 
@@ -139,7 +135,7 @@ const Skills = () => {
   });
 
   return (
-    <motion.section ref={targetRef} className={styles.skills}>
+    <motion.section id={id} ref={targetRef} className={styles.skills}>
       <motion.div style={{ position, top: y }}>
         <motion.div className="sectionHeader">
           <div className="title">

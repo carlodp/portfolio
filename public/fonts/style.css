@@ -1,5 +1,11 @@
 @font-face {
   font-family: "TWK Everett";
+  src: url(/fonts/TWKEverett-Light.otf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "TWK Everett";
   src: url(/fonts/TWKEverett-Regular.otf);
   font-weight: 300;
 }

@@ -21,23 +21,23 @@ const menuTogglerVariant = {
 
 const LINKS = [
   {
-    url: "#!",
+    url: "#about",
     title: "About",
   },
   {
-    url: "#!",
-    title: "Skills",
-  },
-  {
-    url: "#!",
+    url: "#experience",
     title: "Experience",
   },
   {
-    url: "#!",
+    url: "#skills",
+    title: "Skills",
+  },
+  {
+    url: "#projects",
     title: "Projects",
   },
   {
-    url: "#!",
+    url: "#contact",
     title: "Contact",
   },
 ];
@@ -45,6 +45,7 @@ const LINKS = [
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isNavToggled, setIsNavToggled] = useState(false);
+  const [isOverlay, setIsOverlay] = useState(false);
 
   const toggleHoverHandler = () => {
     setIsHovered((isHovered) => !isHovered);
@@ -54,6 +55,11 @@ const Header = () => {
     document.querySelector('body').classList.toggle('open-navigation');
     setIsNavToggled((isNavToggled) => !isNavToggled);
   };
+
+  const goToSectionHandler = () => {
+    document.querySelector('body').classList.toggle('open-navigation');
+    setIsNavToggled((isNavToggled) => !isNavToggled);
+  }
 
   return (
     <header className={styles.header}>
@@ -80,6 +86,7 @@ const Header = () => {
               href={link.url}
               onMouseEnter={toggleHoverHandler}
               onMouseLeave={toggleHoverHandler}
+              onClick={goToSectionHandler}
             >
               <AnimateLetters
                 type="letters"

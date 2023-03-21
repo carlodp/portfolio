@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/About.module.scss";
 
-const About = () => {
+const About = ({id}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -18,7 +18,7 @@ const About = () => {
   const textScale = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
 
   return (
-    <motion.section ref={targetRef} className={styled.about}>
+    <motion.section id={id} ref={targetRef} className={styled.about}>
       <motion.div
         className="aboutContainer"
         style={{ position, width: aboutWidth }}
