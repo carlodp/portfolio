@@ -142,7 +142,7 @@ const Skills = ({id}) => {
             <AnimateLetters
               direction="down"
               type="sentence"
-              title="SKILLS"
+              title="Skills"
               delay="0"
               duration="1"
             />

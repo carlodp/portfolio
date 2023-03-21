@@ -95,7 +95,7 @@ const Experience = ({id}) => {
           className="sectionHeader"
           style={{ y: showExperienceHeader }}
         >
-          <div className="title">EXPERIENCE</div>
+          <div className="title">Experience</div>
           <p className="subText">
             I’ve worked on a handful of web projects over the past 8 <br />
             years, some of which were for the following organizations:

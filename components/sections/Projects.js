@@ -63,7 +63,7 @@ const Projects = ({id}) => {
                   ))}
                 </span>
                 <p className="description">{project.description}</p>
-                <Link href={project.link}>Visit Website</Link>
+                <Link className="projectLink" href={project.link}>Visit {project.name}</Link>
               </div>
             ))}
           </div>
