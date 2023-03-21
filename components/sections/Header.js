@@ -19,7 +19,7 @@ const menuTogglerVariant = {
   },
 };
 
-const LINKS = [
+const PAGE_LINKS = [
   {
     url: "#about",
     title: "About",
@@ -42,23 +42,38 @@ const LINKS = [
   },
 ];
 
+const SOCIAL_LINKS = [
+  {
+    url: "https://www.linkedin.com/in/carlodp/",
+    title: "LinkedIn",
+  },
+  {
+    url: "https://github.com/carlodp",
+    title: "GitHub",
+  },
+  {
+    url: "https://www.instagram.com/carlodp_/",
+    title: "Instagram",
+  },
+];
+
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
   const [isNavToggled, setIsNavToggled] = useState(false);
 
   const toggleHoverHandler = () => {
     setIsHovered((isHovered) => !isHovered);
   };
 
-  const toggleNavigationHandler = () => {
-    document.querySelector('body').classList.toggle('open-navigation');
-    setIsNavToggled((isNavToggled) => !isNavToggled);
+  const toggleHoverHandler2 = () => {
+    setIsHovered2((isHovered2) => !isHovered2);
   };
 
-  const goToSectionHandler = () => {
-    document.querySelector('body').classList.toggle('open-navigation');
+  const toggleNavigationHandler = () => {
+    document.querySelector("body").classList.toggle("open-navigation");
     setIsNavToggled((isNavToggled) => !isNavToggled);
-  }
+  };
 
   return (
     <header className={styles.header}>
@@ -78,14 +93,15 @@ const Header = () => {
         animate="visible"
       >
         <ThemeSwitcher />
+        <h1 className="navName">Carlo Santos</h1>
         <div className={`column pageLinks${isHovered ? " hovered" : ""}`}>
-          {LINKS.map((link, index) => (
+          {PAGE_LINKS.map((link, index) => (
             <Link
               key={link + index}
               href={link.url}
               onMouseEnter={toggleHoverHandler}
               onMouseLeave={toggleHoverHandler}
-              onClick={goToSectionHandler}
+              onClick={toggleNavigationHandler}
             >
               <AnimateLetters
                 type="letters"
@@ -98,7 +114,49 @@ const Header = () => {
           ))}
         </div>
         <div className="column socialLinks">
-          asd
+          <div className="infos">
+            <a href="tel:+639175078842">
+              <AnimateLetters
+                type="sentence"
+                title="+63 917 507 8842"
+                duration="1"
+                stagger="0.025"
+                repeat="true"
+              />
+            </a>
+            <a href="mailto:hello@carlosantos.dev">
+              <AnimateLetters
+                type="sentence"
+                title="hello@carlosantos.dev"
+                duration="1"
+                stagger="0.025"
+                repeat="true"
+              />
+            </a>
+          </div>
+          <div className={`links${isHovered2 ? " hovered" : ""}`}>
+            {SOCIAL_LINKS.map((link, index) => (
+              <Link
+                key={link + index}
+                href={link.url}
+                onMouseEnter={toggleHoverHandler2}
+                onMouseLeave={toggleHoverHandler2}
+                onClick={toggleNavigationHandler}
+              >
+                <AnimateLetters
+                  type="letters"
+                  title={link.title}
+                  duration="1"
+                  stagger="0.025"
+                  repeat="true"
+                />
+              </Link>
+            ))}
+          </div>
+          <div className="footer">
+            <p className="copyright">©2023 Carlo Santos.</p>
+            <p className="copyright">Based on Manila, Philippines</p>
+          </div>
         </div>
       </motion.nav>
     </header>
