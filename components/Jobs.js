@@ -50,7 +50,6 @@ function JobExperience(props) {
   const x2 = useTransform(scrollYProgress, [0, 0.6], [260, 300]);
   const title2 = useTransform(scrollYProgress, [0, 0.6], [-220, -260]);
   const lineWidth = useTransform(scrollYProgress, [0.2, 0.7], ["0px", "25px"]);
-  const lineWidth2 = useTransform(scrollYProgress, [0.2, 0.7], ["0px", "35px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   const lineProgressHeight = useTransform(
@@ -74,10 +73,6 @@ function JobExperience(props) {
           <motion.span
             className="lineGoing"
             style={{ width: lineWidth }}
-          ></motion.span>
-          <motion.span
-            className="lineJobPosition"
-            style={{ width: lineWidth2 }}
           ></motion.span>
           <motion.div className="jobInformation" style={{ opacity, x }}>
             <div className="jobHeader">
@@ -105,10 +100,6 @@ function JobExperience(props) {
           <motion.span
             className="lineGoing"
             style={{ width: lineWidth }}
-          ></motion.span>
-          <motion.span
-            className="lineJobPosition"
-            style={{ width: lineWidth2 }}
           ></motion.span>
           <motion.div className="jobInformation" style={{ opacity, x: x2 }}>
             <div className="jobHeader">

@@ -92,9 +92,8 @@ const Experience = ({ id }) => {
       <motion.div className="experienceContainer">
         <motion.div
           className="sectionHeader"
-          style={{ y: showExperienceHeader }}
         >
-          <div className="title">Experience</div>
+          <h3 className="title">Experience</h3>
           <p className="subText">
             I’ve worked on a handful of web projects over the past 8 <br />
             years, some of which were for the following organizations:

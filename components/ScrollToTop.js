@@ -39,9 +39,9 @@ const ScrollToTop = () => {
         onClick={scrollToTopHandler}
       >
         <svg
-          width="25"
-          height="38"
-          viewBox="0 0 25 38"
+          width="20"
+          height="20"
+          viewBox="0 0 25 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
