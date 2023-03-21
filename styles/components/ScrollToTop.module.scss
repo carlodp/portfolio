@@ -1,0 +1,30 @@
+.scrollTop {
+}
+
+.scrollTop :global {
+  button {
+    padding: 10px;
+    border: 0;
+    position: fixed;
+    bottom: 45px;
+    left: -100px;
+    z-index: 2;
+    background-color: #e1dfdd;
+    color: #161616;
+    mix-blend-mode: difference;
+    cursor: pointer;
+    transition: left 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.9), bottom 0.25s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+
+    &.show {
+      bottom: 45px;
+      left: 45px;
+      transition: left 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.9), bottom 0.25s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+    }
+
+    &.showFooter {
+      bottom: 100px;
+      left: 45px;
+      transition: left 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.9), bottom 0.25s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+    }
+  }
+}

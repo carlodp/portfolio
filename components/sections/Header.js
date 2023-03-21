@@ -45,7 +45,6 @@ const LINKS = [
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isNavToggled, setIsNavToggled] = useState(false);
-  const [isOverlay, setIsOverlay] = useState(false);
 
   const toggleHoverHandler = () => {
     setIsHovered((isHovered) => !isHovered);

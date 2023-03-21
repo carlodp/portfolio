@@ -1,64 +1,89 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  padding: 45px;
 }
 
 .footer :global {
-  .preFooter {
-    text-align: center;
-    padding: 150px 0;
-
-    .title {
-      font-size: 24px;
-      margin: 0 0 15px;
-      font-weight: lighter;
-    }
-    .email {
-      font-family: "TWK Everett";
-      font-size: clamp(1.5rem, 8vw, 6rem);
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--primary);
-    }
-  }
-
-  .bottomFooter {
+  .footerContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    font-weight: 100;
+    align-items: center;
+    height: 100vh;
+    padding: 45px;
 
-    .copyright {
-      a {
-        color: var(--green);
+    .preFooter {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+      padding: 150px 0;
+
+      .title {
+        font-size: 24px;
+        margin: 0 0 15px;
+        font-weight: lighter;
+      }
+      .email {
+        font-family: "TWK Everett";
+        font-size: clamp(1.5rem, 8vw, 6rem);
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--primary);
+
+        span {
+          opacity: 0.5;
+          transition: all 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+        }
+
+        &:hover {
+          span {
+            opacity: 1;
+            transition: all 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.9);
+          }
+        }
       }
     }
 
-    .location {
-      display: inline-flex;
-      align-items: center;
+    .bottomFooter {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: 100;
 
-      .locationIcon {
-        position: relative;
-        margin-right: 10px;
-        background-color: var(--green);
-        height: 16px;
-        width: 16px;
-        border-radius: 50%;
+      p {
+        margin: 0;
+      }
 
-        &:before {
-          position: absolute;
-          content: "";
+      .copyright {
+        a {
+          color: var(--primary);
+        }
+      }
+
+      .location {
+        display: inline-flex;
+        align-items: center;
+
+        .locationIcon {
+          position: relative;
+          margin-right: 10px;
+          background-color: var(--primary);
           height: 16px;
           width: 16px;
-          left: 0;
-          top: 0;
-          background-color: transparent;
           border-radius: 50%;
-          box-shadow: 0px 0px 2px 2px var(--green);
-          animation: pulse 1.5s infinite linear;
+
+          &:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 0px 0px 2px 2px var(--primary);
+            animation: pulse 1.5s infinite linear;
+          }
         }
       }
     }

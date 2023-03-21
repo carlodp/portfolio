@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "@/styles/sections/Footer.module.scss";
+import ScrollToTop from "../ScrollToTop";
 
 const FooterVariants = {
   hidden: {
@@ -36,33 +37,38 @@ const FooterBottomVariants = {
 const Footer = () => {
   return (
     <footer className={`footerSection ${styled.footer}`}>
-      <motion.div
-        className="preFooter"
-        variants={FooterVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.h6 className="title">Want to work together?</motion.h6>
-        <motion.a href="mailto:hello@carlosantos.dev" className="email">
-          hello@carlosantos.dev
-        </motion.a>
-      </motion.div>
-      <motion.div
-        className="bottomFooter"
-        variants={FooterBottomVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <p className="copyright">
-          ©2023 Carlo Santos. Made with <a href="#!">Next.js</a> &{" "}
-          <a href="#!">Framer Motion</a>
-        </p>
-        <p className="location">
-          <span className="locationIcon"></span>Based on Manila, Philippines
-        </p>
-      </motion.div>
+      <div className="footerContainer">
+        <div className="asd"></div>
+        <motion.div
+          className="preFooter"
+          variants={FooterVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h6 className="title">Drop by and say</motion.h6>
+          <motion.a href="mailto:hello@carlosantos.dev" className="email">
+            hello<span>@carlosantos.dev</span>
+          </motion.a>
+        </motion.div>
+        <motion.div
+          className="bottomFooter"
+          variants={FooterBottomVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <p className="copyright">
+            ©2023 Carlo Santos. Made with <a href="#!">Next.js</a> &{" "}
+            <a href="#!">Framer Motion</a>
+          </p>
+          <p className="location">
+            <span className="locationIcon"></span>Based on Manila, Philippines
+          </p>
+        </motion.div>
+      </div>
+
+      <ScrollToTop />
     </footer>
   );
 };
