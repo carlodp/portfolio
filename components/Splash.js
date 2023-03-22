@@ -1,5 +1,6 @@
-import styled from "@/styles/components/Splash.module.scss";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import styled from "@/styles/components/Splash.module.scss";
 
 const container = {
   visible: {
@@ -10,11 +11,13 @@ const container = {
 };
 
 const helloSvg = {
-  initial: {
-    x: 160,
-  },
-  animate: {
+  initial: (isTabletOrMobile) => ({
+    x: isTabletOrMobile ? 0 : 160,
+    y: isTabletOrMobile ? 80 : 0,
+  }),
+  animate: (isTabletOrMobile) => ({
     x: 0,
+    y: 0,
     opacity: 1,
     transition: {
       opacity: {
@@ -25,8 +28,13 @@ const helloSvg = {
         duration: 1,
         ease: [0.6, 0.01, 0.05, 0.9],
       },
+      y: {
+        delay: 2.2,
+        duration: 1,
+        ease: [0.6, 0.01, 0.05, 0.9],
+      }
     },
-  },
+  }),
   exit: {
     y: 50,
     opacity: 0,
@@ -85,6 +93,10 @@ const nameVariant = {
 };
 
 const Splash = ({ setLoading }) => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1230px)" });
+
+  console.log(isTabletOrMobile);
+
   return (
     <motion.div className={styled.splash}>
       <motion.div
@@ -100,6 +112,7 @@ const Splash = ({ setLoading }) => {
             initial="initial"
             animate="animate"
             exit="exit"
+            custom={isTabletOrMobile}
             viewBox="0 0 569 214"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +142,8 @@ const Splash = ({ setLoading }) => {
             </motion.p>
           </div>
           <motion.p variants={nameVariant} layout layoutId="splash-text">
-            <span>CARLO</span><span>SANTOS</span>
+            <span>CARLO</span>
+            <span>SANTOS</span>
           </motion.p>
         </motion.div>
       </motion.div>

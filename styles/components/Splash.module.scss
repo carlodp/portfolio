@@ -1,3 +1,5 @@
+@import "/styles/breakpoints.scss";
+
 .splash {
   position: fixed;
   width: 100%;
@@ -16,6 +18,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+    @media screen and (max-width: $large-screen) {
+      flex-direction: column;
+    }
+
     .hello {
       height: auto;
       width: 180px;
@@ -31,12 +37,20 @@
       align-items: center;
       font-family: "TWK Everett";
 
+      @media screen and (max-width: $large-screen) {
+        flex-direction: column;
+      }
+
       p {
         font-size: 3.5rem;
         font-weight: 600;
         margin: 0;
         line-height: 1;
         letter-spacing: -1px;
+        
+        @media screen and (max-width: $large-screen) {
+          text-align: center;
+        }
 
         span {
           display: block;
@@ -46,6 +60,10 @@
           font-size: 1.5rem;
           letter-spacing: -1px;
           margin: 15px;
+
+          @media screen and (max-width: $large-screen) {
+            margin: 15px 3px;
+          }
         }
       }
     }
