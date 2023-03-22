@@ -1,6 +1,8 @@
-import { Fragment, useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/components/Jobs.module.scss";
+
+import { useMediaQuery } from "react-responsive";
 
 const JOB_EXPERIENCES = [
   {
@@ -44,14 +46,34 @@ function JobExperience(props) {
     offset: ["end end", "start start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 0.6], [-260, -300]);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1170px)" });
+
+  //desktop scroll animations
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.6],
+    isTabletOrMobile ? [-50, 0] : [-260, -300]
+  );
   const title1 = useTransform(scrollYProgress, [0, 0.6], [220, 260]);
-  const x2 = useTransform(scrollYProgress, [0, 0.6], [260, 300]);
+  const x2 = useTransform(
+    scrollYProgress,
+    [0, 0.6],
+    isTabletOrMobile ? [-50, 0] : [260, 300]
+  );
   const title2 = useTransform(scrollYProgress, [0, 0.6], [-220, -260]);
   const lineWidth = useTransform(scrollYProgress, [0.35, 0.6], ["0px", "25px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-
   const lineProgressHeight = useTransform(
+    scrollYProgress,
+    [0.3, 0.7],
+    ["0%", "100%"]
+  );
+
+  //mobile scroll animations
+  const mx = useTransform(scrollYProgress, [0, 0.6], [40, 0]);
+  const mLineWidth = useTransform(scrollYProgress, [0, 1], ["0px", "25px"]);
+  const mopacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  const mlineProgressHeight = useTransform(
     scrollYProgress,
     [0.3, 0.7],
     ["0%", "100%"]
@@ -62,7 +84,9 @@ function JobExperience(props) {
       {props.index % 2 === 0 ? (
         <motion.li
           ref={ref}
-          className={styled.jobExperience}
+          className={`${isTabletOrMobile ? "mobile" : ""} ${
+            styled.jobExperience
+          }`}
           id={`job${props.id}`}
         >
           <motion.span
@@ -80,16 +104,18 @@ function JobExperience(props) {
             </div>
             <div className="jobDetails">{props.description}</div>
           </motion.div>
-          <motion.div className="jobTitle">
-            <motion.div className="title" style={{ opacity, x: title1 }}>
-              {props.position}
+            <motion.div className="jobTitle">
+              <motion.div className="title" style={{ opacity, x: title1 }}>
+                {props.position}
+              </motion.div>
             </motion.div>
-          </motion.div>
         </motion.li>
       ) : (
         <motion.li
           ref={ref}
-          className={styled.jobExperience}
+          className={`${isTabletOrMobile ? "mobile" : ""} ${
+            styled.jobExperience
+          }`}
           id={`job${props.id}`}
         >
           <motion.span

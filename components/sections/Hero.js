@@ -3,14 +3,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/Hero.module.scss";
 import AnimateLetters from "../reusable/AnimateLetters";
 
-const Hero = ({id}) => {
+const Hero = ({ id }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: [
-      "end end",
-      "end start",
-    ],
+    offset: ["end end", "end start"],
   });
 
   const position = useTransform(scrollYProgress, (pos) => {
@@ -27,12 +24,16 @@ const Hero = ({id}) => {
         duration: 1,
         delay: 1,
         ease: [0.6, 0.01, 0.05, 0.9],
-      }
-    }
-  }
+      },
+    },
+  };
 
   return (
-    <motion.section id={id} ref={targetRef} className={`heroSection ${styled.hero}`}>
+    <motion.section
+      id={id}
+      ref={targetRef}
+      className={`heroSection ${styled.hero}`}
+    >
       <motion.div className="heroTexts" style={{ position }}>
         <div className="topText">
           <motion.h1
@@ -47,10 +48,26 @@ const Hero = ({id}) => {
             <span>CARLO</span>
             <span>SANTOS</span>
           </motion.h1>
-          <h2><AnimateLetters type="words" title="— CREATIVE PORTFOLIO" duration="1" stagger="0.1" delay="0.5"/></h2>
+          <h2>
+            <AnimateLetters
+              type="words"
+              title="— CREATIVE PORTFOLIO"
+              duration="1"
+              stagger="0.1"
+              delay="0.5"
+            />
+          </h2>
         </div>
         <div className="bottomText">
-          <h2><AnimateLetters type="words" title="— FRONT-END FOCUSED" duration="1" stagger="0.1" delay="0.5"/></h2>
+          <h2>
+            <AnimateLetters
+              type="words"
+              title="— FRONT-END FOCUSED"
+              duration="1"
+              stagger="0.1"
+              delay="0.5"
+            />
+          </h2>
           <h1>
             <span>
               <AnimateLetters
@@ -74,7 +91,12 @@ const Hero = ({id}) => {
             </span>
           </h1>
         </div>
-        <motion.span className="scrollArrow" variants={arrowVariant} initial="hidden" animate="visible">
+        <motion.span
+          className="scrollArrow"
+          variants={arrowVariant}
+          initial="hidden"
+          animate="visible"
+        >
           <span className="arrow">
             <svg
               width="25"

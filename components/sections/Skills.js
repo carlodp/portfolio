@@ -136,7 +136,7 @@ const Skills = ({id}) => {
 
   return (
     <motion.section id={id} ref={targetRef} className={styles.skills}>
-      <motion.div style={{ position, top: y }}>
+      <motion.div className="skillsContainer" style={{ position, top: y }}>
         <motion.div className="sectionHeader">
           <h3 className="title">
             <AnimateLetters

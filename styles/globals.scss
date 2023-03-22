@@ -1,3 +1,5 @@
+@import "/styles/breakpoints.scss";
+
 //global variables
 :root {
   --nav-height: 120px;
@@ -33,6 +35,10 @@ body::-webkit-scrollbar-thumb {
     outline-color: var(--green);
     outline-offset: 5px;
     outline-width: 2px;
+  }
+
+  @media screen and (min-width: $large-screen) {
+    cursor: auto;
   }
 }
 
@@ -147,6 +153,7 @@ p {
 
   h3.title {
     font-size: 4.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 600;
     line-height: 1;
     margin-bottom: 25px;
@@ -159,9 +166,9 @@ p {
     padding: 0;
     
     .sentence {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
       margin: 0;
-      line-height: normal;
+      line-height: 1.2;
     }
   }
 }

@@ -26,12 +26,12 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider defaultTheme="light" enableSystem={false}>
         <AnimatePresence>
-          {loading ? (
+          {/* {loading ? (
             <Splash setLoading={setLoading} key="splash" />
           ) : (
             <Component {...pageProps} />
-          )}
-          {/* <Component {...pageProps} /> */}
+          )} */}
+          <Component {...pageProps} />
         </AnimatePresence>
       </ThemeProvider>
       <div className="noise"></div>

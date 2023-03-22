@@ -13,5 +13,9 @@
   .words {
     display: inline-flex;
     margin-right: 10px;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }

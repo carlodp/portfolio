@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import styled from "@/styles/sections/Experience.module.scss";
 import Jobs from "../Jobs";
 import AnimateLetters from "../reusable/AnimateLetters";
+import styled from "@/styles/sections/Experience.module.scss";
 
 const Experience = ({ id }) => {
   return (
@@ -29,7 +29,7 @@ const Experience = ({ id }) => {
           </p>
         </motion.div>
         <motion.div className="jobExperiences">
-          <Jobs />
+          <Jobs/>
         </motion.div>
       </motion.div>
     </motion.section>

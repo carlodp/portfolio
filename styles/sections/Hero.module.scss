@@ -1,3 +1,5 @@
+@import "/styles/breakpoints.scss";
+
 .hero {
   display: flex;
   -webkit-box-pack: center;
@@ -19,17 +21,18 @@
 
     h1 {
       font-family: "TWK Everett";
-      font-size: 6rem;
+      font-size: clamp(2.5rem, 6vw, 6rem);
       display: flex;
       flex-direction: column;
       margin: 0;
+      line-height: 1;
     }
 
     h2 {
       font-family: "TWK Everett";
       text-transform: uppercase;
       font-weight: 400;
-      font-size: 1.75rem;
+      font-size: clamp(1rem, 4vw, 1.75rem);
       margin: 0;
     }
 
@@ -39,6 +42,10 @@
       left: 45px;
       text-align: left;
       margin-top: -15px;
+
+      @media screen and (max-width: $large-screen) {
+        margin: 0;
+      }
     }
 
     .bottomText {
@@ -54,6 +61,11 @@
       flex-direction: column;
       align-items: center;
       bottom: 60px;
+
+      @media screen and (max-width: $small-screen) {
+        bottom: 25px;
+        left: 25px;
+      }
 
       .arrow {
         position: absolute;

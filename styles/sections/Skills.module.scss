@@ -1,3 +1,5 @@
+@import "/styles/breakpoints.scss";
+
 .skills {
   display: flex;
   justify-content: flex-start;
@@ -8,14 +10,31 @@
   height: 150vh;
   overflow: hidden;
   padding: 60px;
+
+  @media screen and (max-width: $large-screen) {
+    height: auto !important;
+  }
 }
 
 .skills :global {
+  .skillsContainer {
+    @media screen and (max-width: $large-screen) {
+      position: initial !important;
+      top: auto !important;
+    }
+  }
   .stackContainer {
     display: flex;
-    gap: 130px;
-    padding-top: 70px;
+    column-gap: 130px;
+    row-gap: 40px;
+    padding: 70px 50px 0;
     justify-content: center;
+    flex-flow: row wrap;
+
+    @media screen and (max-width: $medium-screen) {
+      justify-content: start;
+      row-gap: 70px;
+    }
 
     .stack {
       .stackTitle {

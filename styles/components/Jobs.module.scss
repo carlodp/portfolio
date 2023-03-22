@@ -1,3 +1,5 @@
+@import "/styles/breakpoints.scss";
+
 .jobs {
   padding: 0;
   margin: 0;
@@ -11,7 +13,7 @@
       .lineGoing {
         right: 250px;
       }
-      
+
       .lineJobPosition {
         left: 250px;
       }
@@ -38,6 +40,21 @@
 
     &:last-child {
       padding-bottom: 0;
+    }
+  }
+
+  .mobile {
+    text-align: left !important;
+    padding-left: 50px;
+    width: 100%;
+
+    .lineProgress {
+      left: 0 !important;
+      transform: none !important;
+    }
+    
+    .lineGoing {
+      left: 2px !important;
     }
   }
 }
@@ -68,8 +85,8 @@
     height: 4px;
     background: var(--primary);
     top: 50px;
-  }  
-  
+  }
+
   .lineJobPosition {
     position: absolute;
     height: 4px;
@@ -91,7 +108,7 @@
       }
     }
     .jobDetails {
-      font-size: 1.125rem;
+      font-size: clamp(1rem, 3vw, 1.125rem);
       font-weight: 100;
     }
   }
@@ -105,6 +122,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    @media screen and (max-width: 1170px) {
+      display: none;
+    }
 
     .title {
       font-size: 2.5rem;
