@@ -83,8 +83,8 @@ const stackTitleVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.5,
-      duration: 0.5,
+      delay: 0.25,
+      duration: 0.25,
       ease: [0.6, 0.01, 0.05, 0.9],
     },
   },
@@ -98,7 +98,7 @@ const skillsListVariant = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delayChildren: 0.8,
+      delayChildren: 0.3,
       staggerChildren: 0.1,
       duration: 0.5,
       ease: "easeInOut",
@@ -128,7 +128,7 @@ const Skills = ({id}) => {
     offset: ["start end", "end start"], //start of target(targetRef) - end of container (window) and vice versa
   });
 
-  const y = useTransform(scrollYProgress, [0, 0.45], ['100%', '15%']);
+  const y = useTransform(scrollYProgress, [0, 0.35], ['100%', '10%']);
 
   const position = useTransform(scrollYProgress, (pos) => {
     return pos === 1 ? "relative" : "fixed";
@@ -138,22 +138,22 @@ const Skills = ({id}) => {
     <motion.section id={id} ref={targetRef} className={styles.skills}>
       <motion.div style={{ position, top: y }}>
         <motion.div className="sectionHeader">
-          <div className="title">
+          <h3 className="title">
             <AnimateLetters
               direction="down"
               type="sentence"
               title="Skills"
               delay="0"
-              duration="1"
+              duration="0.5"
             />
-          </div>
+          </h3>
           <AnimateLetters
             className="subText"
             direction="up"
             type="sentence"
             title="Throughout my career, I've amassed extensive experience and gained numerous skills. Although here are some, I'm always eager to attain more."
             delay="0"
-            duration="1"
+            duration="0.5"
           />
         </motion.div>
         <motion.div className="stackContainer">

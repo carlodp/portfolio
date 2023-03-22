@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <Header />
       <main>
+        <Cursor/>
         <Hero id="hero"/>
         <About id="about"/>
         <Experience id="experience"/>

@@ -10,29 +10,6 @@
 }
 
 .experience :global {
-  .sectionHeader {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 100px;
-    margin-bottom: 150px;
-    align-items: center;
-
-    .title {
-      font-size: 4.5rem;
-      font-weight: 600;
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .subText {
-      font-size: 1.25rem;
-      margin: 0;
-      text-align: center;
-    }
-  }
-
   .experienceContainer {
     display: flex;
     align-items: center;
@@ -43,6 +20,7 @@
     left: 0;
     background: var(--secondary);
     width: 100%;
+    padding: 100px 45px 45px;
 
     .textContainer {
       padding: 60px;
@@ -65,6 +43,7 @@
     .jobExperiences {
       position: relative;
       width: 100%;
+      padding-top: 100px;
     }
   }
 }

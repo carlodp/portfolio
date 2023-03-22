@@ -25,8 +25,8 @@ body::-webkit-scrollbar-thumb {
   outline: transparent;
 }
 
-
 * {
+  cursor: none;
   box-sizing: border-box;
   &:focus-visible {
     outline-style: dotted;
@@ -124,7 +124,6 @@ p {
   letter-spacing: 0.3px;
 }
 
-
 @keyframes pulse {
   0% {
     transform: scale(0.1);
@@ -136,6 +135,34 @@ p {
   }
   100% {
     opacity: 0;
+  }
+}
+
+.sectionHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3.title {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+
+  .subText {
+    text-align: center;
+    max-width: 720px;
+    margin: 0;
+    padding: 0;
+    
+    .sentence {
+      font-size: 1.25rem;
+      margin: 0;
+      line-height: normal;
+    }
   }
 }
 
