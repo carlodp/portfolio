@@ -7,13 +7,26 @@
 }
 
 ::selection {
-  color: transparent;
-  background-color: transparent;
-  -webkit-text-stroke: 1px var(--primary);
+  color: var(--secondary);
+  background-color: var(--primary);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  outline: transparent;
+}
+
+
 * {
-  cursor: none;
   box-sizing: border-box;
   &:focus-visible {
     outline-style: dotted;
@@ -81,20 +94,6 @@ body {
       animation: noise 1s steps(2) infinite;
     }
   }
-}
-
-body::-webkit-scrollbar {
-  display: none;
-  width: 3px;
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  outline: transparent;
 }
 
 code {

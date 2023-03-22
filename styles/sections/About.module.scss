@@ -4,8 +4,8 @@
   -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 120vh;
-  height: 120vh;
+  min-height: 150vh;
+  height: 150vh;
 }
 
 .about :global {
@@ -50,7 +50,7 @@
     p {
       font-family: "TWK Everett";
       position: relative;
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1.3;
       color: var(--secondary);
       margin: 0;

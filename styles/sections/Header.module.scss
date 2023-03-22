@@ -38,18 +38,18 @@
     height: 100vh;
     transition: left 0.75s cubic-bezier(0.6, 0.01, 0.05, 0.9);
 
-    .navName {
-      position: absolute;
-      left: 50%;
-      top: 35px;
-      transform: translateX(-50%);
-      mix-blend-mode: difference;
-      color: #e1dfdd;
-      line-height: 1;
-      font-size: 3rem;
-      text-transform: uppercase;
-      pointer-events: none;
-    }
+    // .navName {
+    //   position: absolute;
+    //   left: 50%;
+    //   top: 35px;
+    //   transform: translateX(-50%);
+    //   mix-blend-mode: difference;
+    //   color: #e1dfdd;
+    //   line-height: 1;
+    //   font-size: 3rem;
+    //   text-transform: uppercase;
+    //   pointer-events: none;
+    // }
 
     &.toggled {
       left: 0;
@@ -89,9 +89,19 @@
     }
 
     .socialLinks {
+      position: relative;
       background-color: var(--secondary);
-      justify-content: space-between;
-      padding-top: 200px;
+      justify-content: center;
+      gap: 70px;
+
+      .navName {
+        mix-blend-mode: difference;
+        color: #e1dfdd;
+        line-height: 1;
+        font-size: 3rem;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
 
       .infos {
         display: flex;
@@ -114,12 +124,12 @@
           text-decoration: none;
           font-weight: 600;
           transition: opacity 0.25s ease-in-out;
-  
+
           &:hover {
             opacity: 1 !important;
           }
         }
-  
+
         &.hovered {
           a {
             opacity: 0.5;
@@ -128,6 +138,9 @@
       }
 
       .footer {
+        position: absolute;
+        bottom: 0;
+        padding: 0 45px 45px;
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -139,7 +152,7 @@
         .location {
           display: inline-flex;
           align-items: center;
-  
+
           .locationIcon {
             position: relative;
             margin-right: 10px;
@@ -147,7 +160,7 @@
             height: 16px;
             width: 16px;
             border-radius: 50%;
-  
+
             &:before {
               position: absolute;
               content: "";

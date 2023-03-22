@@ -93,7 +93,6 @@ const Header = () => {
         animate="visible"
       >
         <ThemeSwitcher />
-        <h1 className="navName">Carlo Santos</h1>
         <div className={`column pageLinks${isHovered ? " hovered" : ""}`}>
           {PAGE_LINKS.map((link, index) => (
             <Link
@@ -114,6 +113,7 @@ const Header = () => {
           ))}
         </div>
         <div className="column socialLinks">
+        <h1 className="navName">Carlo Santos</h1>
           <div className="infos">
             <a href="tel:+639175078842">
               <AnimateLetters

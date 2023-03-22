@@ -13,9 +13,9 @@ const About = ({id}) => {
     return pos === 1 ? "relative" : "fixed";
   });
 
-  const aboutWidth = useTransform(scrollYProgress, [0, 0.45], ["0vw", "100vw"]);
-  const showText = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
-  const textScale = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
+  const aboutWidth = useTransform(scrollYProgress, [0, 0.4], ["0vw", "100vw"]);
+  const showText = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const textScale = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
   return (
     <motion.section id={id} ref={targetRef} className={styled.about}>
