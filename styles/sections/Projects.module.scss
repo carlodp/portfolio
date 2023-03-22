@@ -43,6 +43,10 @@
       height: auto;
     }
 
+    @media screen and (max-width: $medium-screen) {
+      width: 100vw;
+    }
+
     .projectsContent {
       display: flex;
       flex-direction: row;
@@ -130,9 +134,9 @@
             }
           }
           .description {
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 1vw, 1.125rem);
             font-weight: 100;
-            line-height: 1.5;
+            line-height: 1.4;
           }
 
           .projectLink {

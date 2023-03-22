@@ -16,6 +16,7 @@
 .header :global {
   .menuToggler {
     position: fixed;
+    top: 45px;
     right: 45px;
     z-index: 4;
     background: transparent;
@@ -26,6 +27,11 @@
     padding: 10px;
     color: #161616;
     mix-blend-mode: difference;
+
+    @media screen and (max-width: $large-screen) {
+      top: 25px;
+      right: 25px;
+    }
   }
 
   .nav {

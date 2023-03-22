@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@/styles/sections/Hero.module.scss";
 import AnimateLetters from "../reusable/AnimateLetters";
+import { useMediaQuery } from "react-responsive";
 
 const Hero = ({ id }) => {
+  const [mobileHeight, setMobileHeight] = useState("");
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -13,6 +15,16 @@ const Hero = ({ id }) => {
   const position = useTransform(scrollYProgress, (pos) => {
     return pos === 1 ? "relative" : "fixed";
   });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1230px)" });
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (isTabletOrMobile) {
+        setMobileHeight(window.innerHeight);
+      }
+    }, 500);
+  }, [mobileHeight]);
 
   const arrowVariant = {
     hidden: {
@@ -33,6 +45,7 @@ const Hero = ({ id }) => {
       id={id}
       ref={targetRef}
       className={`heroSection ${styled.hero}`}
+      style={{ height: mobileHeight }}
     >
       <motion.div className="heroTexts" style={{ position }}>
         <div className="topText">

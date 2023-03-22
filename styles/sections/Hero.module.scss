@@ -2,12 +2,8 @@
 
 .hero {
   display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100vh;
   height: 100vh;
   padding: 0px;
   gap: 15px;
@@ -15,9 +11,12 @@
 
 .hero :global {
   .heroTexts {
-    padding: 45px;
     width: 100%;
     height: 100%;
+
+    @media screen and (max-width: $medium-screen) {
+      position: relative !important;
+    }
 
     h1 {
       font-family: "TWK Everett";
@@ -46,6 +45,11 @@
       @media screen and (max-width: $large-screen) {
         margin: 0;
       }
+
+      @media screen and (max-width: $large-screen) {
+        top: 25px;
+        left: 25px;
+      }
     }
 
     .bottomText {
@@ -53,6 +57,11 @@
       bottom: 45px;
       right: 45px;
       text-align: right;
+
+      @media screen and (max-width: $medium-screen) {
+        bottom: 25px;
+        right: 25px;
+      }
     }
 
     .scrollArrow {
@@ -60,9 +69,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      bottom: 60px;
+      left: 45px;
+      bottom: 45px;
 
-      @media screen and (max-width: $small-screen) {
+      @media screen and (max-width: $medium-screen) {
         bottom: 25px;
         left: 25px;
       }

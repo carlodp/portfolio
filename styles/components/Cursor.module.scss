@@ -10,4 +10,8 @@
   transition: background-color 0.15s ease;
   background-color: #e1dfdd;
   mix-blend-mode: difference;
+
+  @media screen and (max-width: $medium-screen) {
+    display: none;
+  }
 }

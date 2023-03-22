@@ -66,10 +66,14 @@ body::-webkit-scrollbar-thumb {
 
 html {
   font-size: 1rem;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  -webkit-overflow-scrolling: touch;
   font-family: "TWK Everett", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -77,6 +81,10 @@ body {
 
   &.open-navigation {
     overflow: hidden;
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    overflow-x: hidden;
   }
 
   .noise {
@@ -172,7 +180,7 @@ p {
     @media screen and (max-width: $small-screen) {
       text-align: left;
     }
-    
+
     .sentence {
       font-size: clamp(1rem, 3vw, 1.25rem);
       margin: 0;
