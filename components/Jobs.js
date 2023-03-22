@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import styled from "@/styles/components/Jobs.module.scss";
 
-import { useMediaQuery } from "react-responsive";
 
 const JOB_EXPERIENCES = [
   {

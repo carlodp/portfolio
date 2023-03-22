@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import styled from "@/styles/sections/Projects.module.scss";
 
@@ -45,13 +46,15 @@ const Projects = ({id}) => {
     offset: ["start start", "end start"], //start of target(targetRef) - end of container (window) and vice versa
   });
 
-  const x = useTransform(scrollYProgress, [0, 0.78], ["0", "-65%"]);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1230px)" });
+
+  const x = useTransform(scrollYProgress, [0.1, 0.5], isTabletOrMobile ? [0, 0] : ["0%", "-60%"]);
 
   return (
     <motion.section id={id} ref={targetRef} className={styled.projects}>
       <motion.div className="projectsContainer">
         <motion.div className="projectsContent" style={{ x }}>
-          <h2 className="sectionHeader">Projects</h2>
+          <div className="sectionHeader"><h3 className="title">Projects</h3></div>
           <div className="projectsList">
             {PROJECT_LIST.map((project) => (
               <div className="projectSingle" key={project.id}>

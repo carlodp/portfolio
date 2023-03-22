@@ -1,5 +1,4 @@
-.footer {
-}
+@import "/styles/breakpoints.scss";
 
 .footer :global {
   .footerContainer {
@@ -10,13 +9,16 @@
     height: 100vh;
     padding: 45px;
 
+    @media screen and (max-width: $large-screen) {
+      height: 55vh;
+    }
+
     .preFooter {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: flex-start;
       text-align: center;
-      padding: 150px 0;
 
       .title {
         font-size: 24px;
@@ -25,7 +27,7 @@
       }
       .email {
         font-family: "TWK Everett";
-        font-size: clamp(1.5rem, 8vw, 6rem);
+        font-size: clamp(1.5rem, 6vw, 6rem);
         font-weight: bold;
         text-decoration: none;
         color: var(--primary);
@@ -49,6 +51,17 @@
       justify-content: space-between;
       width: 100%;
       font-weight: 100;
+
+      @media screen and (max-width: 950px) {
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 15px;
+      }
+
+      @media screen and (max-width: $medium-screen) {
+        align-items: center;
+        text-align: center;
+      }
 
       p {
         margin: 0;

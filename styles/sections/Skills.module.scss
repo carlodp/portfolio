@@ -9,7 +9,7 @@
   min-height: 150vh;
   height: 150vh;
   overflow: hidden;
-  padding: 60px;
+  padding: 45px;
 
   @media screen and (max-width: $large-screen) {
     height: auto !important;
@@ -34,6 +34,10 @@
     @media screen and (max-width: $medium-screen) {
       justify-content: start;
       row-gap: 70px;
+    }
+
+    @media screen and (max-width: $small-screen) {
+      padding: 50px 0;
     }
 
     .stack {

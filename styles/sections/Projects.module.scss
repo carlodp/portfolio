@@ -1,11 +1,16 @@
+@import "/styles/breakpoints.scss";
+
 .projects {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   flex-direction: column;
-  min-height: 310vh;
-  height: 310vh;
+  height: 350vh;
+
+  @media screen and (max-width: 1230px) {
+    height: auto;
+  }
 }
 
 .projects :global {
@@ -25,8 +30,18 @@
     width: 101vw;
     background: var(--primary);
     z-index: 1;
-    padding: 200px;
+    padding: 0 200px;
     overflow: hidden;
+
+    @media screen and (max-width: 1550px) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 1230px) {
+      flex-direction: column;
+      padding: 60px;
+      height: auto;
+    }
 
     .projectsContent {
       display: flex;
@@ -34,10 +49,23 @@
       align-items: center;
       gap: 250px;
 
+      @media screen and (max-width: 1550px) {
+        gap: 100px;
+      }
+
+      @media screen and (max-width: 1230px) {
+        gap: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @media screen and (max-width:  $small-screen) {
+      }
+
       .sectionHeader {
-        font-size: 5rem;
-        line-height: 1;
-        color: var(--secondary);
+        h3 {
+          color: var(--secondary);
+        }
       }
 
       .projectsList {
@@ -46,8 +74,20 @@
         gap: 250px;
         color: var(--secondary);
 
+        @media screen and (max-width: 1550px) {
+          gap: 100px;
+        }
+
+        @media screen and (max-width: 1230px) {
+          flex-direction: column;
+        }
+
         .projectSingle {
           width: 500px;
+
+          @media screen and (max-width: 1230px) {
+            width: 100%;
+          }
 
           .number {
             font-size: 1rem;
@@ -60,6 +100,8 @@
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
+
+
             span {
               position: relative;
               text-transform: uppercase;
