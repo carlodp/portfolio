@@ -7,7 +7,7 @@ import "@/styles/globals.scss";
 import Cursor from "@/components/Cursor";
 import { ThemeProvider } from "next-themes";
 import { AnimatePresence } from "framer-motion";
-import '../public/fonts/style.css';
+import "../public/fonts/style.css";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -24,17 +24,20 @@ export default function App({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
         <meta property="og:url" content="http://carlosantos.dev/" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Carlo | Creative Portfolio 👨‍💻"
-        />
+        <meta property="og:title" content="Carlo | Creative Portfolio 👨‍💻" />
         <meta name="twitter:card" content="summary" />
         <meta
           property="og:description"
-          content="Hurray!! Yes Social Media Preview is Working"
+          content="I'm driven to craft stunning, responsive, and user-friendly websites and applications through the utilization of cutting-edge technologies and industry best practices."
         />
-        <meta property="og:image" content="/og-image.jpg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+        <meta
+          property="og:image"
+          content="http://carlosantos.dev/og-image.jpg"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+        />
       </Head>
       <ThemeProvider defaultTheme="light" enableSystem={false}>
         <AnimatePresence>
