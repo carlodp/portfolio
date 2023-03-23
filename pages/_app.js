@@ -32,8 +32,13 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           property="og:image"
-          content="http://carlosantos.dev/og-image.jpg"
+          content="https://carlosantos.dev/og-image.jpg"
         />
+        <meta
+          property="og:image:url"
+          content="https://carlosantos.dev/og-image.jpg"
+        />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
