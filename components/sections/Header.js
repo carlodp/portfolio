@@ -113,7 +113,15 @@ const Header = () => {
           ))}
         </div>
         <div className="column socialLinks">
-        <h1 className="navName">Carlo Santos</h1>
+          <h1 className="navName">
+            <AnimateLetters
+              type="sentence"
+              title="Carlo Santos"
+              duration="1"
+              stagger="0.025"
+              repeat="true"
+            />
+          </h1>
           <div className="infos">
             <a href="tel:+639175078842">
               <AnimateLetters

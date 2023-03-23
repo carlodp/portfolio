@@ -3,8 +3,6 @@
 .cursor {
   border-radius: 50%;
   position: fixed;
-  top: -50px;
-  left: -50px;
   z-index: 5;
   pointer-events: none;
   transition: background-color 0.15s ease;
