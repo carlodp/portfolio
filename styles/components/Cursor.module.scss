@@ -12,6 +12,6 @@
   mix-blend-mode: difference;
 
   @media screen and (max-width: $medium-screen) {
-    display: none;
+    display: none !important;
   }
 }

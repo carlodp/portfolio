@@ -1,7 +1,13 @@
+@import "/styles/breakpoints.scss";
+
 .theme {
   position: absolute;
   top: 40px;
   left: 40px;
+  @media screen and (max-width: $medium-screen) {
+    top: 25px; 
+    left: 25px;
+  }
 }
 
 .theme :global {

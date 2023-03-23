@@ -7,6 +7,10 @@
   height: 100vh;
   padding: 0px;
   gap: 15px;
+
+  // @media screen and (max-width: $medium-screen) {
+  //   background-color: var(--secondary);
+  // }
 }
 
 .hero :global {
