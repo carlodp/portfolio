@@ -22,6 +22,18 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#161616" />
         <meta name="description" content="Portfolio" />
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
+        <meta property="og:url" content="http://carlosantos.dev/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Carlo | Creative Portfolio 👨‍💻"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:description"
+          content="Hurray!! Yes Social Media Preview is Working"
+        />
+        <meta property="og:image" content="/og-image.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
       </Head>
       <ThemeProvider defaultTheme="light" enableSystem={false}>
