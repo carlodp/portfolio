@@ -10,6 +10,7 @@
   height: 150vh;
   overflow: hidden;
   padding: 45px;
+  background-color: var(--secondary);
 
   @media screen and (max-width: $large-screen) {
     height: auto !important;

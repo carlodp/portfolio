@@ -40,7 +40,7 @@
       width: 100vw !important;
     }
 
-    @media screen and (orientation: landscape) {
+    @media screen and (max-width: $medium-screen) and (orientation: landscape) {
       position: relative !important;
       width: 100vw !important;
       height: 100vh !important;
@@ -66,11 +66,6 @@
     @media screen and (max-width: $large-screen) {
       padding: 50px;
       width: 100%;
-    }
-
-    
-    @media screen and (max-width: $large-screen) {
-
     }
 
     p {

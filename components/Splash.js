@@ -13,9 +13,9 @@ const container = {
 const helloSvg = {
   initial: (isTabletOrMobile) => ({
     x: isTabletOrMobile ? 0 : 160,
-    y: isTabletOrMobile ? 80 : 0,
+    y: isTabletOrMobile ? 170 : 0,
   }),
-  animate: (isTabletOrMobile) => ({
+  animate: {
     x: 0,
     y: 0,
     opacity: 1,
@@ -32,9 +32,9 @@ const helloSvg = {
         delay: 2.2,
         duration: 1,
         ease: [0.6, 0.01, 0.05, 0.9],
-      }
+      },
     },
-  }),
+  },
   exit: {
     y: 50,
     opacity: 0,
@@ -59,10 +59,15 @@ const helloPathVariant = {
 };
 
 const imVariant = {
-  hidden: { opacity: 0, x: -70 },
+  hidden: (isTabletOrMobile) => ({
+    opacity: 0,
+    x: isTabletOrMobile ? 0 : -70,
+    y: isTabletOrMobile ? 150 : 0,
+  }),
   visible: {
     opacity: 1,
     x: 0,
+    y: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.95],
       duration: 1,
@@ -80,10 +85,15 @@ const imVariant = {
 };
 
 const nameVariant = {
-  hidden: { opacity: 0, x: -70 },
+  hidden: (isTabletOrMobile) => ({
+    opacity: 0,
+    x: isTabletOrMobile ? 0 : -70,
+    y: isTabletOrMobile ? 150 : 0,
+  }),
   visible: {
     opacity: 1,
     x: 0,
+    y: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
       duration: 1,
@@ -94,8 +104,6 @@ const nameVariant = {
 
 const Splash = ({ setLoading }) => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1230px)" });
-
-  console.log(isTabletOrMobile);
 
   return (
     <motion.div className={styled.splash}>
@@ -137,11 +145,13 @@ const Splash = ({ setLoading }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
+              custom={isTabletOrMobile}
             >
               I&apos;M
             </motion.p>
           </div>
-          <motion.p variants={nameVariant} layout layoutId="splash-text">
+          <motion.p variants={nameVariant} 
+              custom={isTabletOrMobile} layout layoutId="splash-text">
             <span>CARLO</span>
             <span>SANTOS</span>
           </motion.p>
