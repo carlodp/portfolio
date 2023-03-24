@@ -32,11 +32,11 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           property="og:image"
-          content="https://carlosantos.dev/og-image.jpg"
+          content="https://carlosantos.dev/og-img.jpg"
         />
         <meta
           property="og:image:url"
-          content="https://carlosantos.dev/og-image.jpg"
+          content="https://carlosantos.dev/og-img.jpg"
         />
 
         <meta
