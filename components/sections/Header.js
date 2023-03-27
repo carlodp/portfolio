@@ -51,10 +51,6 @@ const SOCIAL_LINKS = [
     url: "https://github.com/carlodp",
     title: "GitHub",
   },
-  {
-    url: "https://www.instagram.com/carlodp_/",
-    title: "Instagram",
-  },
 ];
 
 const Header = () => {
