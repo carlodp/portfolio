@@ -9,7 +9,7 @@ const PROJECT_LIST = [
     id: "01",
     name: "AniBase",
     link: "http://test.com/",
-    stacks: ["React", "Next.js", "TMBD API"],
+    stacks: ["Vue.js 3", "Nuxt.js", "Tailwind CSS", "Consumet API"],
     description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
