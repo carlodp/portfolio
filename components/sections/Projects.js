@@ -7,39 +7,38 @@ import styled from "@/styles/sections/Projects.module.scss";
 const PROJECT_LIST = [
   {
     id: "01",
-    name: "Moviebase",
+    name: "AniBase",
     link: "http://test.com/",
     stacks: ["React", "Next.js", "TMBD API"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
     id: "02",
+    name: "FOA",
+    link: "https://www.financeofamerica.com/",
+    stacks: ["WordPress", "PHP", "Javascript", "SASS"],
+    description:
+      "During my tenure with Finance of America, I was responsible for maintaining and adding new functionalities to their corporate website, which provides all the essential information about the company.",
+  },
+  {
+    id: "03",
     name: "Statify",
     link: "http://test.com/",
     stacks: ["Vue", "Vite", "Spotify API"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    id: "03",
-    name: "Lipsum",
-    link: "http://test.com/",
-    stacks: ["Next.js", "React", "TMBD API"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Statify is an analytics tool gives you an in-depth look at your personal music listening habits, from the most-played songs to the genres you listen to the most, track and compare your music preferences over time, so you can make sure you're always listening to what you love.",
   },
   {
     id: "04  ",
-    name: "Lorem",
-    link: "http://test.com/",
-    stacks: ["Next.js", "React", "TMBD API"],
+    name: "CRMP Courses",
+    link: "https://www.farwholesale.com/crmp/",
+    stacks: ["Wordpress", "PHP", "Javascript", "SASS"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "As part of my responsibilities, I created a training website that provides customers with access to multiple courses for becoming certified mortgage professionals. The website was developed using WordPress as a content management system, and I also utilized PHP, Javascript, and SASS in the creation process.",
   },
 ];
 
-const Projects = ({id}) => {
+const Projects = ({ id }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -48,13 +47,19 @@ const Projects = ({id}) => {
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1230px)" });
 
-  const x = useTransform(scrollYProgress, [0.1, 0.5], isTabletOrMobile ? [0, 0] : ["0%", "-60%"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0.1, 0.5],
+    isTabletOrMobile ? [0, 0] : ["0%", "-60%"]
+  );
 
   return (
     <motion.section id={id} ref={targetRef} className={styled.projects}>
       <motion.div className="projectsContainer">
         <motion.div className="projectsContent" style={{ x }}>
-          <div className="sectionHeader"><h3 className="title">Projects</h3></div>
+          <div className="sectionHeader">
+            <h3 className="title">Projects</h3>
+          </div>
           <div className="projectsList">
             {PROJECT_LIST.map((project) => (
               <div className="projectSingle" key={project.id}>
@@ -66,7 +71,9 @@ const Projects = ({id}) => {
                   ))}
                 </span>
                 <p className="description">{project.description}</p>
-                <Link className="projectLink" href={project.link}>Visit {project.name}</Link>
+                <Link className="projectLink" href={project.link}>
+                  Visit {project.name}
+                </Link>
               </div>
             ))}
           </div>
