@@ -35,14 +35,14 @@ const helloSvg = {
       },
     },
   },
-  exit: {
-    y: 50,
+  exit: (isTabletOrMobile) => ({
+    y: isTabletOrMobile ? -100 : 50,
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
       duration: 0.4,
     },
-  },
+  }),
 };
 
 const helloPathVariant = {
@@ -74,14 +74,14 @@ const imVariant = {
       delay: 2.2,
     },
   },
-  exit: {
-    y: 50,
+  exit: (isTabletOrMobile) => ({
+    y: isTabletOrMobile ? -100 : 50,
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, 0.05, 0.9],
       duration: 0.4,
     },
-  },
+  }),
 };
 
 const nameVariant = {

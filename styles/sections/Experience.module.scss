@@ -14,20 +14,20 @@
   }
 
   @media screen and (max-width: 1170px)  {
-    height: 170vh;
+    height: auto;
   }
 
-  @media screen and (max-width: $large-screen) {
-    height: 180vh;
-  }
+  // @media screen and (max-width: $large-screen) {
+  //   height: 180vh;
+  // }
 
-  @media screen and (max-width: $medium-screen) {
-    height: 195vh;
-  }
+  // @media screen and (max-width: $medium-screen) {
+  //   height: 195vh;
+  // }
 
-  @media screen and (max-width: $small-screen) {
-    height: 210vh;
-  }
+  // @media screen and (max-width: $small-screen) {
+  //   height: 210vh;
+  // }
 }
 
 .experience :global {

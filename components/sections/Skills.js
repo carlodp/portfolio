@@ -23,6 +23,7 @@ const SKILLS = [
       "Framer Motion",
       "Next.js",
       "Bootstrap",
+      "Tailwind CSS",
       "Vue.js",
       "Nuxt.js",
       "Gatsby",

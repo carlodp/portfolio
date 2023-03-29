@@ -107,6 +107,7 @@
           }
           .stacksUsed {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 15px;
 
@@ -115,12 +116,14 @@
             }
 
             @media screen and (max-width: $small-screen) {
+              margin: 10px 0 15px;
               justify-content: flex-start;
             }
 
             span {
               position: relative;
               text-transform: uppercase;
+              font-size: clamp(0.8rem, 3vw, 1rem);
               &:after {
                 content: "–";
                 margin-left: 5px;
