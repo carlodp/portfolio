@@ -7,10 +7,11 @@ import styled from "@/styles/sections/Projects.module.scss";
 const PROJECT_LIST = [
   {
     id: "01",
-    name: "AniBase",
-    link: "https://aniibase.netlify.app/",
-    stacks: ["Vue.js 3", "Nuxt.js", "Tailwind CSS", "Consumet API"],
-    description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
+    name: "Spotti",
+    link: "https://spotti.netlify.app/",
+    stacks: ["React", "Vite", "Tailwind CSS", "Rapid API"],
+    description:
+      "Spotti is an online music library that utilizes Shazam's API, providing you with the ability to browse, search, and listen to sample music and artists.",
   },
   {
     id: "02",
@@ -22,11 +23,10 @@ const PROJECT_LIST = [
   },
   {
     id: "03",
-    name: "Statify",
-    link: "http://test.com/",
-    stacks: ["Vue", "Vite", "Spotify API"],
-    description:
-      "Statify is an analytics tool gives you an in-depth look at your personal music listening habits, from the most-played songs to the genres you listen to the most, track and compare your music preferences over time, so you can make sure you're always listening to what you love.",
+    name: "AniBase",
+    link: "https://aniibase.netlify.app/",
+    stacks: ["Vue.js 3", "Nuxt.js", "Tailwind CSS", "Consumet API"],
+    description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
     id: "04  ",
