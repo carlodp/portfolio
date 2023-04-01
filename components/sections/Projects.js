@@ -15,6 +15,14 @@ const PROJECT_LIST = [
   },
   {
     id: "02",
+    name: "SineMovie",
+    link: "https://www.sinemovie.vercel.app/",
+    stacks: ["Next.JS", "Prisma", "MongoDB", "NextAuth", "Tailwind CSS"],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    id: "03",
     name: "FOA",
     link: "https://www.financeofamerica.com/",
     stacks: ["WordPress", "PHP", "Javascript", "SASS"],
@@ -22,14 +30,14 @@ const PROJECT_LIST = [
       "During my tenure with Finance of America, I was responsible for maintaining and adding new functionalities to their corporate website, which provides all the essential information about the company.",
   },
   {
-    id: "03",
+    id: "04",
     name: "AniBase",
     link: "https://aniibase.netlify.app/",
-    stacks: ["Vue.js 3", "Nuxt.js", "Tailwind CSS", "Consumet API"],
+    stacks: ["Vue.js 3", "Nuxt.JS", "Tailwind CSS", "Consumet API"],
     description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
-    id: "04  ",
+    id: "05",
     name: "CRMP Courses",
     link: "https://www.farwholesale.com/crmp/",
     stacks: ["Wordpress", "PHP", "Javascript", "SASS"],
