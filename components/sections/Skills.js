@@ -30,6 +30,7 @@ const SKILLS = [
       "Gatsby",
       "WordPress",
       "Node",
+      "Prisma,"
     ],
   },
   {

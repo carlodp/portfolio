@@ -16,10 +16,10 @@ const PROJECT_LIST = [
   {
     id: "02",
     name: "SineMovie",
-    link: "https://www.sinemovie.vercel.app/",
+    link: "https://sinemovie.vercel.app/",
     stacks: ["Next.JS", "Prisma", "MongoDB", "NextAuth", "Tailwind CSS"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "SineMovie is a personal project of mine that was based on Netflix, I tried to use Next.js as the front-end and Prisma to connect the application to the MongoDB server. The website also utilizes Tailwind CSS for faster designing, which is really useful.",
   },
   {
     id: "03",
@@ -79,7 +79,7 @@ const Projects = ({ id }) => {
                   ))}
                 </span>
                 <p className="description">{project.description}</p>
-                <Link className="projectLink" href={project.link}>
+                <Link className="projectLink" href={project.link} passHref>
                   Visit {project.name}
                 </Link>
               </div>
