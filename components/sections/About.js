@@ -30,7 +30,7 @@ const About = ({id}) => {
         >
           <motion.p>
             As an eight-year software engineer, I&apos;m driven to craft
-            stunning, responsive, and user-friendly websites and applications
+            stunning, responsive, user-friendly websites and applications
             through the utilization of cutting-edge technologies and industry
             best practices. I&apos;ve tackled various projects for clients of
             all sizes, delivering exceptional solutions that meet and exceed

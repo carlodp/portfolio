@@ -80,10 +80,13 @@ const Projects = ({ id }) => {
                   ))}
                 </span>
                 <p className="description">{project.description}</p>
-                <Link className="projectLink" href={project.link} passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    Visit {project.name}
-                  </a>
+                <Link
+                  className="projectLink"
+                  href={project.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit {project.name}
                 </Link>
               </div>
             ))}
