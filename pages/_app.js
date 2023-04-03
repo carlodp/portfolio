@@ -19,18 +19,16 @@ export default function App({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+        />
         <meta name="theme-color" content="#161616" />
         <meta name="description" content="Portfolio" />
         <meta name="apple-mobile-web-app-status-bar" content="#161616" />
-        <meta property="og:url" content="http://carlosantos.dev/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Carlo | Creative Portfolio 👨‍💻" />
-        <meta name="twitter:site" content="@carlodp_" />
+        <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:creator" content="@carlodp_" />
-        <meta
-          name="twitter:title"
-          content="Carlo | Creative Portfolio 👨‍💻"
-        />
+        <meta name="twitter:title" content="Carlo | Creative Portfolio 👨‍💻" />
         <meta
           name="twitter:description"
           content="I'm driven to craft stunning, responsive, and user-friendly websites and applications through the utilization of cutting-edge technologies and industry best practices."
@@ -39,6 +37,9 @@ export default function App({ Component, pageProps }) {
           name="twitter:image"
           content="https://carlosantos.dev/og-img.jpg"
         />
+        <meta property="og:url" content="http://carlosantos.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Carlo | Creative Portfolio 👨‍💻" />
         <meta
           property="og:description"
           content="I'm driven to craft stunning, responsive, and user-friendly websites and applications through the utilization of cutting-edge technologies and industry best practices."
@@ -50,11 +51,6 @@ export default function App({ Component, pageProps }) {
         <meta
           property="og:image:url"
           content="https://carlosantos.dev/og-img.jpg"
-        />
-
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
         />
       </Head>
       <ThemeProvider defaultTheme="light" enableSystem={false}>
