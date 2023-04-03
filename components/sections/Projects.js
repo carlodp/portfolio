@@ -34,7 +34,8 @@ const PROJECT_LIST = [
     name: "AniBase",
     link: "https://aniibase.netlify.app/",
     stacks: ["Vue.js 3", "Nuxt.JS", "Tailwind CSS", "Consumet API"],
-    description: "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
+    description:
+      "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
     id: "05",
@@ -80,7 +81,9 @@ const Projects = ({ id }) => {
                 </span>
                 <p className="description">{project.description}</p>
                 <Link className="projectLink" href={project.link} passHref>
-                  Visit {project.name}
+                  <a target="_blank" rel="noopener noreferrer">
+                    Visit {project.name}
+                  </a>
                 </Link>
               </div>
             ))}
