@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           name="twitter:image"
-          content="https://carlosantos.dev/og-img.jpg"
+          content="https://carlosantos.dev/og-img.jpg/?carlo"
         />
         <meta property="og:url" content="http://carlosantos.dev/" />
         <meta property="og:type" content="website" />
@@ -46,11 +46,11 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           property="og:image"
-          content="https://carlosantos.dev/og-img.jpg"
+          content="https://carlosantos.dev/og-img.jpg/?carlo"
         />
         <meta
           property="og:image:url"
-          content="https://carlosantos.dev/og-img.jpg"
+          content="https://carlosantos.dev/og-img.jpg/?carlo"
         />
       </Head>
       <ThemeProvider defaultTheme="light" enableSystem={false}>
