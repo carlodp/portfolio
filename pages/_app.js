@@ -25,7 +25,21 @@ export default function App({ Component, pageProps }) {
         <meta property="og:url" content="http://carlosantos.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Carlo | Creative Portfolio 👨‍💻" />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@carlodp_" />
+        <meta name="twitter:creator" content="@carlodp_" />
+        <meta
+          name="twitter:title"
+          content="Carlo | Creative Portfolio 👨‍💻"
+        />
+        <meta
+          name="twitter:description"
+          content="I'm driven to craft stunning, responsive, and user-friendly websites and applications through the utilization of cutting-edge technologies and industry best practices."
+        />
+        <meta
+          name="twitter:image"
+          content="https://carlosantos.dev/og-img.jpg"
+        />
         <meta
           property="og:description"
           content="I'm driven to craft stunning, responsive, and user-friendly websites and applications through the utilization of cutting-edge technologies and industry best practices."
