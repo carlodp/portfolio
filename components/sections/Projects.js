@@ -7,6 +7,14 @@ import styled from "@/styles/sections/Projects.module.scss";
 const PROJECT_LIST = [
   {
     id: "01",
+    name: "Henyo",
+    link: "https://henyo.vercel.app/",
+    stacks: ["React", "OpenAI", "Prisma", "Tailwind CSS", "Clerk", "PlanetScale"],
+    description:
+      "Henyo is a SaaS AI platform project that utilizes OpenAI API, that has 5 main features, Conversation, Music Generation, Image Generation, Video Generation, and Code Generation",
+  },
+  {
+    id: "02",
     name: "Spotti",
     link: "https://spotti.netlify.app/",
     stacks: ["React", "Vite", "Tailwind CSS", "Rapid API"],
@@ -14,7 +22,7 @@ const PROJECT_LIST = [
       "Spotti is an online music library that utilizes Shazam's API, providing you with the ability to browse, search, and listen to sample music and artists.",
   },
   {
-    id: "02",
+    id: "03",
     name: "SineMovie",
     link: "https://sinemovie.vercel.app/",
     stacks: ["Next.JS", "Prisma", "MongoDB", "NextAuth", "Tailwind CSS"],
@@ -22,7 +30,7 @@ const PROJECT_LIST = [
       "SineMovie is a personal project of mine that was based on Netflix, I tried to use Next.js as the front-end and Prisma to connect the application to the MongoDB server. The website also utilizes Tailwind CSS for faster designing, which is really useful.",
   },
   {
-    id: "03",
+    id: "04",
     name: "FOA",
     link: "https://www.financeofamerica.com/",
     stacks: ["WordPress", "PHP", "Javascript", "SASS"],
@@ -30,7 +38,15 @@ const PROJECT_LIST = [
       "During my tenure with Finance of America, I was responsible for maintaining and adding new functionalities to their corporate website, which provides all the essential information about the company.",
   },
   {
-    id: "04",
+    id: "05",
+    name: "Lakbay",
+    link: "#!",
+    stacks: ["Next.JS", "Prisma", "Tailwind CSS"],
+    description:
+      "A web application that utilizes the normal functionality of Airbnb, icluding login, booking, payment, etc.",
+  },
+  {
+    id: "06",
     name: "AniBase",
     link: "https://aniibase.netlify.app/",
     stacks: ["Vue.js 3", "Nuxt.JS", "Tailwind CSS", "Consumet API"],
@@ -38,7 +54,7 @@ const PROJECT_LIST = [
       "A comprehensive database that has all the information you need to stay up-to-date on your favorite shows. Plus, we provide direct links to episodes so you can watch them right away. With AniBase, you'll never miss a beat in the world of anime!",
   },
   {
-    id: "05",
+    id: "07",
     name: "CRMP Courses",
     link: "https://www.farwholesale.com/crmp/",
     stacks: ["Wordpress", "PHP", "Javascript", "SASS"],
@@ -59,7 +75,7 @@ const Projects = ({ id }) => {
   const x = useTransform(
     scrollYProgress,
     [0.1, 0.5],
-    isTabletOrMobile ? [0, 0] : ["0%", "-60%"]
+    isTabletOrMobile ? [0, 0] : ["0%", "-73%"] //Increase value if adding projects
   );
 
   return (

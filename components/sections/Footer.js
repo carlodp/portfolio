@@ -59,8 +59,8 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="copyright">
-            ©2023 Carlo Santos. Made with <a href="#!">Next.js</a> &{" "}
-            <a href="#!">Framer Motion</a>
+            ©2023 Carlo Santos. Made with <a href="https://nextjs.org/">Next.js</a> &{" "}
+            <a href="https://www.framer.com/">Framer Motion</a>
           </p>
           <p className="location">
             <span className="locationIcon"></span>Based on Manila, Philippines
